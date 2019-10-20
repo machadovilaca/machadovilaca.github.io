@@ -5,7 +5,10 @@
   $(window).on('load', function() {
     var ageDifMs = Date.now() - new Date("1998-06-30").getTime();
     var ageDate = new Date(ageDifMs);
-    $("#age").text(Math.abs(ageDate.getUTCFullYear() - 1970) + " Years");
+    var age = Math.abs(ageDate.getUTCFullYear() - 1970) + " Years";
+    console.log(age);
+    $("#age1").text(age);
+    $("#age2").text(age);
 
     var experienceDifMs = Date.now() - new Date("2017-06-01").getTime();
     var experienceDate = new Date(experienceDifMs);
