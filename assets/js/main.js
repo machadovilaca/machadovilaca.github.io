@@ -6,7 +6,6 @@
     var ageDifMs = Date.now() - new Date("1998-06-30").getTime();
     var ageDate = new Date(ageDifMs);
     var age = Math.abs(ageDate.getUTCFullYear() - 1970) + " Years";
-    console.log(age);
     $("#age1").text(age);
     $("#age2").text(age);
 
