@@ -1,3 +1,5 @@
+@import "~@patternfly/react-catalog-view-extension/dist/css/react-catalog-view-extension.css";
+
 html, body, #root {
   height: 100%;
 }
@@ -30,4 +32,12 @@ html, body, #root {
 .mini-icon {
   max-width: 30px;
   border-radius: 30%;
+}
+
+.catalog-tile-pf-icon {
+  max-width: 100%;
+}
+
+.pf-c-card {
+  height: 300px;
 }

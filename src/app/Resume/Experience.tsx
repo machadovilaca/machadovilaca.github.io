@@ -46,10 +46,6 @@ export const experienceData = [
         <p>In this role, I was able to utilize my strong technical skills to design and implement efficient and reliable
           systems that could handle the demands of modern applications. I worked closely with other members of the
           engineering team to ensure that our systems were always up-to-date and operating at peak performance.</p>
-        <br />
-        <p>I am passionate about using the latest technologies and tools to improve the efficiency and reliability of
-          systems, and I am always looking for new ways to learn and grow as a DevOps Engineer. Connect with me on
-          LinkedIn to learn more about my professional experience and interests.</p>
       </div>
     )
   },
