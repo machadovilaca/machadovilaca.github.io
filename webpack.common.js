@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
-const BG_IMAGES_DIRNAME = 'bgimages';
+const BG_IMAGES_DIRNAME = 'images';
 const ASSET_PATH = process.env.ASSET_PATH || '/';
 module.exports = (env) => {
   return {
@@ -60,7 +60,7 @@ module.exports = (env) => {
         },
         {
           test: /\.svg$/,
-          // only process SVG modules with this loader if they live under a 'bgimages' directory
+          // only process SVG modules with this loader if they live under a 'images' directory
           // this is primarily useful when applying a CSS background using an SVG
           include: (input) => input.indexOf(BG_IMAGES_DIRNAME) > -1,
           use: {
@@ -70,7 +70,7 @@ module.exports = (env) => {
         },
         {
           test: /\.svg$/,
-          // only process SVG modules with this loader when they don't live under a 'bgimages',
+          // only process SVG modules with this loader when they don't live under a 'images',
           // 'fonts', or 'pficon' directory, those are handled with other loaders
           include: (input) =>
             input.indexOf(BG_IMAGES_DIRNAME) === -1 &&

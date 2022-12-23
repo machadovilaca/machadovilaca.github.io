@@ -4,7 +4,7 @@ import * as React from 'react';
 export function useDocumentTitle(title: string) {
   React.useEffect(() => {
     const originalTitle = document.title;
-    document.title = title;
+    document.title = title + ' | João Vilaça';
 
     return () => {
       document.title = originalTitle;

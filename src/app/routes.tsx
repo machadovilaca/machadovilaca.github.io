@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { Route, RouteComponentProps, Switch, useLocation } from 'react-router-dom';
-import { Dashboard } from '@app/Dashboard/Dashboard';
-import { Support } from '@app/Support/Support';
-import { GeneralSettings } from '@app/Settings/General/GeneralSettings';
-import { ProfileSettings } from '@app/Settings/Profile/ProfileSettings';
+import { About } from '@app/About/About';
+import { Portfolio } from '@app/Portfolio/Portfolio';
 import { NotFound } from '@app/NotFound/NotFound';
 import { useDocumentTitle } from '@app/utils/useDocumentTitle';
+import { Blog } from '@app/Blog/Blog';
+import { Resume } from '@app/Resume/Resume';
 
 let routeFocusTimer: number;
 export interface IAppRoute {
@@ -28,37 +28,32 @@ export type AppRouteConfig = IAppRoute | IAppRouteGroup;
 
 const routes: AppRouteConfig[] = [
   {
-    component: Dashboard,
+    component: About,
     exact: true,
-    label: 'Dashboard',
+    label: 'About',
     path: '/',
-    title: 'PatternFly Seed | Main Dashboard',
+    title: 'About me',
   },
   {
-    component: Support,
+    component: Blog,
     exact: true,
-    label: 'Support',
-    path: '/support',
-    title: 'PatternFly Seed | Support Page',
+    label: 'Blog',
+    path: '/blog',
+    title: 'Blog',
   },
   {
-    label: 'Settings',
-    routes: [
-      {
-        component: GeneralSettings,
-        exact: true,
-        label: 'General',
-        path: '/settings/general',
-        title: 'PatternFly Seed | General Settings',
-      },
-      {
-        component: ProfileSettings,
-        exact: true,
-        label: 'Profile',
-        path: '/settings/profile',
-        title: 'PatternFly Seed | Profile Settings',
-      },
-    ],
+    component: Portfolio,
+    exact: true,
+    label: 'Portfolio',
+    path: '/portfolio',
+    title: 'Portfolio',
+  },
+  {
+    component: Resume,
+    exact: true,
+    label: 'Resume',
+    path: '/resume',
+    title: 'Resume',
   },
 ];
 
