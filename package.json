@@ -45,7 +45,7 @@
     "file-loader": "^6.2.0",
     "gh-pages": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
-    "imagemin": "^8.0.0",
+    "imagemin": "^8.0.1",
     "jest": "^27.0.4",
     "mini-css-extract-plugin": "^1.6.0",
     "postcss": "^8.3.1",
