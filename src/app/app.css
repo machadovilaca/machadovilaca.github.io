@@ -24,9 +24,20 @@ html, body, #root {
   max-width: 1000px;
 }
 
+@media screen and (min-width: 1250px) {
+  .mw-1000 {
+    margin-left: 15%;
+  }
+}
+
+
 .portrait {
   max-width: 300px;
   border-radius: 50%;
+}
+
+.blog-image {
+  max-width: 400px;
 }
 
 .mini-icon {
@@ -38,6 +49,11 @@ html, body, #root {
   max-width: 100%;
 }
 
-.pf-c-card {
-  height: 300px;
+.card-350-height {
+  height: 350px;
+}
+
+.code-struct * {
+  padding-bottom: 0;
+  font-size: 1em;
 }

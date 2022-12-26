@@ -7,6 +7,7 @@ import { ExternalLinkAltIcon } from "@patternfly/react-icons";
 const ProjectTile: React.FunctionComponent<{ project: Project }> = ({ project }) => {
   return (
     <CatalogTile
+      className="card-350-height"
       iconImg={project.img}
       iconAlt={`${project.title} image`}
       title={project.title}

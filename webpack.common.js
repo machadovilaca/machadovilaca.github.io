@@ -7,6 +7,7 @@ const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 const BG_IMAGES_DIRNAME = 'images';
 const ASSET_PATH = process.env.ASSET_PATH || '/';
+const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 module.exports = (env) => {
   return {
     module: {
@@ -33,6 +34,7 @@ module.exports = (env) => {
             path.resolve(__dirname, 'node_modules/@patternfly/react-core/dist/styles/assets/pficon'),
             path.resolve(__dirname, 'node_modules/@patternfly/patternfly/assets/fonts'),
             path.resolve(__dirname, 'node_modules/@patternfly/patternfly/assets/pficon'),
+            path.resolve(__dirname, 'node_modules/monaco-editor/esm'),
           ],
           use: {
             loader: 'file-loader',
@@ -132,6 +134,7 @@ module.exports = (env) => {
       new CopyPlugin({
         patterns: [{ from: './src/favicon.png', to: 'images' }],
       }),
+      new MonacoWebpackPlugin(),
     ],
     resolve: {
       extensions: ['.js', '.ts', '.tsx', '.jsx'],
