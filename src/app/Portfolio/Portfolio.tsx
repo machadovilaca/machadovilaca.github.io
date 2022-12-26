@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Button, Gallery, GalleryItem, Page, PageSection, Title } from "@patternfly/react-core";
+import { Gallery, GalleryItem, Page, PageSection, Title } from "@patternfly/react-core";
 import { CatalogTile, CatalogTileBadge } from "@patternfly/react-catalog-view-extension";
 import { Project, projectsData } from "@app/Portfolio/Projects";
 import { ExternalLinkAltIcon } from "@patternfly/react-icons";

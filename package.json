@@ -1,9 +1,9 @@
 {
-  "name": "patternfly-seed",
+  "name": "machadovilaca.github.io",
   "version": "0.0.2",
-  "description": "An open source build scaffolding utility for web apps.",
-  "repository": "https://github.com/patternfly/patternfly-react-seed.git",
-  "homepage": "https://patternfly-react-seed.surge.sh",
+  "description": "João Vilaça personal website",
+  "repository": "https://github.com/machadovilaca/machadovilaca.github.io",
+  "homepage": "https://machadovilaca.github.io",
   "license": "MIT",
   "private": true,
   "scripts": {
@@ -21,7 +21,9 @@
     "ci-checks": "npm run type-check && npm run lint && npm run test:coverage",
     "build:bundle-profile": "webpack --config webpack.prod.js --profile --json > stats.json",
     "bundle-profile:analyze": "npm run build:bundle-profile && webpack-bundle-analyzer ./stats.json",
-    "clean": "rimraf dist"
+    "clean": "rimraf dist",
+    "predeploy": "webpack --config webpack.prod.js && echo machadovilaca.eu > dist/CNAME",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "@types/enzyme": "^3.10.8",
@@ -41,6 +43,7 @@
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "file-loader": "^6.2.0",
+    "gh-pages": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
     "imagemin": "^8.0.0",
     "jest": "^27.0.4",

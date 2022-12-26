@@ -11,8 +11,8 @@ const Geolocate: React.FunctionComponent = () => (
       orchestration of these resources can be a challenge, as it requires considering not only the availability of
       resources but also their geographic location.</Text>
 
-    <Text>In this context, in "Geolocate: A geolocation-aware scheduling system for Edge Computing" we propose a new
-      scheduling solution for data-centric workloads deployed in geographically distributed Edge environments. The
+    <Text>In this context, in &quot;Geolocate: A geolocation-aware scheduling system for Edge Computing&quot; we propose
+      a new scheduling solution for data-centric workloads deployed in geographically distributed Edge environments. The
       solution, called Geolocate, is integrated with KubeEdge, a popular orchestration system based on Kubernetes that
       allows for the deployment and management of applications at the Edge.</Text>
 
@@ -24,21 +24,24 @@ const Geolocate: React.FunctionComponent = () => (
       workloads.</Text>
 
     <Text>To evaluate the performance of the Geolocate scheduler, we conducted a series of experiments using a modified
-      version of the "Data Analytics with Apache Beam" service example provided by KubeEdge. The results showed that
-      Geolocate was able to significantly improve the response time of the data-processing workloads when compared to
-      the KubeEdge default scheduler, which does not consider the location of the workloads.</Text>
+      version of the &quot;Data Analytics with Apache Beam&quot; service example provided by KubeEdge. The results
+      showed that Geolocate was able to significantly improve the response time of the data-processing workloads when
+      compared to the KubeEdge default scheduler, which does not consider the location of the workloads.</Text>
 
     <Text>If you want to learn more about the Geolocate scheduling system for hybrid Cloud and Edge environments, I
       encourage you to read the full article at
-      <Text component={TextVariants.a} href="https://dsr-haslab.github.io/repository/vpv21.pdf"> https://dsr-haslab.github.io/repository/vpv21.pdf</Text>.
+      <Text component={TextVariants.a}
+            href="https://dsr-haslab.github.io/repository/vpv21.pdf"> https://dsr-haslab.github.io/repository/vpv21.pdf</Text>.
       The article discusses the need for a scheduling system that takes into account the geographic location of
       data-producing workloads in order to minimize network latencies and improve service response times. It also
       presents the design principles, architecture, and integration with KubeEdge of the Geolocate scheduler, as well as
       the results of preliminary experiments that demonstrate the benefits of using the Geolocate scheduler. You can
       also check out the project code at
-      <Text component={TextVariants.a} href="https://github.com/geolocate-orchestration/scheduler"> https://github.com/geolocate-orchestration/scheduler </Text>
+      <Text component={TextVariants.a}
+            href="https://github.com/geolocate-orchestration/scheduler"> https://github.com/geolocate-orchestration/scheduler </Text>
       and
-      <Text component={TextVariants.a} href="https://github.com/geolocate-orchestration/geolocate-scheduler"> https://github.com/geolocate-orchestration/geolocate-scheduler </Text>
+      <Text component={TextVariants.a}
+            href="https://github.com/geolocate-orchestration/geolocate-scheduler"> https://github.com/geolocate-orchestration/geolocate-scheduler </Text>
       to learn more about how the Geolocate scheduler works.</Text>
   </>
 );

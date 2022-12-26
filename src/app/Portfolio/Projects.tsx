@@ -1,5 +1,3 @@
-import React from "react";
-
 export interface Project {
   title: string;
   subtitle: string;
@@ -16,7 +14,7 @@ export const projectsData: Project[] = [
     url: "https://github.com/kubevirt/kubevirt",
     owner: "KubeVirt",
     owner_url: "https://kubevirt.io",
-    img: "http://kubevirt.io/assets/images/KubeVirt_logo_color.svg",
+    img: "https://kubevirt.io/assets/images/KubeVirt_logo_color.svg",
   },
   {
     title: "kubevirt/hyperconverged-cluster-operator",
@@ -24,7 +22,7 @@ export const projectsData: Project[] = [
     url: "https://github.com/kubevirt/hyperconverged-cluster-operator",
     owner: "KubeVirt",
     owner_url: "https://kubevirt.io",
-    img: "http://kubevirt.io/assets/images/KubeVirt_logo_color.svg",
+    img: "https://kubevirt.io/assets/images/KubeVirt_logo_color.svg",
   },
   {
     title: "Geolocate: A geolocation-aware scheduling system for Edge Computing",

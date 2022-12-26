@@ -5,7 +5,7 @@ import { useHistory, useLocation } from 'react-router-dom'
 import { CatalogTile } from "@patternfly/react-catalog-view-extension";
 import { Article, articles } from "@app/Blog/articles";
 
-const Tile: React.FunctionComponent<{ mapkey: string, article: Article, onListClick: any }> = ({ mapkey, article, onListClick }) => {
+const Tile: React.FunctionComponent<{ mapkey: string, article: Article, onListClick: (a: string) => void }> = ({ mapkey, article, onListClick }) => {
   return (
     <CatalogTile
       title={article.title}
@@ -19,7 +19,7 @@ const Tile: React.FunctionComponent<{ mapkey: string, article: Article, onListCl
   )
 }
 
-const Index: React.FunctionComponent<{onListClick: any}> = ({ onListClick }) => {
+const Index: React.FunctionComponent<{onListClick: (a: string) => void}> = ({ onListClick }) => {
   const items: JSX.Element[] = [];
 
   articles.forEach((article: Article, mapkey: string) => {
@@ -50,7 +50,7 @@ function Blog(): React.ReactElement {
     }
   }, [articleId]);
 
-  const onListClick = (article) => {
+  const onListClick = (article: string) => {
     history.push({
       search: `?article=${article}`
     })
