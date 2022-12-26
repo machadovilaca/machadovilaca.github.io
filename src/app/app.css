@@ -16,6 +16,10 @@ html, body, #root {
   margin-bottom: 20px;
 }
 
+.ml-sm {
+  margin-left: 20px;
+}
+
 .m-xs {
   margin: 5px;
 }
@@ -56,4 +60,13 @@ html, body, #root {
 .code-struct * {
   padding-bottom: 0;
   font-size: 1em;
+}
+
+.logo {
+  max-width: 50px;
+  border-radius: 50%;
+}
+
+.logo-text {
+  color: var(	--pf-global--palette--black-100);
 }
