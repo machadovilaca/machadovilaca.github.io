@@ -9,10 +9,13 @@ import {
   PageHeader,
   PageSidebar,
   Text,
-  SkipToContent
-} from '@patternfly/react-core';
+  SkipToContent, Avatar
+} from "@patternfly/react-core";
 import { routes, IAppRoute, IAppRouteGroup } from '@app/routes';
 import logo from '@app/images/jvilaca.png';
+
+import '@patternfly/react-styles/css/utilities/Spacing/spacing.css';
+import '@patternfly/react-styles/css/utilities/Text/text.css';
 
 interface IAppLayout {
   children: React.ReactNode;
@@ -39,8 +42,8 @@ const AppLayout: React.FunctionComponent<IAppLayout> = ({ children }) => {
     }
     return (
       <>
-        <img className="logo" src={logo} onClick={handleClick} alt="website logo" />
-        <Text className="ml-sm logo-text">João Vilaça - Software Engineer @ Red Hat</Text>
+        <Avatar onClick={handleClick} src={logo} size="md" alt="website logo" />
+        <Text onClick={handleClick} className="pf-u-ml-md pf-u-color-light-100">João Vilaça - Software Engineer @ Red Hat</Text>
       </>
     );
   }

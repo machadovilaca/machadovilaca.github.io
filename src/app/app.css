@@ -8,45 +8,8 @@ html, body, #root {
   --pf-c-accordion__expanded-content--Color: var(--pf-global--palette--black-850);
 }
 
-.mt-sm {
-  margin-top: 20px;
-}
-
-.mb-sm {
-  margin-bottom: 20px;
-}
-
-.ml-sm {
-  margin-left: 20px;
-}
-
-.m-xs {
-  margin: 5px;
-}
-
-.mw-1000 {
-  max-width: 1000px;
-}
-
-@media screen and (min-width: 1250px) {
-  .mw-1000 {
-    margin-left: 15%;
-  }
-}
-
-
-.portrait {
-  max-width: 300px;
-  border-radius: 50%;
-}
-
 .blog-image {
   max-width: 400px;
-}
-
-.mini-icon {
-  max-width: 30px;
-  border-radius: 30%;
 }
 
 .catalog-tile-pf-icon {
@@ -62,11 +25,6 @@ html, body, #root {
   font-size: 1em;
 }
 
-.logo {
-  max-width: 50px;
-  border-radius: 50%;
-}
-
-.logo-text {
-  color: var(	--pf-global--palette--black-100);
+.line-height-1-6 * {
+  line-height: 1.6;
 }

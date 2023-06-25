@@ -1,44 +1,45 @@
 import * as React from "react";
-import { Button, Grid, GridItem, Page, PageSection, Title } from "@patternfly/react-core";
-import { List } from "@app/Resume/List";
+import { Bullseye, Button, PageSection, Title } from "@patternfly/react-core";
+import { List, ListElem } from "@app/Resume/List";
 import { experienceData } from "@app/Resume/Experience";
 import { educationData } from "@app/Resume/Education";
+import { Page } from "@app/components/Page";
+import { publicationsData } from "@app/Resume/Publications";
+import { speakingData } from "@app/Resume/Speaking";
 
-const Resume: React.FunctionComponent = () => (
-  <Page>
+const PDFResume: React.FunctionComponent = () => (
+  <Bullseye>
+    <Button
+      variant="secondary"
+      component="a" href="https://github.com/machadovilaca/curriculum-vitae/raw/master/joaovilaca_cv.pdf"
+      target="_blank"
+    >
+      Download full PDF Resume
+    </Button>
+  </Bullseye>
+)
+
+const ResumeSection: (props: { title: string, data: ListElem[] }) => JSX.Element = ({ title, data }) => (
+  <PageSection>
+    <Title size="2xl" headingLevel="h2" className="pf-u-mb-sm">
+      {title}
+    </Title>
+    <List data={data} />
+  </PageSection>
+)
+
+export const Resume: React.FunctionComponent = () => (
+  <Page title="Resume">
     <PageSection>
-      <Title size="4xl" headingLevel="h1">
-        Resume
-      </Title>
+      <PDFResume />
     </PageSection>
 
-    <PageSection>
-      <Grid>
-        <GridItem span={4} />
-        <GridItem span={4}>
-          <Button
-            variant="secondary" className={"mb-sm"}
-            component="a" href="https://github.com/machadovilaca/curriculum-vitae/raw/master/joaovilaca_cv.pdf" target="_blank"
-          >
-            Download full PDF Resume
-          </Button>
-        </GridItem>
-        <GridItem span={4} />
-      </Grid>
+    <ResumeSection title='Experience' data={experienceData} />
 
-      <Title size="2xl" headingLevel="h2" className={"mb-sm"}>
-        Experience
-      </Title>
+    <ResumeSection title='Speaking' data={speakingData} />
 
-      <List data={experienceData} />
+    <ResumeSection title='Publications' data={publicationsData} />
 
-      <Title size="2xl" headingLevel="h2" className={"mt-sm mb-sm"}>
-        Education
-      </Title>
-
-      <List data={educationData} />
-    </PageSection>
+    <ResumeSection title='Education' data={educationData} />
   </Page>
 );
-
-export { Resume };

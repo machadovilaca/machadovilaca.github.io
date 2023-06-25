@@ -1,0 +1,17 @@
+.logo {
+  height: 70px;
+  width: 70px;
+}
+
+.details {
+  width: 90%;
+}
+
+.detailsText {
+  width: 100%;
+}
+
+.company {
+  font-weight: bold;
+  text-align: left;
+}

@@ -1,9 +1,23 @@
 import * as React from 'react';
-import { Button, Chip, Page, PageSection, Stack, StackItem, Text, TextVariants, Title } from "@patternfly/react-core";
+import {
+  Chip,
+  Divider,
+  PanelHeader,
+  PanelMain,
+  PanelMainBody,
+  Stack,
+  StackItem,
+  Text,
+  TextVariants
+} from "@patternfly/react-core";
 import { useEffect, useState } from "react";
 import { useHistory, useLocation } from 'react-router-dom'
 import { CatalogTile } from "@patternfly/react-catalog-view-extension";
 import { Article, articles } from "@app/Blog/articles";
+import { Page } from "@app/components/Page";
+import { Panel } from '@patternfly/react-core';
+import { PanelCloseIcon } from "@patternfly/react-icons";
+import { Button } from '@patternfly/react-core';
 
 const Tile: React.FunctionComponent<{ mapkey: string, article: Article, onListClick: (a: string) => void }> = ({ mapkey, article, onListClick }) => {
   return (
@@ -12,8 +26,8 @@ const Tile: React.FunctionComponent<{ mapkey: string, article: Article, onListCl
       onClick={() => onListClick(mapkey)}
     >
       <>
-        <p className="mb-sm">{article.date.toDateString().split(' ').slice(1).join(' ')}</p>
-        {article.tags.map((tag, i) => <Chip key={i} className="m-xs" isReadOnly>{tag}</Chip>)}
+        <p className="pf-u-mb-sm">{article.date.toDateString().split(' ').slice(1).join(' ')}</p>
+        {article.tags.map((tag, i) => <Chip key={i} className="pf-u-m-xs" isReadOnly>{tag}</Chip>)}
       </>
     </CatalogTile>
   )
@@ -35,7 +49,20 @@ const Index: React.FunctionComponent<{onListClick: (a: string) => void}> = ({ on
   )
 }
 
-function Blog(): React.ReactElement {
+const GoBack: React.FunctionComponent<{goBack: () => void, className?: string}> = ({ goBack, className }) => {
+  return (
+    <Button
+      variant="link"
+      icon={<PanelCloseIcon />}
+      onClick={goBack}
+      className={className}
+    >
+      Back
+    </Button>
+  )
+}
+
+export function Blog(): React.ReactElement {
   const [post, setPost] = useState('');
 
   const location = useLocation()
@@ -56,43 +83,39 @@ function Blog(): React.ReactElement {
     })
   }
 
+  const goBack = () => {
+    history.push({
+      search: ``
+    })
+  }
+
   const shouldRenderPost = articleId !== null && post !== '' && articles.has(post)
   const article = articles.get(post)
 
   return (
-    <Page>
-      <PageSection>
-        <Title size="4xl" headingLevel="h1">
-          Blog
-        </Title>
-      </PageSection>
-
-      <PageSection className={"pf-c-content mw-1000"}>
-        { shouldRenderPost && article !== undefined &&
-            <>
-              <Text component={TextVariants.h2}>{article.title}</Text>
+    <Page title="Blog">
+      { shouldRenderPost && article !== undefined &&
+          <Panel>
+            <PanelHeader>
+              <Text component={TextVariants.h2} className="pf-u-font-size-lg pf-u-font-weight-bold">{article.title}</Text>
               <Text component={TextVariants.small}>João Vilaça · {article.date.toDateString()}</Text>
-              {article.content}
-            </>
-        }
+              <GoBack goBack={goBack}/>
+            </PanelHeader>
+            <Divider />
+            <PanelMain>
+              <PanelMainBody className="line-height-1-6">
+                {article.content}
+              </PanelMainBody>
+            </PanelMain>
+            <Divider />
 
-        { !shouldRenderPost &&
-          <Index onListClick={onListClick} />
-        }
+            <GoBack goBack={goBack} className="pf-u-my-md" />
+          </Panel>
+      }
 
-        <Button
-          className="mt-sm"
-          variant="secondary"
-          onClick={() => {
-            setPost("");
-            history.replace({search: ''})
-          }}
-        >
-          Back
-        </Button>
-      </PageSection>
+      { !shouldRenderPost &&
+        <Index onListClick={onListClick} />
+      }
     </Page>
   );
 }
-
-export { Blog };

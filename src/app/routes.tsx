@@ -28,11 +28,18 @@ export type AppRouteConfig = IAppRoute | IAppRouteGroup;
 
 const routes: AppRouteConfig[] = [
   {
+    component: Resume,
+    exact: true,
+    label: 'Resume',
+    path: '/resume',
+    title: 'Resume',
+  },
+  {
     component: About,
     exact: true,
     label: 'About',
     path: '/',
-    title: 'About me',
+    title: 'About',
   },
   {
     component: Blog,
@@ -47,13 +54,6 @@ const routes: AppRouteConfig[] = [
     label: 'Portfolio',
     path: '/portfolio',
     title: 'Portfolio',
-  },
-  {
-    component: Resume,
-    exact: true,
-    label: 'Resume',
-    path: '/resume',
-    title: 'Resume',
   },
 ];
 

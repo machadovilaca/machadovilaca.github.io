@@ -1,5 +1,6 @@
 import * as React from "react";
-import { Text, TextVariants } from "@patternfly/react-core";
+import { Text } from "@patternfly/react-core";
+import { TextLink } from "@app/components/TextLink";
 
 const Geolocate: React.FunctionComponent = () => (
   <>
@@ -30,18 +31,15 @@ const Geolocate: React.FunctionComponent = () => (
 
     <Text>If you want to learn more about the Geolocate scheduling system for hybrid Cloud and Edge environments, I
       encourage you to read the full article at
-      <Text component={TextVariants.a}
-            href="https://dsr-haslab.github.io/repository/vpv21.pdf"> https://dsr-haslab.github.io/repository/vpv21.pdf</Text>.
+      <TextLink href="https://dsr-haslab.github.io/repository/vpv21.pdf" text="https://dsr-haslab.github.io/repository/vpv21.pdf" />.
       The article discusses the need for a scheduling system that takes into account the geographic location of
       data-producing workloads in order to minimize network latencies and improve service response times. It also
       presents the design principles, architecture, and integration with KubeEdge of the Geolocate scheduler, as well as
       the results of preliminary experiments that demonstrate the benefits of using the Geolocate scheduler. You can
       also check out the project code at
-      <Text component={TextVariants.a}
-            href="https://github.com/geolocate-orchestration/scheduler"> https://github.com/geolocate-orchestration/scheduler </Text>
+      <TextLink href="https://github.com/geolocate-orchestration/scheduler" text="https://github.com/geolocate-orchestration/scheduler" />
       and
-      <Text component={TextVariants.a}
-            href="https://github.com/geolocate-orchestration/geolocate-scheduler"> https://github.com/geolocate-orchestration/geolocate-scheduler </Text>
+      <TextLink href="https://github.com/geolocate-orchestration/geolocate-scheduler" text="https://github.com/geolocate-orchestration/geolocate-scheduler" />
       to learn more about how the Geolocate scheduler works.</Text>
   </>
 );

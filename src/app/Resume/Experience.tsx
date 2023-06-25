@@ -1,11 +1,23 @@
 import * as React from "react";
 
+import redhatLogo from "@app/images/resume/redhat.png";
+import pmintLogo from "@app/images/resume/pmint.jpg";
+import eurotuxLogo from "@app/images/resume/eurotux.png";
+
 export const experienceData = [
   {
     company: "Red Hat",
-    date: "Sep 2021 - Present",
-    title: "Associate Software Engineer",
-    img: "https://media.licdn.com/dms/image/C4E0BAQEto-TydTTIfQ/company-logo_200_200/0/1556712048684?e=1680134400&v=beta&t=1Wfn3yJi_F8czBfeDN9KaFtsR_6iV1zIw6fAwb7CajM",
+    positions: [
+      {
+        date: "April 2023 - Present",
+        title: "Software Engineer",
+      },
+      {
+        date: "Sep 2021 - April 2023",
+        title: "Associate Software Engineer",
+      }
+    ],
+    img: redhatLogo,
     description: (
       <div>
         <p>As a Software Engineer at Red Hat, I have had the opportunity to work on the KubeVirt project, a tool for
@@ -33,9 +45,13 @@ export const experienceData = [
   },
   {
     company: "Public Mint",
-    date: "Aug 2019 - Sep 2021",
-    title: "DevOps Engineer",
-    img: "https://media.licdn.com/dms/image/C4D0BAQHuVAE0ypNKDg/company-logo_200_200/0/1616608786098?e=1680134400&v=beta&t=n9SR7o9O9pYTDl0DXCze0v2geqp3Li2QAZvkfjzAMvE",
+    positions: [
+      {
+        date: "Aug 2019 - Sep 2021",
+        title: "DevOps Engineer",
+      }
+    ],
+    img: pmintLogo,
     description: (
       <div>
         <p>As a DevOps Engineer, I was responsible for developing, maintaining, and deploying systems in the AWS cloud.
@@ -51,9 +67,17 @@ export const experienceData = [
   },
   {
     company: "Eurotux",
-    date: "Jun 2018 - Aug 2018",
-    title: "2 Summer Internships in DevOps",
-    img: "https://media.licdn.com/dms/image/C4D0BAQFUr2vztHIcdA/company-logo_200_200/0/1519894481161?e=1680134400&v=beta&t=sJrNCkh1iPZp5q3TApfycE5iOaTq4I3QrnzKQCtKjkQ",
+    positions: [
+      {
+        date: "2019",
+        title: "Summer Internship in DevOps",
+      },
+      {
+        date: "2018",
+        title: "Summer Internship in DevOps",
+      }
+    ],
+    img: eurotuxLogo,
     description: (
       <div>
         <p>During my 2018 summer internship at Eurotux Informática, I had the opportunity to work on some exciting
