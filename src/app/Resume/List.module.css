@@ -3,12 +3,16 @@
   width: 70px;
 }
 
-.details {
-  width: 90%;
+.w100 {
+  width: 100%;
 }
 
 .detailsText {
-  width: 100%;
+  text-align: left;
+}
+
+.dateText {
+  text-align: right;
 }
 
 .company {

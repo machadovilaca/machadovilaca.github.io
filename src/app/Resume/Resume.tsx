@@ -1,11 +1,11 @@
 import * as React from "react";
 import { Bullseye, Button, PageSection, Title } from "@patternfly/react-core";
 import { List, ListElem } from "@app/Resume/List";
-import { experienceData } from "@app/Resume/Experience";
-import { educationData } from "@app/Resume/Education";
+import { experienceData } from "@app/Resume/data/Experience";
+import { educationData } from "@app/Resume/data/Education";
 import { Page } from "@app/components/Page";
-import { publicationsData } from "@app/Resume/Publications";
-import { speakingData } from "@app/Resume/Speaking";
+import { publicationsData } from "@app/Resume/data/Publications";
+import { speakingData } from "@app/Resume/data/Speaking";
 
 const PDFResume: React.FunctionComponent = () => (
   <Bullseye>

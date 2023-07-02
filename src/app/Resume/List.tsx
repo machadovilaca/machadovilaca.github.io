@@ -5,7 +5,7 @@ import {
   AccordionItem,
   AccordionToggle, Bullseye,
   Flex,
-  FlexItem,
+  FlexItem, Grid, GridItem,
   Text
 } from "@patternfly/react-core";
 import '@app/Resume/List.css';
@@ -38,8 +38,10 @@ export const List: React.FunctionComponent<{ data: ListElem[]}> = ({ data }) => 
     const num = i.toString();
 
     const title = (
-      <Flex alignItems={{ default: "alignItemsCenter"}} className={css(styles.details)}>
-        <FlexItem>
+      <Grid key={i}>
+        {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+        {/* @ts-ignore */}
+        <GridItem sm={12} lg={1} rowSpan={data.length + 1}>
           <Bullseye className={css(styles.logo)}>
             {
               data[i].img &&
@@ -51,23 +53,25 @@ export const List: React.FunctionComponent<{ data: ListElem[]}> = ({ data }) => 
               />
             }
           </Bullseye>
-        </FlexItem>
-        <FlexItem className={css(styles.details)}>
+        </GridItem>
+
+        <GridItem sm={12} lg={10}>
           <Text component="p" className={css(styles.company)}>{data[i].company}</Text>
-          {
-            data[i].positions.map((position, i) =>
-              <Flex key={i} className={css(styles.detailsText)}>
-                <FlexItem>
-                  <Text component="small">{position.title}</Text>
-                </FlexItem>
-                <FlexItem align={{ default: 'alignRight' }}>
-                  <Text component="small">{position.date}</Text>
-                </FlexItem>
-              </Flex>
-            )
-          }
-        </FlexItem>
-      </Flex>
+        </GridItem>
+
+        {
+          data[i].positions.map((position) =>
+            <>
+              <GridItem sm={8} lg={8} className={css(styles.detailsText)}>
+                <Text component="small">{position.title}</Text>
+              </GridItem>
+              <GridItem sm={4} lg={2} className={css(styles.dateText)}>
+                <Text component="small">{position.date}</Text>
+              </GridItem>
+            </>
+          )
+        }
+      </Grid>
     );
 
     items.push(

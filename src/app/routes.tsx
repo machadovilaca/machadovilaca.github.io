@@ -55,6 +55,13 @@ const routes: AppRouteConfig[] = [
     path: '/portfolio',
     title: 'Portfolio',
   },
+  {
+    component: Portfolio,
+    exact: true,
+    label: 'Food Map',
+    path: '/foodmap',
+    title: 'Food Map',
+  },
 ];
 
 // a custom hook for sending focus to the primary content container
