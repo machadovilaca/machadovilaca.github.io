@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from '@app/index';
+import { createRoot } from 'react-dom/client';
 
 if (process.env.NODE_ENV !== "production") {
   const config = {
@@ -16,4 +17,6 @@ if (process.env.NODE_ENV !== "production") {
   axe(React, ReactDOM, 1000, config);
 }
 
-ReactDOM.render(<App />, document.getElementById("root") as HTMLElement);
+const container = document.getElementById('root');
+const root = createRoot(container); // createRoot(container!) if you use TypeScript
+root.render(<App />);

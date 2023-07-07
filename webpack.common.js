@@ -104,6 +104,8 @@ module.exports = (env) => {
               __dirname,
               'node_modules/@patternfly/react-inline-edit-extension/node_modules/@patternfly/react-styles/css/assets/images'
             ),
+            path.resolve(__dirname, 'node_modules/leaflet/dist/images'),
+            path.resolve(__dirname, 'node_modules/react-leaflet-cluster/lib/assets'),
           ],
           use: [
             {

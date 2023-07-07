@@ -11,5 +11,7 @@ module.exports = {
     path.resolve(__dirname, 'node_modules/@patternfly/react-table/node_modules/@patternfly/react-styles/css'),
     path.resolve(__dirname, 'node_modules/@patternfly/react-inline-edit-extension/node_modules/@patternfly/react-styles/css'),
     path.resolve(__dirname, 'node_modules/monaco-editor/esm'),
+    path.resolve(__dirname, 'node_modules/leaflet/dist'),
+    path.resolve(__dirname, 'node_modules/react-leaflet-cluster/lib/assets'),
   ]
 }

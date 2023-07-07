@@ -4,8 +4,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionToggle, Bullseye,
-  Flex,
-  FlexItem, Grid, GridItem,
+  Grid, GridItem,
   Text
 } from "@patternfly/react-core";
 import '@app/Resume/List.css';

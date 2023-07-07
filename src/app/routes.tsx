@@ -6,6 +6,7 @@ import { NotFound } from '@app/NotFound/NotFound';
 import { useDocumentTitle } from '@app/utils/useDocumentTitle';
 import { Blog } from '@app/Blog/Blog';
 import { Resume } from '@app/Resume/Resume';
+import { FoodMap } from "@app/FoodMap/FoodMap";
 
 let routeFocusTimer: number;
 export interface IAppRoute {
@@ -17,6 +18,7 @@ export interface IAppRoute {
   path: string;
   title: string;
   routes?: undefined;
+  sidebar: 'top' | 'bottom';
 }
 
 export interface IAppRouteGroup {
@@ -33,6 +35,7 @@ const routes: AppRouteConfig[] = [
     label: 'Resume',
     path: '/resume',
     title: 'Resume',
+    sidebar: 'top',
   },
   {
     component: About,
@@ -40,6 +43,7 @@ const routes: AppRouteConfig[] = [
     label: 'About',
     path: '/',
     title: 'About',
+    sidebar: 'top',
   },
   {
     component: Blog,
@@ -47,6 +51,7 @@ const routes: AppRouteConfig[] = [
     label: 'Blog',
     path: '/blog',
     title: 'Blog',
+    sidebar: 'top',
   },
   {
     component: Portfolio,
@@ -54,13 +59,15 @@ const routes: AppRouteConfig[] = [
     label: 'Portfolio',
     path: '/portfolio',
     title: 'Portfolio',
+    sidebar: 'top',
   },
   {
-    component: Portfolio,
+    component: FoodMap,
     exact: true,
     label: 'Food Map',
     path: '/foodmap',
     title: 'Food Map',
+    sidebar: 'bottom',
   },
 ];
 
@@ -106,8 +113,8 @@ const flattenedRoutes: IAppRoute[] = routes.reduce(
 
 const AppRoutes = (): React.ReactElement => (
   <Switch>
-    {flattenedRoutes.map(({ path, exact, component, title }, idx) => (
-      <RouteWithTitleUpdates path={path} exact={exact} component={component} key={idx} title={title} />
+    {flattenedRoutes.map(({ path, exact, component, title, sidebar }, idx) => (
+      <RouteWithTitleUpdates path={path} exact={exact} component={component} key={idx} title={title}  sidebar={sidebar}/>
     ))}
     <PageNotFound title="404 Page Not Found" />
   </Switch>

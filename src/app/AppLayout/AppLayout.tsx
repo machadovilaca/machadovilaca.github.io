@@ -9,13 +9,17 @@ import {
   PageHeader,
   PageSidebar,
   Text,
-  SkipToContent, Avatar
+  SkipToContent, Avatar, Flex, FlexItem
 } from "@patternfly/react-core";
 import { routes, IAppRoute, IAppRouteGroup } from '@app/routes';
 import logo from '@app/images/jvilaca.png';
 
 import '@patternfly/react-styles/css/utilities/Spacing/spacing.css';
 import '@patternfly/react-styles/css/utilities/Text/text.css';
+import { css } from "@patternfly/react-styles";
+
+import styles from '@app/AppLayout/AppLayout.module.css';
+import '@app/AppLayout/AppLayout.css';
 
 interface IAppLayout {
   children: React.ReactNode;
@@ -79,17 +83,33 @@ const AppLayout: React.FunctionComponent<IAppLayout> = ({ children }) => {
   );
 
   const Navigation = (
-    <Nav id="nav-primary-simple" theme="dark">
-      <NavList id="nav-list-simple">
-        {routes.map(
-          (route, idx) => route.label && (!route.routes ? renderNavItem(route, idx) : renderNavGroup(route, idx))
-        )}
-      </NavList>
+    <Nav className={css(styles.h100)} id="nav-primary-simple" theme="dark">
+      <Flex className={css(styles.h100)} direction={{ default: "column" }} justifyContent={{ default: 'justifyContentSpaceBetween' }}>
+        <FlexItem>
+          <NavList id="nav-list-simple">
+            {
+              routes
+                .filter(route => route.label && (route.routes || route.sidebar == "top"))
+                .map((route, idx) => !route.routes ? renderNavItem(route, idx) : renderNavGroup(route, idx))
+            }
+          </NavList>
+        </FlexItem>
+        <FlexItem>
+          <NavList id="nav-list-simple">
+            {
+              routes
+                .filter(route => route.label && (route.routes || route.sidebar == "bottom"))
+                .map((route, idx) => !route.routes ? renderNavItem(route, idx) : renderNavGroup(route, idx))
+            }
+          </NavList>
+        </FlexItem>
+      </Flex>
     </Nav>
   );
 
   const Sidebar = (
     <PageSidebar
+      className={css(styles.h100)}
       theme="dark"
       nav={Navigation}
       isNavOpen={isMobileView ? isNavOpenMobile : isNavOpen} />
