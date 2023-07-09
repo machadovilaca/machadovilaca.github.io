@@ -1,12 +1,12 @@
 import * as React from "react";
 import { Page } from "@app/components/Page";
-import { Bullseye, Button, Card, CardBody, CardTitle, Slider } from "@patternfly/react-core";
-import { AngleLeftIcon, AngleRightIcon, StarHalfIcon, StarIcon } from "@patternfly/react-icons";
-import { TextLink } from "@app/components/TextLink";
 import { Icon } from 'leaflet';
-import { MapContainer, Marker, Popup, TileLayer, Tooltip } from "react-leaflet";
+import { MapContainer, Marker, TileLayer, useMap } from "react-leaflet";
 import MarkerClusterGroup from 'react-leaflet-cluster';
 import { restaurantData } from "@app/FoodMap/data/Restaurants";
+import { FoodMarker } from "@app/FoodMap/FoodMarker";
+import { Button, Flex } from "@patternfly/react-core";
+import { FiltersModal } from "@app/FoodMap/FiltersModal";
 
 import pin from '@app/images/pin.svg';
 import 'leaflet/dist/leaflet.css'
@@ -14,115 +14,117 @@ import 'leaflet/dist/leaflet.css'
 export interface Restaurant {
   name: string;
   types: string[];
-  address: string;
+  address: {
+    street: string;
+    city: string;
+    country: string;
+  };
   website: string;
   rating: number;
   position: [number, number];
   images: string[];
 }
 
-const FoodMarker: ({ item }: { item: Restaurant }) => JSX.Element = ({ item }) => {
-  const [index, setIndex] = React.useState(1);
-
-  const onChange = (value: number) => {
-    setIndex(value);
-  }
-
-  const onMinusClick = () => {
-    const newValue = index - 1;
-    if (newValue >= 1) {
-      setIndex(newValue);
-    }
-  };
-
-  const onPlusClick = () => {
-    const newValue = index + 1;
-    if (newValue <= item.images.length) {
-      setIndex(newValue);
-    }
-  };
-
-  const stars: JSX.Element[] = [];
-  let i = 0;
-  for (; i+1 <= item.rating; i++) {
-    stars.push(<StarIcon key={i} style={{ color: "#f0ab00" }} />);
-  }
-  if (item.rating - i >= 0.5) {
-    stars.push(<StarHalfIcon key={i} style={{ color: "#f0ab00" }} />);
-  }
-
-  const content =
-    <Card isPlain style={{ maxHeight: "70vh", maxWidth: "50vw", overflow: "auto" }}>
-      <CardTitle style={{ color: "black" }}>
-        {item.name}
-        <p style={{ fontWeight: 100, fontSize: "small", }}>
-          {item.types.join(", ")}
-        </p>
-      </CardTitle>
-
-      <CardBody style={{ color: "black" }}>
-        <TextLink text="Website" href={item.website} />
-
-        <p>{item.rating} {stars}</p>
-
-        <p>{item.address}</p>
-
-        <Bullseye>
-          <img
-            alt={item.name}
-            src={item.images[index-1]}
-            className={"pf-u-my-md"}
-            style={{ height: '200px', width: '200px', padding: 'auto' }}
-          />
-        </Bullseye>
-        <Slider
-          value={index}
-          onChange={onChange}
-          min={1}
-          max={item.images.length}
-          leftActions={
-            <Button variant="plain" aria-label="Minus" onClick={onMinusClick}>
-              <AngleLeftIcon />
-            </Button>
-          }
-          rightActions={
-            <Button variant="plain" aria-label="Plus" onClick={onPlusClick}>
-              <AngleRightIcon />
-            </Button>
-          }
-        />
-      </CardBody>
-    </Card>
-
-  return (
-    <>
-      <Popup>
-        {content}
-      </Popup>
-      <Tooltip>
-        {`${item.name} (${item.rating}) - ${item.types.join(", ")}`}
-      </Tooltip>
-    </>
-  )
+export interface RestaurantFilter {
+  types?: string[];
+  minimumRating?: number;
+  location?: string;
 }
 
 export const FoodMap: React.FunctionComponent = () => {
+  const [isFilterModalOpen, setIsFilterModalOpen] = React.useState(false);
+  const [restaurantFilters, setRestaurantFilters] = React.useState<RestaurantFilter>({})
+
   const markerIcon = new Icon({
     iconUrl:  pin,
     iconSize: [40, 40],
   });
 
+  const handleFilterModalToggle = () => {
+    setIsFilterModalOpen(!isFilterModalOpen);
+  }
+
+  const matchesType = (item: Restaurant): boolean => {
+    if (restaurantFilters.types === undefined) {
+      return true;
+    }
+
+    for (const type of restaurantFilters.types) {
+      const uppercaseType = type.toUpperCase();
+      if (item.types.map(t => t.toUpperCase()).includes(uppercaseType)) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
+  const matchesLocation = (item: Restaurant): boolean => {
+    if (restaurantFilters.location === undefined) {
+      return true;
+    }
+
+    const location = restaurantFilters.location.toUpperCase()
+
+    return (
+      item.address.country.toUpperCase().includes(location)
+      ||
+      item.address.city.toUpperCase().includes(location)
+      ||
+      item.address.street.toUpperCase().includes(location)
+    )
+  }
+
+  const matchesFilter = (item: Restaurant): boolean => {
+    return matchesType(item) && matchesLocation(item);
+  }
+
+  const FilterButtons = () => {
+    const map = useMap();
+
+    return (
+      <Flex
+        style={{
+          position: "absolute",
+          width: "auto",
+          zIndex: 1000,
+          top: 10,
+          right: 0,
+          background: "white",
+          padding: "10px",
+        }}
+      >
+        <Button variant="primary" onClick={handleFilterModalToggle}>
+          Filters
+        </Button>
+        <Button variant="secondary" onClick={() => {
+          setRestaurantFilters({});
+          map.setView([47.12050796189794, 15.430993191034421], 5);
+        }}>
+          Reset
+        </Button>
+      </Flex>
+    )
+  }
+
   return (
-    <Page title="Food Map">
+    <Page title="Food Map" style={{ maxHeight: "90vh" }}>
       <MapContainer
-        center={[49.6133127050156, 6.116811722034303]}
+        center={[47.12050796189794, 15.430993191034421]}
         zoom={5}
         scrollWheelZoom={true}
-        style={{height: "1000px", maxHeight: "80vh"}}
+        style={{ height: "100%" }}
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        <FilterButtons />
+        <FiltersModal
+          isOpen={isFilterModalOpen}
+          handleToggle={handleFilterModalToggle}
+          restaurantFilters={restaurantFilters}
+          setRestaurantFilters={setRestaurantFilters}
         />
         <MarkerClusterGroup
           chunkedLoading
@@ -131,6 +133,7 @@ export const FoodMap: React.FunctionComponent = () => {
         >
           {
             restaurantData.map((item, index) => (
+              matchesFilter(item) &&
               <Marker key={index} position={item.position} icon={markerIcon}>
                 <FoodMarker item={item} />
               </Marker>
