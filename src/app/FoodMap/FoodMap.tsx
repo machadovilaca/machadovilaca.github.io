@@ -1,11 +1,11 @@
 import * as React from "react";
 import { Page } from "@app/components/Page";
-import { Icon } from 'leaflet';
+import { Icon, LatLngExpression } from "leaflet";
 import { MapContainer, Marker, TileLayer, Tooltip, useMap } from "react-leaflet";
 import MarkerClusterGroup from 'react-leaflet-cluster';
 import { restaurantData } from "@app/FoodMap/data/Restaurants";
 import { FoodMarker } from "@app/FoodMap/FoodMarker";
-import { Button, Flex } from "@patternfly/react-core";
+import { Button, Flex, Modal, ModalVariant } from "@patternfly/react-core";
 import { FiltersModal } from "@app/FoodMap/FiltersModal";
 
 import pin from '@app/images/pin.svg';
@@ -32,6 +32,11 @@ export interface RestaurantFilter {
 }
 
 export const FoodMap: React.FunctionComponent = () => {
+  const mapCenter: LatLngExpression = [41.5518643962061, -8.42592195980869];
+
+  const [isItemModalOpen, setIsItemModalOpen] = React.useState(false);
+  const [selectedItem, setSelectedItem] = React.useState<Restaurant | undefined>(undefined);
+
   const [isFilterModalOpen, setIsFilterModalOpen] = React.useState(false);
   const [restaurantFilters, setRestaurantFilters] = React.useState<RestaurantFilter>({})
 
@@ -99,7 +104,7 @@ export const FoodMap: React.FunctionComponent = () => {
         </Button>
         <Button variant="secondary" onClick={() => {
           setRestaurantFilters({});
-          map.setView([47.12050796189794, 15.430993191034421], 5);
+          map.setView(mapCenter, 5);
         }}>
           Reset
         </Button>
@@ -107,10 +112,22 @@ export const FoodMap: React.FunctionComponent = () => {
     )
   }
 
+  const handleItemModalToggle = () => {
+    setIsItemModalOpen(!isItemModalOpen);
+  };
+
   return (
-    <Page title="Food Map" style={{ maxHeight: "90vh" }}>
+    <Page title="Food Map">
+      <Modal
+        isOpen={isItemModalOpen}
+        onClose={handleItemModalToggle}
+        variant={ModalVariant.medium}
+      >
+        <FoodMarker item={selectedItem} />
+      </Modal>
+
       <MapContainer
-        center={[47.12050796189794, 15.430993191034421]}
+        center={mapCenter}
         zoom={5}
         scrollWheelZoom={true}
         style={{ height: "100%" }}
@@ -139,8 +156,9 @@ export const FoodMap: React.FunctionComponent = () => {
                 position={item.position}
                 icon={markerIcon}
                 eventHandlers={{
-                  click: (e) => {
-                    console.log(e)
+                  click: () => {
+                    setSelectedItem(item);
+                    setIsItemModalOpen(true);
                   },
                 }}
               >

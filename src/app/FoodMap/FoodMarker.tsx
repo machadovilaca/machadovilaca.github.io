@@ -1,10 +1,21 @@
 import * as React from "react";
 import { AngleLeftIcon, AngleRightIcon, StarHalfIcon, StarIcon } from "@patternfly/react-icons";
-import { Bullseye, Button, Card, CardBody, CardTitle, Slider } from "@patternfly/react-core";
+import { Bullseye, Button, Card, CardBody, CardTitle, Skeleton, Slider } from "@patternfly/react-core";
 import { TextLink } from "@app/components/TextLink";
 import { Restaurant } from "@app/FoodMap/FoodMap";
 
-export const FoodMarker: ({ item }: { item: Restaurant }) => JSX.Element = ({ item }) => {
+export const FoodMarker: ({ item }: { item: Restaurant | undefined }) => JSX.Element = ({ item }) => {
+  return (
+    <>
+      {
+        item === undefined ? <Skeleton screenreaderText="Loading contents" /> :
+        <FoodMarkerContent item={item} />
+      }
+    </>
+  )
+}
+
+const FoodMarkerContent: ({ item }: { item: Restaurant }) => JSX.Element = ({ item }) => {
   const [index, setIndex] = React.useState(1);
 
   const onChange = (value: number) => {
@@ -35,7 +46,7 @@ export const FoodMarker: ({ item }: { item: Restaurant }) => JSX.Element = ({ it
   }
 
   return (
-    <Card isPlain style={{ maxHeight: "70vh", maxWidth: "50vw", overflow: "auto" }}>
+    <Card isPlain>
       <CardTitle style={{ color: "black" }}>
         {item.name}
         <p style={{ fontWeight: 100, fontSize: "small", }}>
@@ -55,7 +66,7 @@ export const FoodMarker: ({ item }: { item: Restaurant }) => JSX.Element = ({ it
             alt={item.name}
             src={item.images[index-1]}
             className={"pf-v5-u-my-md"}
-            style={{ height: '200px', width: '200px', padding: 'auto' }}
+            style={{ maxWidth: "100%", maxHeight: "500px" }}
           />
         </Bullseye>
         <Slider
