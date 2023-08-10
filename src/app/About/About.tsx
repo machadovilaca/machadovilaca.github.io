@@ -31,7 +31,7 @@ const age = (initialDateStr: string): number => {
 }
 
 const AboutMeText: React.FunctionComponent = () => (
-  <TextContent className="pf-u-font-size-lg pf-u-text-align-justify">
+  <TextContent className="pf-v5-u-font-size-lg pf-v5-u-text-align-justify">
 
     <Text>
       Hello, I&apos;m João Vilaça, a {age("1998-06-30")} years old
@@ -91,28 +91,28 @@ const AboutMeText: React.FunctionComponent = () => (
 const Socials: React.FunctionComponent = () => (
   <>
     <Button
-      className="pf-u-m-xs" variant="tertiary"
+      className="pf-v5-u-m-xs" variant="tertiary"
       component="a" href="https://github.com/machadovilaca" target="_blank"
     >
       <GithubIcon /> machadovilaca
     </Button>
 
     <Button
-      className="pf-u-m-xs" variant="secondary"
+      className="pf-v5-u-m-xs" variant="secondary"
       component="a" href="https://linkedin.com/in/machadovilaca" target="_blank"
     >
       <LinkedinIcon /> machadovilaca
     </Button>
 
     <Button
-      className="pf-u-m-xs" variant="secondary"
+      className="pf-v5-u-m-xs" variant="secondary"
       component="a" href="https://twitter.com/machadovilaca" target="_blank"
     >
       <TwitterIcon /> machadovilaca
     </Button>
 
     <Button
-      className="pf-u-m-xs" variant="secondary" isDanger
+      className="pf-v5-u-m-xs" variant="secondary" isDanger
       component="a" href="mailto:machadovilaca@gmail.com" target="_blank"
     >
       <GoogleIcon /> machadovilaca@gmail.com

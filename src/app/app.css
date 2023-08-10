@@ -4,8 +4,8 @@ html, body, #root {
   height: 100%;
 }
 
-.pf-c-accordion {
-  --pf-c-accordion__expanded-content--Color: var(--pf-global--palette--black-850);
+.pf-v5-c-accordion {
+  --pf-v5-c-accordion__expanded-content--Color: var(--pf-v5-global--palette--black-850);
 }
 
 .blog-image {

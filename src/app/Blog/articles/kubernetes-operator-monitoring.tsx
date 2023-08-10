@@ -21,7 +21,7 @@ const KubernetesOperatorMonitoring: React.FunctionComponent = () => (
       the performance and behavior of key components, and can be used to trigger alerts when certain thresholds are
       exceeded.</Text>
 
-    <Flex className="pf-u-my-md">
+    <Flex className="pf-v5-u-my-md">
       <FlexItem>
         <img
           className="blog-image"
@@ -46,7 +46,7 @@ const KubernetesOperatorMonitoring: React.FunctionComponent = () => (
       chat tools.</Text>
 
     <img
-      className="pf-u-my-md"
+      className="pf-v5-u-my-md"
       src={alerts}
       alt="custom alert examples"
     />
@@ -64,7 +64,7 @@ const KubernetesOperatorMonitoring: React.FunctionComponent = () => (
       structure in Golang for modular metrics and alert code. This structure allows for easy maintenance and expansion
       as the operator code grows.</Text>
 
-    <Nav className="pf-u-my-md code-struct" theme="light">
+    <Nav className="pf-v5-u-my-md code-struct" theme="light">
       <NavList>
         <NavItem component="p">cmd</NavItem>
         <NavItem component="p">pkg</NavItem>

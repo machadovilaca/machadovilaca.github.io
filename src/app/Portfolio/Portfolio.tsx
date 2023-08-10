@@ -24,9 +24,8 @@ const ProjectTile: React.FunctionComponent<{ project: Project }> = ({ project })
           </a>
         </CatalogTileBadge>
       ]}
-    >
-      {project.subtitle}
-    </CatalogTile>
+      description={project.subtitle}
+    />
   )
 }
 

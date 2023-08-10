@@ -201,7 +201,7 @@ export const AutocompleteInput: React.FunctionComponent<AutocompleteInputProps> 
     <>
       {inputGroup}
       <Popper
-        reference={textInputGroupRef}
+        triggerRef={textInputGroupRef}
         popper={menu}
         popperRef={menuRef}
         appendTo={textInputGroupRef.current}

@@ -1,15 +1,18 @@
 import * as React from 'react';
-import { NavLink, useLocation, useHistory } from 'react-router-dom';
+import { NavLink, useLocation, useHistory, Link } from "react-router-dom";
 import {
   Nav,
   NavList,
   NavItem,
   NavExpandable,
   Page,
-  PageHeader,
   PageSidebar,
+  PageSidebarBody,
   Text,
-  SkipToContent, Avatar, Flex, FlexItem
+  SkipToContent,
+  Avatar,
+  Flex,
+  FlexItem, Masthead, MastheadMain, MastheadToggle, PageToggleButton
 } from "@patternfly/react-core";
 import { routes, IAppRoute, IAppRouteGroup } from '@app/routes';
 import logo from '@app/images/jvilaca.png';
@@ -20,6 +23,7 @@ import { css } from "@patternfly/react-styles";
 
 import styles from '@app/AppLayout/AppLayout.module.css';
 import '@app/AppLayout/AppLayout.css';
+import { BarsIcon } from "@patternfly/react-icons";
 
 interface IAppLayout {
   children: React.ReactNode;
@@ -47,18 +51,28 @@ const AppLayout: React.FunctionComponent<IAppLayout> = ({ children }) => {
     return (
       <>
         <Avatar onClick={handleClick} src={logo} size="md" alt="website logo" />
-        <Text onClick={handleClick} className="pf-u-ml-md pf-u-color-light-100">João Vilaça - Software Engineer @ Red Hat</Text>
+        <Text onClick={handleClick} className="pf-v5-u-ml-md pf-v5-u-color-light-100">João Vilaça - Software Engineer @ Red Hat</Text>
       </>
     );
   }
 
   const Header = (
-    <PageHeader
-      logo={<LogoImg />}
-      showNavToggle
-      isNavOpen={isNavOpen}
-      onNavToggle={isMobileView ? onNavToggleMobile : onNavToggle}
-    />
+    <Masthead>
+      <MastheadToggle>
+        <PageToggleButton
+          variant="plain"
+          aria-label="Global navigation"
+          isSidebarOpen={isNavOpen}
+          onSidebarToggle={isMobileView ? onNavToggleMobile : onNavToggle}
+          id="vertical-nav-toggle"
+        >
+          <BarsIcon />
+        </PageToggleButton>
+      </MastheadToggle>
+      <MastheadMain>
+        <LogoImg />
+      </MastheadMain>
+    </Masthead>
   );
 
   const location = useLocation();
@@ -111,8 +125,12 @@ const AppLayout: React.FunctionComponent<IAppLayout> = ({ children }) => {
     <PageSidebar
       className={css(styles.h100)}
       theme="dark"
-      nav={Navigation}
-      isNavOpen={isMobileView ? isNavOpenMobile : isNavOpen} />
+      isSidebarOpen={isMobileView ? isNavOpenMobile : isNavOpen}
+    >
+      <PageSidebarBody>
+        {Navigation}
+      </PageSidebarBody>
+    </PageSidebar>
   );
 
   const pageId = 'primary-app-container';
@@ -131,7 +149,7 @@ const AppLayout: React.FunctionComponent<IAppLayout> = ({ children }) => {
       mainContainerId={pageId}
       header={Header}
       sidebar={Sidebar}
-      onPageResize={onPageResize}
+      onPageResize={(_e, object: { mobileView: boolean; windowSize: number }) => onPageResize(object)}
       skipToContent={PageSkipToContent}>
       {children}
     </Page>

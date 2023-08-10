@@ -2,7 +2,6 @@ import * as React from "react";
 import { AngleLeftIcon, AngleRightIcon, StarHalfIcon, StarIcon } from "@patternfly/react-icons";
 import { Bullseye, Button, Card, CardBody, CardTitle, Slider } from "@patternfly/react-core";
 import { TextLink } from "@app/components/TextLink";
-import { Popup, Tooltip } from "react-leaflet";
 import { Restaurant } from "@app/FoodMap/FoodMap";
 
 export const FoodMarker: ({ item }: { item: Restaurant }) => JSX.Element = ({ item }) => {
@@ -35,7 +34,7 @@ export const FoodMarker: ({ item }: { item: Restaurant }) => JSX.Element = ({ it
     stars.push(<StarHalfIcon key={i} style={{ color: "#f0ab00" }} />);
   }
 
-  const content =
+  return (
     <Card isPlain style={{ maxHeight: "70vh", maxWidth: "50vw", overflow: "auto" }}>
       <CardTitle style={{ color: "black" }}>
         {item.name}
@@ -55,13 +54,13 @@ export const FoodMarker: ({ item }: { item: Restaurant }) => JSX.Element = ({ it
           <img
             alt={item.name}
             src={item.images[index-1]}
-            className={"pf-u-my-md"}
+            className={"pf-v5-u-my-md"}
             style={{ height: '200px', width: '200px', padding: 'auto' }}
           />
         </Bullseye>
         <Slider
           value={index}
-          onChange={onChange}
+          onChange={(e, value) => onChange(value)}
           min={1}
           max={item.images.length}
           leftActions={
@@ -77,15 +76,5 @@ export const FoodMarker: ({ item }: { item: Restaurant }) => JSX.Element = ({ it
         />
       </CardBody>
     </Card>
-
-  return (
-    <>
-      <Popup>
-        {content}
-      </Popup>
-      <Tooltip>
-        {`${item.name} (${item.rating}) - ${item.types.join(", ")}`}
-      </Tooltip>
-    </>
   )
 }

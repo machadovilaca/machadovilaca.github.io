@@ -59,7 +59,7 @@ export const List: React.FunctionComponent<{ data: ListElem[]}> = ({ data }) => 
         </GridItem>
 
         {
-          data[i].positions.map((position) =>
+          data[i].positions.map((position, i) =>
             <>
               <GridItem sm={8} lg={8} className={css(styles.detailsText)}>
                 <Text component="small">{position.title}</Text>
@@ -84,7 +84,7 @@ export const List: React.FunctionComponent<{ data: ListElem[]}> = ({ data }) => 
         >
           {title}
         </AccordionToggle>
-        <AccordionContent id={num} isHidden={!expanded.includes(num)} className="pf-u-font-size-md pf-u-text-align-justify">
+        <AccordionContent id={num} isHidden={!expanded.includes(num)} className="pf-v5-u-font-size-md pf-v5-u-text-align-justify">
           {data[i].description}
         </AccordionContent>
       </AccordionItem>

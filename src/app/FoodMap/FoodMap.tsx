@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Page } from "@app/components/Page";
 import { Icon } from 'leaflet';
-import { MapContainer, Marker, TileLayer, useMap } from "react-leaflet";
+import { MapContainer, Marker, TileLayer, Tooltip, useMap } from "react-leaflet";
 import MarkerClusterGroup from 'react-leaflet-cluster';
 import { restaurantData } from "@app/FoodMap/data/Restaurants";
 import { FoodMarker } from "@app/FoodMap/FoodMarker";
@@ -134,8 +134,19 @@ export const FoodMap: React.FunctionComponent = () => {
           {
             restaurantData.map((item, index) => (
               matchesFilter(item) &&
-              <Marker key={index} position={item.position} icon={markerIcon}>
-                <FoodMarker item={item} />
+              <Marker
+                key={index}
+                position={item.position}
+                icon={markerIcon}
+                eventHandlers={{
+                  click: (e) => {
+                    console.log(e)
+                  },
+                }}
+              >
+                <Tooltip>
+                  {`${item.name} (${item.rating}) - ${item.types.join(", ")}`}
+                </Tooltip>
               </Marker>
             ))
           }

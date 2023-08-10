@@ -22,13 +22,11 @@ import { Button } from '@patternfly/react-core';
 const Tile: React.FunctionComponent<{ mapkey: string, article: Article, onListClick: (a: string) => void }> = ({ mapkey, article, onListClick }) => {
   return (
     <CatalogTile
-      title={article.title}
       onClick={() => onListClick(mapkey)}
+      title={article.title}
+      vendor={article.date.toDateString().split(' ').slice(1).join(' ')}
     >
-      <>
-        <p className="pf-u-mb-sm">{article.date.toDateString().split(' ').slice(1).join(' ')}</p>
-        {article.tags.map((tag, i) => <Chip key={i} className="pf-u-m-xs" isReadOnly>{tag}</Chip>)}
-      </>
+      {article.tags.map((tag, i) => <Chip key={i} className="pf-v5-u-m-xs" isReadOnly>{tag}</Chip>)}
     </CatalogTile>
   )
 }
@@ -97,7 +95,7 @@ export function Blog(): React.ReactElement {
       { shouldRenderPost && article !== undefined &&
           <Panel>
             <PanelHeader>
-              <Text component={TextVariants.h2} className="pf-u-font-size-lg pf-u-font-weight-bold">{article.title}</Text>
+              <Text component={TextVariants.h2} className="pf-v5-u-font-size-lg pf-v5-u-font-weight-bold">{article.title}</Text>
               <Text component={TextVariants.small}>João Vilaça · {article.date.toDateString()}</Text>
               <GoBack goBack={goBack}/>
             </PanelHeader>
@@ -109,7 +107,7 @@ export function Blog(): React.ReactElement {
             </PanelMain>
             <Divider />
 
-            <GoBack goBack={goBack} className="pf-u-my-md" />
+            <GoBack goBack={goBack} className="pf-v5-u-my-md" />
           </Panel>
       }
 

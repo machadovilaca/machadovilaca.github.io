@@ -21,7 +21,7 @@ const PDFResume: React.FunctionComponent = () => (
 
 const ResumeSection: (props: { title: string, data: ListElem[] }) => JSX.Element = ({ title, data }) => (
   <PageSection>
-    <Title size="2xl" headingLevel="h2" className="pf-u-mb-sm">
+    <Title size="2xl" headingLevel="h2" className="pf-v5-u-mb-sm">
       {title}
     </Title>
     <List data={data} />
