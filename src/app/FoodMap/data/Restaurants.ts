@@ -4,6 +4,7 @@ const bucketBaseUrl = "https://pub-567bc98a830042fbb2c7a6f479f9de3d.r2.dev"
 
 const sushis: Restaurant[] = [
   {
+    key: "Michizaki",
     name: "Michizaki",
     types: ["Japanese", "Sushi"],
     address: {
@@ -29,6 +30,7 @@ const sushis: Restaurant[] = [
     ]
   },
   {
+    key: "AlmadEca",
     name: "Alma d'Eça",
     types: ["Italian", "Japanese", "Fusion", "Sushi"],
     address: {
@@ -48,6 +50,7 @@ const sushis: Restaurant[] = [
     ]
   },
   {
+    key: "Kanji",
     name: "Kanji Restaurant Garden & Bar",
     types: ["Japanese", "Sushi", "Fusion"],
     address: {
@@ -65,6 +68,7 @@ const sushis: Restaurant[] = [
     ]
   },
   {
+    key: "Nikko",
     name: "Nikko",
     types: ["Japanese", "Sushi", "Fusion"],
     address: {
@@ -83,6 +87,7 @@ const sushis: Restaurant[] = [
     ]
   },
   {
+    key: "Omakase",
     name: "Omakase Braga",
     types: ["Japanese", "Sushi"],
     address: {
@@ -103,6 +108,7 @@ const sushis: Restaurant[] = [
 
 const asian: Restaurant[] = [
   {
+    key: "RO",
     name: "RO",
     types: ["Ramen", "Japanese"],
     address: {
@@ -121,6 +127,7 @@ const asian: Restaurant[] = [
     ]
   },
   {
+    key: "Leongs Legend",
     name: "Leongs Legend",
     types: ["Taiwanese", "Dim Sum", "Dumplings"],
     address: {
@@ -137,6 +144,7 @@ const asian: Restaurant[] = [
     ]
   },
   {
+    key: 'RamenMakotoyaRATHAUS',
     name: "Ramen Makotoya RATHAUS",
     types: ["Ramen", "Japanese"],
     address: {
@@ -154,6 +162,7 @@ const asian: Restaurant[] = [
     ]
   },
   {
+    key: "Wagamama-CoventGarden",
     name: "wagamama covent garden",
     types: ["Ramen", "Japanese"],
     address: {
@@ -170,6 +179,7 @@ const asian: Restaurant[] = [
     ]
   },
   {
+    key: "ArslanBuuz",
     name: "Arslan Buuz",
     types: ["Dim Sum", "Dumplings", "Asian"],
     address: {
@@ -185,6 +195,7 @@ const asian: Restaurant[] = [
     ]
   },
   {
+    key: "DIANDI",
     name: "DIANDI",
     types: ["Vietnamese", "Asian", "Sushi"],
     address: {
@@ -203,6 +214,7 @@ const asian: Restaurant[] = [
     ]
   },
   {
+    key: "MarketRestaurant",
     name: "Market Restaurant",
     types: ["Asian", "Dim Sum", "Dumplings", "Sushi"],
     address: {
@@ -218,6 +230,7 @@ const asian: Restaurant[] = [
     ]
   },
   {
+    key: "SeoulChicken",
     name: "Seoul Chicken",
     types: ["Korean", "Fried Chicken", "Asian"],
     address: {
@@ -238,6 +251,7 @@ const asian: Restaurant[] = [
 
 const italian: Restaurant[] = [
   {
+    key: "AnticaNapoliSLBarcelona",
     name: "Pizzeria & Vermuteria L' Antica Napoli SL",
     types: ["Italian", "Pizza"],
     address: {
@@ -254,6 +268,7 @@ const italian: Restaurant[] = [
     ]
   },
   {
+    key: "Casanostra",
     name: "Casanostra",
     types: ["Italian", "Pizza", "Pasta"],
     address: {
@@ -270,6 +285,7 @@ const italian: Restaurant[] = [
     ]
   },
   {
+    key: "SaleDolce",
     name: "Sale&Dolce",
     types: ["Italian", "Pizza", "Pasta"],
     address: {
@@ -286,6 +302,7 @@ const italian: Restaurant[] = [
     ]
   },
   {
+    key: "ALAngolo",
     name: "A L’Angolo",
     types: ["Italian", "Pizza", "Pasta"],
     address: {
@@ -293,7 +310,7 @@ const italian: Restaurant[] = [
       city: "Brussels",
       country: "Belgium"
     },
-    website: "https://cdn0.centralappstatic.com/file/place-12640-innnweyocx.pdf",
+    website: "https://alangolo.be/en",
     rating: 3.9,
     position: [50.849530507500184, 4.349848067031891],
     images: [
@@ -301,6 +318,7 @@ const italian: Restaurant[] = [
     ]
   },
   {
+    key: "GustoPizza",
     name: "Gusto Pizza by Gusto DiVino",
     types: ["Italian", "Pizza"],
     address: {
@@ -316,6 +334,7 @@ const italian: Restaurant[] = [
     ]
   },
   {
+    key: "PizzeriaMammaMia",
     name: "Mamma Mia",
     types: ["Italian", "Pizza", "Pasta"],
     address: {
@@ -334,6 +353,7 @@ const italian: Restaurant[] = [
     ]
   },
   {
+    key: "JoesPizza",
     name: "Joe's Pizza",
     types: ["Italian", "Pizza"],
     address: {
@@ -349,6 +369,7 @@ const italian: Restaurant[] = [
     ]
   },
   {
+    key: "ForneriaDaVilla",
     name: "Forneria da villa",
     types: ["Italian", "Pizza", "Pasta"],
     address: {
@@ -369,6 +390,7 @@ const italian: Restaurant[] = [
     ]
   },
   {
+    key: "LaPiola",
     name: "La Piola",
     types: ["Italian", "Pizza", "Pasta"],
     address: {
@@ -385,6 +407,7 @@ const italian: Restaurant[] = [
     ]
   },
   {
+    key: "IlFiumeNogueiro",
     name: "Il Fiume Nogueiró",
     types: ["Italian", "Pizza", "Pasta"],
     address: {
@@ -401,6 +424,7 @@ const italian: Restaurant[] = [
     ]
   },
   {
+    key: "LaPiazzaAmsterdam",
     name: "La Piazza Amsterdam",
     types: ["Italian", "Pizza", "Pasta"],
     address: {
@@ -418,6 +442,7 @@ const italian: Restaurant[] = [
     ]
   },
   {
+    key: "RistorantePeppino",
     name: "Ristorante Italiano Peppino",
     types: ["Italian", "Pizza", "Pasta"],
     address: {
@@ -437,6 +462,7 @@ const italian: Restaurant[] = [
 
 const others: Restaurant[] = [
   {
+    key: "InatoBistro",
     name: "Inato Bistrô",
     types: ["Portuguese", "European", "Fine Dining"],
     address: {
@@ -455,6 +481,7 @@ const others: Restaurant[] = [
     ]
   },
   {
+    key: "OFilhoDaMae",
     name: "O Filho da Mãe",
     types: ["Latin", "American"],
     address: {
@@ -474,6 +501,7 @@ const others: Restaurant[] = [
     ]
   },
   {
+    key: "ElGuero",
     name: "El Güero",
     types: ["Mexican"],
     address: {
@@ -492,6 +520,7 @@ const others: Restaurant[] = [
     ]
   },
   {
+    key: "PartilhaGastrobar",
     name: "Partilha Gastrobar",
     types: ["Portuguese", "European"],
     address: {
@@ -515,6 +544,7 @@ const others: Restaurant[] = [
     ]
   },
   {
+    key: "Basilio",
     name: "Basílio",
     types: ["Breakfast", "Brunch"],
     address: {
@@ -531,6 +561,7 @@ const others: Restaurant[] = [
     ]
   },
   {
+    key: "TappasCaffe",
     name: "Tappas Caffé",
     types: ["Portuguese", "Francesinha", "Regional"],
     address: {
@@ -546,6 +577,7 @@ const others: Restaurant[] = [
     ]
   },
   {
+    key: "Kianda",
     name: "Kianda",
     types: ["African", "Angolan", "Fusion"],
     address: {
@@ -564,6 +596,7 @@ const others: Restaurant[] = [
     ]
   },
   {
+    key: "CactusCatBar",
     name: "CactusCat Bar",
     types: ["Plant-based", "Vegan"],
     address: {
@@ -580,6 +613,7 @@ const others: Restaurant[] = [
     ]
   },
   {
+    key: "ColomRestaurant",
     name: "Colom Restaurant",
     types: ["Spanish", "Mediterranean", "Paella"],
     address: {
@@ -595,6 +629,7 @@ const others: Restaurant[] = [
     ]
   },
   {
+    key: "GelatariaMonaLisa",
     name: "Gelataria Mona Lisa",
     types: ["Ice Cream", "Dessert"],
     address: {
@@ -611,6 +646,7 @@ const others: Restaurant[] = [
     ]
   },
   {
+    key: "PracaGastroPub",
     name: "Praça GastroPub",
     types: ["Burger", "Portuguese"],
     address: {
@@ -627,6 +663,7 @@ const others: Restaurant[] = [
     ]
   },
   {
+    key: "UTomana",
     name: "U Tomana",
     types: ["Czech", "Regional", "Brewery"],
     address: {
@@ -643,6 +680,7 @@ const others: Restaurant[] = [
     ]
   },
   {
+    key: "RestaurantMozart",
     name: "Restaurant Mozart",
     types: ["Ribs", "Buffet", "Grill"],
     address: {
@@ -658,6 +696,7 @@ const others: Restaurant[] = [
     ]
   },
   {
+    key: "COSMOPOLISGRILL",
     name: "COSMOPOLIS GRILL",
     types: ["Greek", "Mediterranean"],
     address: {
@@ -675,6 +714,7 @@ const others: Restaurant[] = [
     ]
   },
   {
+    key: "WilliamThomasArtisanBakery",
     name: "William Thomas Artisan Bakery",
     types: ["Bakery", "French"],
     address: {
@@ -690,6 +730,7 @@ const others: Restaurant[] = [
     ]
   },
   {
+    key: "MikrofarmaMasnyTrh",
     name: "Mikrofarma Masný trh",
     types: ["Burger"],
     address: {
@@ -705,6 +746,7 @@ const others: Restaurant[] = [
     ]
   },
   {
+    key: "CafeSchwarzenberg",
     name: "Café Schwarzenberg",
     types: ["Cafe", "Austrian"],
     address: {
@@ -720,6 +762,7 @@ const others: Restaurant[] = [
     ]
   },
   {
+    key: "TheBreakfastClub-LondonBridge",
     name: "The Breakfast Club London Bridge",
     types: ["Breakfast", "Brunch"],
     address: {
@@ -735,6 +778,7 @@ const others: Restaurant[] = [
     ]
   },
   {
+    key: "BurgerandBeyond-BoroughYards",
     name: "Burger and Beyond Borough Yards",
     types: ["Burger"],
     address: {
@@ -750,6 +794,7 @@ const others: Restaurant[] = [
     ]
   },
   {
+    key: "BackereiCafeFelzl",
     name: "Bäckerei Cafe Felzl",
     types: ["Bakery", "Cafe"],
     address: {
@@ -765,6 +810,7 @@ const others: Restaurant[] = [
     ]
   },
   {
+    key: "BeneditoBrunch",
     name: "Benedito Brunch",
     types: ["Brunch", "Cafe"],
     address: {
@@ -781,6 +827,7 @@ const others: Restaurant[] = [
     ]
   },
   {
+    key: "BurgerBistro",
     name: "Burger Bistro",
     types: ["Burger"],
     address: {
@@ -796,6 +843,7 @@ const others: Restaurant[] = [
     ]
   },
   {
+    key: "LosToros",
     name: "Los Toros",
     types: ["Argentinian", "Steakhouse"],
     address: {
@@ -812,6 +860,7 @@ const others: Restaurant[] = [
     ]
   },
   {
+    key: "NordicoCoffeeShop",
     name: "Nórdico Coffee Shop",
     types: ["Cafe", "Breakfast", "Brunch"],
     address: {
@@ -829,6 +878,7 @@ const others: Restaurant[] = [
     ]
   },
   {
+    key: "RembrandtCorner",
     name: "Rembrandt Corner",
     types: ["Dutch", "Regional"],
     address: {
@@ -846,6 +896,7 @@ const others: Restaurant[] = [
     ]
   },
   {
+    key: "Semente",
     name: "Semente - Art, Coffee & Plant Based Food",
     types: ["Cafe", "Vegan", "Plant-based"],
     address: {

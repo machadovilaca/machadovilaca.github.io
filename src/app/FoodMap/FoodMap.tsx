@@ -1,17 +1,20 @@
 import * as React from "react";
-import { Page } from "@app/components/Page";
+
 import { Icon, LatLngExpression } from "leaflet";
 import { MapContainer, Marker, TileLayer, Tooltip, useMap } from "react-leaflet";
 import MarkerClusterGroup from 'react-leaflet-cluster';
-import { restaurantData } from "@app/FoodMap/data/Restaurants";
-import { FoodMarker } from "@app/FoodMap/FoodMarker";
-import { Button, Flex, Modal, ModalVariant } from "@patternfly/react-core";
-import { FiltersModal } from "@app/FoodMap/FiltersModal";
-
-import pin from '@app/images/pin.svg';
 import 'leaflet/dist/leaflet.css'
+import { useLocation, useHistory } from "react-router-dom";
+import { Button, Flex, Modal, ModalVariant } from "@patternfly/react-core";
+
+import { Page } from "@app/components/Page";
+import { FoodMarker } from "@app/FoodMap/FoodMarker";
+import { restaurantData } from "@app/FoodMap/data/Restaurants";
+import { FiltersModal } from "@app/FoodMap/FiltersModal";
+import pin from '@app/images/pin.svg';
 
 export interface Restaurant {
+  key: string;
   name: string;
   types: string[];
   address: {
@@ -31,11 +34,28 @@ export interface RestaurantFilter {
   location?: string;
 }
 
-export const FoodMap: React.FunctionComponent = () => {
-  const mapCenter: LatLngExpression = [41.5518643962061, -8.42592195980869];
+const mapCenter: LatLngExpression = [41.5518643962061, -8.42592195980869];
+const baseUrl = "/foodmap"
 
+const useQuery = () => {
+  const { search } = useLocation();
+  return React.useMemo(() => new URLSearchParams(search), [search]);
+}
+
+export const FoodMap: React.FunctionComponent = () => {
   const [isItemModalOpen, setIsItemModalOpen] = React.useState(false);
   const [selectedItem, setSelectedItem] = React.useState<Restaurant | undefined>(undefined);
+
+  const history = useHistory();
+  const query = useQuery();
+
+  React.useEffect(() => {
+    const restaurantKey = query.get("restaurant");
+    const initialRestaurant = restaurantData.find(item => item.key === restaurantKey);
+
+    setSelectedItem(initialRestaurant);
+    setIsItemModalOpen(initialRestaurant !== undefined);
+  }, [query])
 
   const [isFilterModalOpen, setIsFilterModalOpen] = React.useState(false);
   const [restaurantFilters, setRestaurantFilters] = React.useState<RestaurantFilter>({})
@@ -113,7 +133,7 @@ export const FoodMap: React.FunctionComponent = () => {
   }
 
   const handleItemModalToggle = () => {
-    setIsItemModalOpen(!isItemModalOpen);
+    history.push(baseUrl);
   };
 
   return (
@@ -122,8 +142,9 @@ export const FoodMap: React.FunctionComponent = () => {
         isOpen={isItemModalOpen}
         onClose={handleItemModalToggle}
         variant={ModalVariant.medium}
+        showClose={false}
       >
-        <FoodMarker item={selectedItem} />
+        <FoodMarker item={selectedItem} onClose={handleItemModalToggle} />
       </Modal>
 
       <MapContainer
@@ -157,8 +178,7 @@ export const FoodMap: React.FunctionComponent = () => {
                 icon={markerIcon}
                 eventHandlers={{
                   click: () => {
-                    setSelectedItem(item);
-                    setIsItemModalOpen(true);
+                    history.push(`${baseUrl}?restaurant=${item.key}`);
                   },
                 }}
               >

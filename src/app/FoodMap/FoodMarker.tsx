@@ -1,22 +1,59 @@
 import * as React from "react";
-import { AngleLeftIcon, AngleRightIcon, StarHalfIcon, StarIcon } from "@patternfly/react-icons";
-import { Bullseye, Button, Card, CardBody, CardTitle, Skeleton, Slider } from "@patternfly/react-core";
+import {
+  AngleLeftIcon,
+  AngleRightIcon,
+  StarHalfIcon,
+  StarIcon,
+  EllipsisVIcon, CloseIcon, CheckIcon
+} from "@patternfly/react-icons";
+import {
+  Bullseye,
+  Button,
+  Card,
+  CardBody,
+  CardHeader,
+  CardTitle,
+  Dropdown,
+  DropdownItem,
+  DropdownList,
+  MenuToggle,
+  MenuToggleElement,
+  Skeleton,
+  Slider
+} from "@patternfly/react-core";
+
 import { TextLink } from "@app/components/TextLink";
 import { Restaurant } from "@app/FoodMap/FoodMap";
 
-export const FoodMarker: ({ item }: { item: Restaurant | undefined }) => JSX.Element = ({ item }) => {
+interface FoodMarkerProps {
+  item: Restaurant | undefined;
+  onClose: () => void;
+}
+
+export function FoodMarker({ item, onClose }: FoodMarkerProps) {
   return (
     <>
       {
         item === undefined ? <Skeleton screenreaderText="Loading contents" /> :
-        <FoodMarkerContent item={item} />
+        <FoodMarkerContent item={item} onClose={onClose} />
       }
     </>
   )
 }
 
-const FoodMarkerContent: ({ item }: { item: Restaurant }) => JSX.Element = ({ item }) => {
+interface FoodMarkerContentProps {
+  item: Restaurant;
+  onClose: () => void;
+}
+
+export function FoodMarkerContent({ item, onClose }: FoodMarkerContentProps) {
   const [index, setIndex] = React.useState(1);
+  const [isOpen, setIsOpen] = React.useState<boolean>(false);
+  const [urlCopied, setUrlCopied] = React.useState(false);
+
+  const onSelect = () => {
+    setIsOpen(!isOpen);
+  };
 
   const onChange = (value: number) => {
     setIndex(value);
@@ -45,20 +82,55 @@ const FoodMarkerContent: ({ item }: { item: Restaurant }) => JSX.Element = ({ it
     stars.push(<StarHalfIcon key={i} style={{ color: "#f0ab00" }} />);
   }
 
+  const dropdownItems = (
+    <>
+      <DropdownItem key="website" onClick={() => {window.open(item.website, '_blank');}}>
+        Open website
+      </DropdownItem>
+      <DropdownItem key="share" onClick={() => {
+        navigator.clipboard.writeText(window.location.href).then(() => {
+          setUrlCopied(true);
+          setTimeout(() => setUrlCopied(false), 1000);
+        })
+        setIsOpen(true);
+      }}>
+        Copy link {urlCopied ? <CheckIcon /> : ""}
+      </DropdownItem>
+    </>
+  );
+
+  const headerActions = (
+    <>
+      <Dropdown
+        onSelect={onSelect}
+        toggle={(toggleRef: React.Ref<MenuToggleElement>) => (
+          <MenuToggle ref={toggleRef} isExpanded={isOpen} onClick={() => setIsOpen(!isOpen)} variant="plain">
+            <EllipsisVIcon aria-hidden="true" />
+          </MenuToggle>
+        )}
+        isOpen={isOpen}
+        onOpenChange={(isOpen: boolean) => setIsOpen(isOpen)}
+        popperProps={{ position: 'right' }}
+      >
+        <DropdownList>{dropdownItems}</DropdownList>
+      </Dropdown>
+      <CloseIcon style={{ cursor: 'pointer' }} onClick={() => onClose()} />
+    </>
+  );
+
   return (
     <Card isPlain>
-      <CardTitle style={{ color: "black" }}>
-        {item.name}
-        <p style={{ fontWeight: 100, fontSize: "small", }}>
-          {item.types.join(", ")}
-        </p>
-      </CardTitle>
+      <CardHeader actions={{ actions: headerActions, hasNoOffset: true }}>
+        <CardTitle style={{ color: "black" }}>
+          {item.name}
+          <p style={{ fontWeight: 100, fontSize: "small", }}>
+            {item.types.join(", ")}
+          </p>
+        </CardTitle>
+      </CardHeader>
 
       <CardBody style={{ color: "black" }}>
-        <TextLink text="Website" href={item.website} />
-
         <p>{item.rating} {stars}</p>
-
         <p>{item.address.street}, {item.address.city}, {item.address.country}</p>
 
         <Bullseye>
