@@ -34,7 +34,10 @@ export interface RestaurantFilter {
   location?: string;
 }
 
-const mapCenter: LatLngExpression = [41.5518643962061, -8.42592195980869];
+const mapCenterSmallScreen: LatLngExpression = [45.792529586011504, -8.99721104344336];
+const mapCenterLargeScreen: LatLngExpression = [45.85377838427736, 1.549663550068369];
+const mapCenter: LatLngExpression = window.innerWidth < 768 ? mapCenterSmallScreen : mapCenterLargeScreen;
+
 const baseUrl = "/foodmap"
 
 const useQuery = () => {

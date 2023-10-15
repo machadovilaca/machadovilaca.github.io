@@ -82,6 +82,8 @@ const sushis: Restaurant[] = [
     images: [
       `${bucketBaseUrl}/nikko_3725.jpg`,
       `${bucketBaseUrl}/nikko_3728.jpg`,
+      `${bucketBaseUrl}/nikko_5428.jpg`,
+      `${bucketBaseUrl}/nikko_5430.jpg`,
       `${bucketBaseUrl}/nikko_3730.jpg`,
       `${bucketBaseUrl}/nikko_3731.jpg`,
     ]
@@ -245,6 +247,44 @@ const asian: Restaurant[] = [
       `${bucketBaseUrl}/seoulchicken_3873.jpg`,
       `${bucketBaseUrl}/seoulchicken_3875.jpg`,
       `${bucketBaseUrl}/seoulchicken_3878.jpg`,
+    ]
+  },
+  {
+    key: "RamenBreak",
+    name: "Ramen Break",
+    types: ["Ramen", "Japanese"],
+    address: {
+      street: "Praça Conde de Agrolongo 180, 4700-312",
+      city: "Braga",
+      country: "Portugal"
+    },
+    website: "https://www.instagram.com/ramenbreak",
+    rating: 4.4,
+    position: [41.552816077695226, -8.426455275828902],
+    images: [
+      `${bucketBaseUrl}/ramenbreak_6137.jpg`,
+      `${bucketBaseUrl}/ramenbreak_6139.jpg`,
+    ]
+  },
+  {
+    key: "AKAI",
+    name: "AKAI",
+    types: ["Japanese", "Sushi"],
+    address: {
+      street: "R. Brg. Pinho Freire 169, 3880-342",
+      city: "Ovar",
+      country: "Portugal"
+    },
+    website: "https://akaistreetfood.wixsite.com/akai",
+    rating: 4.6,
+    position: [40.87529034876151, -8.665243182836386],
+    images: [
+      `${bucketBaseUrl}/akai_5567.jpg`,
+      `${bucketBaseUrl}/akai_5568.jpg`,
+      `${bucketBaseUrl}/akai_5569.jpg`,
+      `${bucketBaseUrl}/akai_5570.jpg`,
+      `${bucketBaseUrl}/akai_5565.jpg`,
+      `${bucketBaseUrl}/akai_5573.jpg`,
     ]
   }
 ]
@@ -458,6 +498,75 @@ const italian: Restaurant[] = [
       `${bucketBaseUrl}/ristorantepeppino_3563.jpg`,
     ]
   },
+  {
+    key: "LaPorta",
+    name: "La Porta",
+    types: ["Italian", "Pizza", "Pasta"],
+    address: {
+      street: "R. Dom Diogo de Sousa 19, 4700-421",
+      city: "Braga",
+      country: "Portugal"
+    },
+    website: "https://www.thefork.pt/restaurante/la-porta-braga-r568401",
+    rating: 3.8,
+    position: [41.55052635449664, -8.429036289320154],
+    images: [
+      `${bucketBaseUrl}/laporta_4408.jpg`,
+    ]
+  },
+  {
+    key: "CaffeItaly",
+    name: "Caffé Italy",
+    types: ["Italian", "Pizza", "Pasta"],
+    address: {
+      street: "Praça da República, 4710-245",
+      city: "Braga",
+      country: "Portugal"
+    },
+    website: "https://www.thefork.pt/restaurante/caffe-italy-r572183?cc=18174-54f",
+    rating: 4.0,
+    position: [41.55171466448018, -8.423731248846567],
+    images: [
+      `${bucketBaseUrl}/caffeitaly_3716.jpg`,
+      `${bucketBaseUrl}/caffeitaly_3718.jpg`,
+      `${bucketBaseUrl}/caffeitaly_3721.jpg`,
+    ]
+  }
+]
+
+const francesinha: Restaurant[] = [
+  {
+    key: "TappasCaffe",
+    name: "Tappas Caffé",
+    types: ["Portuguese", "Francesinha", "Regional"],
+    address: {
+      street: "R. Guilherme Gomes Fernandes 204, 4400-175",
+      city: "Vila Nova de Gaia",
+      country: "Portugal"
+    },
+    website: "http://www.tappascaffe.pt/",
+    rating: 4.2,
+    position: [41.14073735809855, -8.613120762983689],
+    images: [
+      `${bucketBaseUrl}/tappascaffe_0596.jpg`,
+    ]
+  },
+  {
+    key: "Ohlala",
+    name: "Ohlálá",
+    types: ["Francesinha", "Portuguese"],
+    address: {
+      street: "Av. Dom João II 97, 4715-304 Nogueiró",
+      city: "Braga",
+      country: "Portugal"
+    },
+    website: "https://www.facebook.com/ohlalabraga/",
+    rating: 3.8,
+    position: [41.55216936352001, -8.395142931647566],
+    images: [
+      `${bucketBaseUrl}/ohlala_3734.jpg`,
+    ]
+  }
 ]
 
 const others: Restaurant[] = [
@@ -558,22 +667,6 @@ const others: Restaurant[] = [
     images: [
       `${bucketBaseUrl}/basilio_0838.jpg`,
       `${bucketBaseUrl}/basilio_0841.jpg`,
-    ]
-  },
-  {
-    key: "TappasCaffe",
-    name: "Tappas Caffé",
-    types: ["Portuguese", "Francesinha", "Regional"],
-    address: {
-      street: "R. Guilherme Gomes Fernandes 204, 4400-175",
-      city: "Vila Nova de Gaia",
-      country: "Portugal"
-    },
-    website: "http://www.tappascaffe.pt/",
-    rating: 4.2,
-    position: [41.14073735809855, -8.613120762983689],
-    images: [
-      `${bucketBaseUrl}/tappascaffe_0596.jpg`,
     ]
   },
   {
@@ -910,6 +1003,194 @@ const others: Restaurant[] = [
     images: [
       `${bucketBaseUrl}/semente_2346.jpg`,
     ]
+  },
+  {
+    key: "QuintaDasLagrimas",
+    name: "Quinta das Lágrimas",
+    types: ["Portuguese", "European", "Fine Dining"],
+    address: {
+      street: "Rua António Augusto Gonçalves, 3041-901",
+      city: "Coimbra",
+      country: "Portugal"
+    },
+    website: "https://www.quintadaslagrimas.pt",
+    rating: 4.1,
+    position: [40.198086430499785, -8.433690018207946],
+    images: [
+      `${bucketBaseUrl}/quintadaslagrimas_3865.jpg`,
+      `${bucketBaseUrl}/quintadaslagrimas_3866.jpg`,
+      `${bucketBaseUrl}/quintadaslagrimas_3867.jpg`,
+    ]
+  },
+  {
+    key: "BakeLondon",
+    name: "BAKE",
+    types: ["Bakery", "Japanese"],
+    address: {
+      street: "9 Wardour St, W1D 6PF",
+      city: "London",
+      country: "United Kingdom"
+    },
+    website: "https://www.facebook.com/pages/Bake-%E9%BA%B5%E5%8C%85%E5%B1%8B/208049219544860",
+    rating: 3.6,
+    position: [51.51101276683126, -0.13185014471207032],
+    images: [
+      `${bucketBaseUrl}/bakelondon_4022.jpg`,
+    ]
+  },
+  {
+    key: "TasquinhaDomFerreira",
+    name: "Tasquinha Dom Ferreira",
+    types: ["Portuguese", "European", "Regional"],
+    address: {
+      street: "R. de São Vicente 35, 4710-312",
+      city: "Braga",
+      country: "Portugal"
+    },
+    website: "https://www.tripadvisor.pt/Restaurant_Review-g189171-d6850381-Reviews-Tasquinha_Dom_Ferreira-Braga_Braga_District_Northern_Portugal.html?m=19905",
+    rating: 4.3,
+    position: [41.554715127612276, -8.422914089414277],
+    images: [
+      `${bucketBaseUrl}/tasquinhadomferreira_5326.jpg`,
+      `${bucketBaseUrl}/tasquinhadomferreira_5327.jpg`,
+      `${bucketBaseUrl}/tasquinhadomferreira_5329.jpg`,
+    ]
+  },
+  {
+    key: "GranturinoSteakhouse",
+    name: "Granturino Steakhouse",
+    types: ["Steakhouse"],
+    address: {
+      street: "R. António dos Santos Lé 18, 3800-105",
+      city: "Aveiro",
+      country: "Portugal"
+    },
+    website: "https://www.instagram.com/granturino.steakhouse",
+    rating: 4.6,
+    position: [40.645027564657404, -8.65666158348872],
+    images: [
+      `${bucketBaseUrl}/granturino_5539.jpg`,
+      `${bucketBaseUrl}/granturino_5537.jpg`,
+      `${bucketBaseUrl}/granturino_5540.jpg`,
+      `${bucketBaseUrl}/granturino_5541.jpg`,
+    ]
+  },
+  {
+    key: "PaulanerWirtshaus",
+    name: "Paulaner Wirtshaus Berlin Potsdamer Platz",
+    types: ["German", "Bavarian"],
+    address: {
+      street: "Alte Potsdamer Str. 1, 10785",
+      city: "Berlin",
+      country: "Germany"
+    },
+    website: "https://www.paulaner-wirtshaus-berlinpotsdamerplatz.de/en",
+    rating: 4.2,
+    position: [52.50820131476543, 13.374580155334934],
+    images: [
+      `${bucketBaseUrl}/paulanerwirtshaus_5819.jpg`,
+    ]
+  },
+  {
+    key: "MarkthalleNeun",
+    name: "Markthalle Neun - Street Food Thursday",
+    types: ["Street Food", "Market"],
+    address: {
+      street: "Eisenbahnstraße 42/43, 10997",
+      city: "Berlin",
+      country: "Germany"
+    },
+    website: "https://markthalleneun.de/en/street-food-thursday",
+    rating: 4.0,
+    position: [52.502160522863456, 13.431999570679743],
+    images: [
+      `${bucketBaseUrl}/markthalleneun_5702.jpg`,
+      `${bucketBaseUrl}/markthalleneun_5693.jpg`,
+      `${bucketBaseUrl}/markthalleneun_5699.jpg`
+    ]
+  },
+  {
+    key: "BoxhagenerPlatz",
+    name: "Boxhagener Platz - Saturday Food Market",
+    types: ["Street Food", "Market"],
+    address: {
+      street: "Grünberger Str. 75, 10245",
+      city: "Berlin",
+      country: "Germany"
+    },
+    website: "http://www.slowtravelberlin.com/boxhagener-platz-food-market/",
+    rating: 3.9,
+    position: [52.5138853345523, 13.459057696277338],
+    images: [
+      `${bucketBaseUrl}/boxhagenerplatz_5756.jpg`,
+      `${bucketBaseUrl}/boxhagenerplatz_5779.jpg`,
+    ]
+  },
+  {
+    key: "Burgermeister",
+    name: "Burgermeister",
+    types: ["Burger"],
+    address: {
+      street: "Dircksenstraße 113, 10178",
+      city: "Berlin",
+      country: "Germany"
+    },
+    website: "https://burger-meister.de/",
+    rating: 4.4,
+    position: [52.52050629390125, 13.41315282649925],
+    images: [
+      `${bucketBaseUrl}/burgermeister_5856.jpg`,
+    ]
+  },
+  {
+    key: "CasaGuedes",
+    name: "Casa Guedes",
+    types: ["Portuguese", "European", "Regional"],
+    address: {
+      street: "Praça dos Poveiros 130, 4000-393",
+      city: "Porto",
+      country: "Portugal"
+    },
+    website: "http://casaguedes.pt/?l=en",
+    rating: 4.3,
+    position: [41.14622602996456, -8.603400572136742],
+    images: [
+      `${bucketBaseUrl}/casaguedes_5531.jpg`,
+      `${bucketBaseUrl}/casaguedes_5532.jpg`,
+    ]
+  },
+  {
+    key: "AHamburgueriaDoClub",
+    name: "A Hamburgueria do Club",
+    types: ["Burger"],
+    address: {
+      street: "Av. Dom João II 23, 4715-303",
+      city: "Braga",
+      country: "Portugal"
+    },
+    website: "https://www.thefork.pt/restaurante/hamburgueria-do-club-r750472?cc=18174-54f",
+    rating: 2.9,
+    position: [41.55445141686233, -8.394769687466098],
+    images: [
+      `${bucketBaseUrl}/ahamburgueriadoclub_5360.jpg`,
+      `${bucketBaseUrl}/ahamburgueriadoclub_5358.jpg`,
+    ]
+  },
+  {
+    key: "DonaPipa",
+    name: "Dona Pipa",
+    types: ["Portuguese", "Steakhouse"],
+    address: {
+      street: "R. Dom Rodrigo da Cunha, 4715-179",
+      city: "Braga",
+      country: "Portugal"
+    },
+    website: "https://www.donapipa.pt/",
+    rating: 4.4,
+    position: [41.52982006940938, -8.41269781815723],
+    images: [
+      `${bucketBaseUrl}/donapipa_5332.jpg`,
+    ]
   }
 ]
 
@@ -917,5 +1198,6 @@ export const restaurantData: Restaurant[] = [
   ...sushis,
   ...asian,
   ...italian,
+  ...francesinha,
   ...others,
 ];

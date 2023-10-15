@@ -22,7 +22,6 @@ import {
   Slider
 } from "@patternfly/react-core";
 
-import { TextLink } from "@app/components/TextLink";
 import { Restaurant } from "@app/FoodMap/FoodMap";
 
 interface FoodMarkerProps {
