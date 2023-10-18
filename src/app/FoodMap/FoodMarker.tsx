@@ -83,6 +83,9 @@ export function FoodMarkerContent({ item, onClose }: FoodMarkerContentProps) {
 
   const dropdownItems = (
     <>
+      <DropdownItem key="google-maps" onClick={() => {window.open(item.googleMaps, '_blank');}}>
+        View on Google Maps
+      </DropdownItem>
       <DropdownItem key="website" onClick={() => {window.open(item.website, '_blank');}}>
         Open website
       </DropdownItem>

@@ -23,6 +23,7 @@ export interface Restaurant {
     country: string;
   };
   website: string;
+  googleMaps: string;
   rating: number;
   position: [number, number];
   images: string[];
