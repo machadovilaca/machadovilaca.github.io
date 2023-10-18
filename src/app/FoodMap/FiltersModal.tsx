@@ -30,6 +30,13 @@ export const FiltersModal: React.FunctionComponent<FiltersModalProps> = (
     setRestaurantFilters({});
   }
 
+  const handleNameChange = (name: string) => {
+    setRestaurantFilters({
+      ...restaurantFilters,
+      name
+    });
+  }
+
   const handleLocationChange = (location: string) => {
     setRestaurantFilters({
       ...restaurantFilters,
@@ -51,6 +58,18 @@ export const FiltersModal: React.FunctionComponent<FiltersModalProps> = (
       array[i] = array[j];
       array[j] = temp;
     }
+  }
+
+  const getNameSuggestions = (): string[] => {
+    const suggestions = new Set<string>()
+
+    restaurantData.map((r) => {
+      suggestions.add(r.name);
+    })
+
+    const r = Array.from(suggestions)
+    shuffle(r)
+    return r
   }
 
   const getLocationSuggestions = (): string[] => {
@@ -99,6 +118,17 @@ export const FiltersModal: React.FunctionComponent<FiltersModalProps> = (
       ]}
     >
       <Form>
+        <FormGroup
+          label="Location"
+        >
+          <AutocompleteInput
+            value={restaurantFilters.name}
+            suggestions={getNameSuggestions()}
+            onChange={handleNameChange}
+            placeholder={"Search by name"}
+          />
+        </FormGroup>
+
         <FormGroup
           label="Location"
         >

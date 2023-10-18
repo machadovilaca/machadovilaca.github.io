@@ -29,6 +29,7 @@ export interface Restaurant {
 }
 
 export interface RestaurantFilter {
+  name?: string;
   types?: string[];
   minimumRating?: number;
   location?: string;
@@ -72,6 +73,14 @@ export const FoodMap: React.FunctionComponent = () => {
     setIsFilterModalOpen(!isFilterModalOpen);
   }
 
+  const matchesName = (item: Restaurant): boolean => {
+    if (restaurantFilters.name === undefined || restaurantFilters.name.length === 0) {
+      return true;
+    }
+
+    return item.name.toUpperCase().includes(restaurantFilters.name.toUpperCase());
+  }
+
   const matchesType = (item: Restaurant): boolean => {
     if (restaurantFilters.types === undefined || restaurantFilters.types.length === 0) {
       return true;
@@ -104,7 +113,7 @@ export const FoodMap: React.FunctionComponent = () => {
   }
 
   const matchesFilter = (item: Restaurant): boolean => {
-    return matchesType(item) && matchesLocation(item);
+    return matchesName(item) && matchesType(item) && matchesLocation(item);
   }
 
   const FilterButtons = () => {
