@@ -178,10 +178,14 @@ export const AutocompleteInput: React.FunctionComponent<AutocompleteInputProps> 
           value={value}
           hint={hint}
           onChange={handleInputChange}
-          onFocus={() => setMenuIsOpen(true)}
+          onFocus={(event) => {
+            event.target.setAttribute('autoComplete', 'none');
+            setMenuIsOpen(true);
+          }}
           onKeyDown={handleTextInputKeyDown}
           placeholder={placeholder}
           aria-label="input"
+
         />
       </TextInputGroup>
     </div>

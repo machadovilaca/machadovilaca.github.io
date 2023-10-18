@@ -73,7 +73,7 @@ export const FoodMap: React.FunctionComponent = () => {
   }
 
   const matchesType = (item: Restaurant): boolean => {
-    if (restaurantFilters.types === undefined) {
+    if (restaurantFilters.types === undefined || restaurantFilters.types.length === 0) {
       return true;
     }
 
@@ -88,7 +88,7 @@ export const FoodMap: React.FunctionComponent = () => {
   }
 
   const matchesLocation = (item: Restaurant): boolean => {
-    if (restaurantFilters.location === undefined) {
+    if (restaurantFilters.location === undefined || restaurantFilters.location.length === 0) {
       return true;
     }
 

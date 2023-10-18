@@ -221,7 +221,10 @@ export const AutocompleteSelect: React.FunctionComponent<AutocompleteSelectProps
           value={inputValue}
           hint={hint}
           onChange={handleInputChange}
-          onFocus={() => setMenuIsOpen(true)}
+          onFocus={(event) => {
+            event.target.setAttribute('autoComplete', 'none');
+            setMenuIsOpen(true);
+          }}
           onKeyDown={handleTextInputKeyDown}
           placeholder={(values && !!values.length) ? '' : placeholder}
           aria-label="input"
