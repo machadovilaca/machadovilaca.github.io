@@ -58,18 +58,18 @@ const AppLayout: React.FunctionComponent<IAppLayout> = ({ children }) => {
 
   const Header = (
     <Masthead>
-      <MastheadToggle>
-        <PageToggleButton
-          variant="plain"
-          aria-label="Global navigation"
-          isSidebarOpen={isNavOpen}
-          onSidebarToggle={isMobileView ? onNavToggleMobile : onNavToggle}
-          id="vertical-nav-toggle"
-        >
-          <BarsIcon />
-        </PageToggleButton>
-      </MastheadToggle>
       <MastheadMain>
+        <MastheadToggle>
+          <PageToggleButton
+            variant="plain"
+            aria-label="Global navigation"
+            isSidebarOpen={isNavOpen}
+            onSidebarToggle={isMobileView ? onNavToggleMobile : onNavToggle}
+            id="vertical-nav-toggle"
+          >
+            <BarsIcon />
+          </PageToggleButton>
+        </MastheadToggle>
         <LogoImg />
       </MastheadMain>
     </Masthead>
@@ -78,7 +78,12 @@ const AppLayout: React.FunctionComponent<IAppLayout> = ({ children }) => {
   const location = useLocation();
 
   const renderNavItem = (route: IAppRoute, index: number) => (
-    <NavItem key={`${route.label}-${index}`} id={`${route.label}-${index}`} isActive={route.path === location.pathname}>
+    <NavItem
+      key={`${route.label}-${index}`}
+      id={`${route.label}-${index}`}
+      isActive={route.path === location.pathname}
+      onClick={() => setIsNavOpenMobile(false)}
+    >
       <NavLink exact={route.exact} to={route.path}>
         {route.label}
       </NavLink>
