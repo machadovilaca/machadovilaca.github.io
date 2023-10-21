@@ -3,8 +3,43 @@ import { Text } from "@patternfly/react-core";
 import { TextLink } from "@app/components/TextLink";
 import fosdemLogo from "@app/images/resume/fosdem.png";
 import devconfLogo from "@app/images/resume/devconf.png";
+import promconLogo from "@app/images/resume/promcon.png";
 
 export const speakingData = [
+  {
+    company: "Testing Kubernetes apps' observability end-to-end",
+    positions: [
+      {
+        date: "2023",
+        title: "PromCon EU",
+      }
+    ],
+    img: promconLogo,
+    description: (
+      <>
+        <Text>
+          This presentation is designed for developers and DevOps engineers with
+          a basic understanding of Kubernetes, Prometheus, and alerting
+          concepts. We will cover how to end-to-end test observability features
+          in Kubernetes applications using Prometheus, Alertmanager, and various
+          testing frameworks and libraries. We will demo how to set up a test
+          environment, spin up a disposable local cluster, and use Prometheus
+          client libraries for testing. Then, we will see how to write tests for
+          Metrics and Events to ensure their availability and correctness, which
+          are essential to monitoring the application&apos;`s behavior and
+          diagnosing issues. Next, we will focus on Alert testing. Our primary
+          goal is to understand how to test Alerts for accuracy and timeliness,
+          as alerting is one of the critical components of observability. We
+          will discuss how to ensure our alerts are actionable, relevant, and
+          real, and show how to configure them correctly and ensure they react
+          to the appropriate triggering conditions.
+        </Text>
+        <TextLink href="https://promcon.io/2023-berlin/talks/testing-kubernetes-apps-observability-end-to-end/" text="Details here" />
+        <br/>
+        <TextLink href="https://www.youtube.com/live/ymR57Q0qqg4?feature=shared&t=18173" text="Video here" />
+      </>
+    )
+  },
   {
     company: "Testing Kubernetes apps' observability end-to-end",
     positions: [
