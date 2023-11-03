@@ -149,6 +149,41 @@ export const FoodMap: React.FunctionComponent = () => {
     history.push(baseUrl);
   };
 
+  const isEmpty = (obj: any) => {
+    return Object.keys(obj).length === 0;
+  }
+
+  const RestaurantsMarkers = () => {
+    const map = useMap();
+    let restaurants: Restaurant[]
+
+    if (!isEmpty(restaurantFilters)) {
+      restaurants = restaurantData.filter(matchesFilter);
+      map.fitBounds(restaurants.map((item) => item.position));
+    } else {
+      restaurants = restaurantData;
+    }
+
+    return <>
+      {restaurants.map((item, index) => (
+        <Marker
+          key={index}
+          position={item.position}
+          icon={markerIcon}
+          eventHandlers={{
+            click: () => {
+              history.push(`${baseUrl}?restaurant=${item.key}`);
+            }
+          }}
+        >
+          <Tooltip>
+            {`${item.name} (${item.rating}) - ${item.types.join(", ")}`}
+          </Tooltip>
+        </Marker>
+      ))}
+    </>
+  }
+
   return (
     <Page title="Food Map">
       <Modal
@@ -182,25 +217,7 @@ export const FoodMap: React.FunctionComponent = () => {
           maxClusterRadius={25}
           showCoverageOnHover={false}
         >
-          {
-            restaurantData.map((item, index) => (
-              matchesFilter(item) &&
-              <Marker
-                key={index}
-                position={item.position}
-                icon={markerIcon}
-                eventHandlers={{
-                  click: () => {
-                    history.push(`${baseUrl}?restaurant=${item.key}`);
-                  },
-                }}
-              >
-                <Tooltip>
-                  {`${item.name} (${item.rating}) - ${item.types.join(", ")}`}
-                </Tooltip>
-              </Marker>
-            ))
-          }
+          <RestaurantsMarkers />
         </MarkerClusterGroup>
       </MapContainer>
     </Page>

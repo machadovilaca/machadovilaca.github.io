@@ -122,23 +122,13 @@ export const FiltersModal: React.FunctionComponent<FiltersModalProps> = (
           label="Location"
         >
           <AutocompleteInput
-            value={restaurantFilters.name}
-            suggestions={getNameSuggestions()}
-            onChange={handleNameChange}
-            placeholder={"Search by name"}
-          />
-        </FormGroup>
-
-        <FormGroup
-          label="Location"
-        >
-          <AutocompleteInput
             value={restaurantFilters.location}
             suggestions={getLocationSuggestions()}
             onChange={handleLocationChange}
             placeholder={"Search by address, city or country"}
           />
         </FormGroup>
+
         <FormGroup
           label="Type"
         >
@@ -147,6 +137,17 @@ export const FiltersModal: React.FunctionComponent<FiltersModalProps> = (
             suggestions={getTypeSuggestions()}
             onChange={handleTypeChange}
             placeholder={"Search by type"}
+          />
+        </FormGroup>
+
+        <FormGroup
+          label="Restaurant"
+        >
+          <AutocompleteInput
+            value={restaurantFilters.name}
+            suggestions={getNameSuggestions()}
+            onChange={handleNameChange}
+            placeholder={"Search by name"}
           />
         </FormGroup>
       </Form>

@@ -149,12 +149,12 @@ export function FoodMarkerContent({ item, onClose }: FoodMarkerContentProps) {
           min={1}
           max={item.images.length}
           leftActions={
-            <Button variant="plain" aria-label="Minus" onClick={onMinusClick}>
+            <Button variant="plain" aria-label="Minus" isAriaDisabled={index===1} onClick={onMinusClick}>
               <AngleLeftIcon />
             </Button>
           }
           rightActions={
-            <Button variant="plain" aria-label="Plus" onClick={onPlusClick}>
+            <Button variant="plain" aria-label="Plus" isAriaDisabled={index===item.images.length} onClick={onPlusClick}>
               <AngleRightIcon />
             </Button>
           }
