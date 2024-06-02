@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import {ThemeProvider} from "@/components/theme-provider";
+import {Menu} from "@/components/menu";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "João Vilaça",
-  description: "Software Engineer @ Red Hat",
+  description: "Software Engineer at Red Hat",
 };
 
 export default function RootLayout({
@@ -24,6 +25,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Menu />
           {children}
         </ThemeProvider>
       </body>
