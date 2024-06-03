@@ -31,9 +31,10 @@ export const speakingData = [
           real, and show how to configure them correctly and ensure they react
           to the appropriate triggering conditions.
         </p>
-        <TextLink href="https://promcon.io/2023-berlin/talks/testing-kubernetes-apps-observability-end-to-end/" text="Details here" />
+        <TextLink href="https://promcon.io/2023-berlin/talks/testing-kubernetes-apps-observability-end-to-end/"
+                  text="Details here"/>
         <br/>
-        <TextLink href="https://www.youtube.com/live/ymR57Q0qqg4?feature=shared&t=18173" text="Video here" />
+        <TextLink href="https://www.youtube.com/live/ymR57Q0qqg4?feature=shared&t=18173" text="Video here"/>
       </>
     )
   },
@@ -61,7 +62,8 @@ export const speakingData = [
           real, and show how to configure them correctly and ensure they react
           to the appropriate triggering conditions.
         </p>
-        <TextLink href="https://devconfcz2023.sched.com/event/1MYdn/testing-kubernetes-apps-observability-end-to-end" text="Details here" />
+        <TextLink href="https://devconfcz2023.sched.com/event/1MYdn/testing-kubernetes-apps-observability-end-to-end"
+                  text="Details here"/>
       </>
     )
   },
@@ -88,7 +90,7 @@ export const speakingData = [
           and new tooling that we added to Operator SDK to assist developers in
           the first steps in implementing monitoring.
         </p>
-        <TextLink href="https://fosdem.org/2023/schedule/event/operator/" text="Details here" />
+        <TextLink href="https://fosdem.org/2023/schedule/event/operator/" text="Details here"/>
       </>
     )
   },

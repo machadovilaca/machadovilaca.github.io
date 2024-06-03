@@ -35,7 +35,7 @@ export function Menu() {
       <NavigationMenu>
         <Avatar className="mr-2 h-10 w-10">
           <AvatarImage asChild src="/jvilaca.jpg">
-            <Image src="/jvilaca.jpg" alt="João Vilaça" width={400} height={400} />
+            <Image src="/jvilaca.jpg" alt="João Vilaça" width={400} height={400}/>
           </AvatarImage>
           <AvatarFallback>JV</AvatarFallback>
         </Avatar>
@@ -51,7 +51,7 @@ export function Menu() {
           ))}
         </NavigationMenuList>
       </NavigationMenu>
-      <ThemeToggle />
+      <ThemeToggle/>
     </header>
   )
 }
