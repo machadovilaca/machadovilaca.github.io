@@ -21,12 +21,14 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
           <Menu />
-          {children}
+          <div className="m-5">
+            {children}
+          </div>
         </ThemeProvider>
       </body>
     </html>

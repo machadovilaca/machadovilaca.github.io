@@ -3,11 +3,12 @@ import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
 import Link from "next/link";
 import { SVGProps } from "react";
 import Image from "next/image";
+import {TextLink} from "@/components/text-link";
 
 export default function Home() {
   return (
     <main>
-      <Card className="mt-5 mx-auto max-w-lg">
+      <Card className="mx-auto max-w-lg">
         <CardHeader className="flex flex-col items-center space-y-4 p-6">
           <Avatar className="h-36 w-36">
             <AvatarImage asChild src="/jvilaca.jpg">
@@ -23,7 +24,7 @@ export default function Home() {
         <CardContent className="flex flex-col px-6 py-4 text-justify gap-4">
           <p>
             I actively participate in the open-source community, mostly contributing to the{" "}
-            <Link className="underline" target="_blank" href="https://github.com/kubevirt/kubevirt">kubevirt/kubevirt</Link>
+            <TextLink href="https://github.com/kubevirt/kubevirt" text="kubevirt/kubevirt" />
             {" "}project, a Kubernetes virtualization API and runtime for defining and managing virtual machines.
           </p>
           <p>
