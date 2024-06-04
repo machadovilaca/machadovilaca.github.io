@@ -1,4 +1,19 @@
-import {Restaurant} from "@/components/map";
+export interface Restaurant {
+  key: string;
+  name: string;
+  types: string[];
+  address: {
+    street: string;
+    city: string;
+    country: string;
+  };
+  website: string;
+  googleMaps: string;
+  rating: number;
+  priceRange: number;
+  position: [number, number];
+  images: string[];
+}
 
 const bucketBaseUrl = "https://pub-567bc98a830042fbb2c7a6f479f9de3d.r2.dev"
 
@@ -15,6 +30,7 @@ const sushis: Restaurant[] = [
     website: "https://www.facebook.com/michizaki.braga/",
     googleMaps: "https://maps.app.goo.gl/C4wG7ZVNCbPQrHT36",
     rating: 4.7,
+    priceRange: 4,
     position: [41.5484696893659, -8.428208906909544],
     images: [
       `${bucketBaseUrl}/michizaki_3611.jpg`,
@@ -42,6 +58,7 @@ const sushis: Restaurant[] = [
     website: "https://almadeca.eatbu.com/",
     googleMaps: "https://maps.app.goo.gl/jNZXvqeiPFf2jE6NA",
     rating: 4.3,
+    priceRange: 4,
     position: [41.5518643962061, -8.42592195980869],
     images: [
       `${bucketBaseUrl}/almadeca_3634.jpg`,
@@ -63,6 +80,7 @@ const sushis: Restaurant[] = [
     website: "https://www.tripadvisor.pt/Restaurant_Review-g189174-d20944018-Reviews-Kanji_Restaurant_Garden_Bar-Guimaraes_Braga_District_Northern_Portugal.html",
     googleMaps: "https://maps.app.goo.gl/c9SQtyq1cxqJfBbBA",
     rating: 4.1,
+    priceRange: 3,
     position: [41.44431046042532, -8.293703813781669],
     images: [
       `${bucketBaseUrl}/kanji_2480.jpg`,
@@ -81,7 +99,8 @@ const sushis: Restaurant[] = [
     },
     website: "https://www.facebook.com/Nikko-773733622771533/",
     googleMaps: "https://maps.app.goo.gl/3XXKKcZBkCeKCyAG8",
-    rating: 4.1,
+    rating: 4.0,
+    priceRange: 3,
     position: [41.54850345951748, -8.428248089697492],
     images: [
       `${bucketBaseUrl}/nikko_3725.jpg`,
@@ -104,6 +123,7 @@ const sushis: Restaurant[] = [
     website: "https://omakasebraga.business.site",
     googleMaps: "https://maps.app.goo.gl/h54TzPKPkqxFsMd58",
     rating: 4.9,
+    priceRange: 5,
     position: [41.5511421202459, -8.4181537201536],
     images: [
       `${bucketBaseUrl}/omakasebraga_5184.jpg`,
@@ -126,6 +146,7 @@ const asian: Restaurant[] = [
     website: "https://www.tripadvisor.com/Restaurant_Review-g189180-d11894384-Reviews-Ro-Porto_Porto_District_Northern_Portugal.html",
     googleMaps: "https://maps.app.goo.gl/6Z5ih6t2BsfnQDS38",
     rating: 4.1,
+    priceRange: 3,
     position: [41.14894146929367, -8.611914015640227],
     images: [
       `${bucketBaseUrl}/ro_2548.jpg`,
@@ -146,6 +167,7 @@ const asian: Restaurant[] = [
     website: "https://chinatown.co.uk/en/restaurant/leongs-legend/",
     googleMaps: "https://maps.app.goo.gl/RhiUc2s4CocAxNQMA",
     rating: 4.6,
+    priceRange: 3,
     position: [51.51219837825268, -0.13075197516503045],
     images: [
       `${bucketBaseUrl}/leongslegend_4017.jpg`,
@@ -164,6 +186,7 @@ const asian: Restaurant[] = [
     website: "https://www.ramen-makotoya.at/",
     googleMaps: "https://maps.app.goo.gl/LvrtAuPukumTetjw9",
     rating: 4.6,
+    priceRange: 3,
     position: [48.214174658392594, 16.358442538757554],
     images: [
       `${bucketBaseUrl}/makotoya_5016.jpg`,
@@ -182,7 +205,8 @@ const asian: Restaurant[] = [
     },
     website: "https://www.wagamama.com/restaurants/london/bedford-street-covent-garden",
     googleMaps: "https://maps.app.goo.gl/wXampWYuvSivLW1b8",
-    rating: 3.9,
+    rating: 3.6,
+    priceRange: 3,
     position: [51.51316279977156, -0.12424355957350237],
     images: [
       `${bucketBaseUrl}/wagamama_1244.jpg`,
@@ -201,6 +225,7 @@ const asian: Restaurant[] = [
     website: "https://www.arslanbuuz.cz/",
     googleMaps: "https://maps.app.goo.gl/WRKdqRHt7PB8rQSM6",
     rating: 4.7,
+    priceRange: 2,
     position: [49.20045764794219, 16.60233092420062],
     images: [
       `${bucketBaseUrl}/arslanbuuz_5136.jpg`,
@@ -218,6 +243,7 @@ const asian: Restaurant[] = [
     website: "https://diandi.cz/",
     googleMaps: "https://maps.app.goo.gl/MmEnvipYx3JPDip26",
     rating: 3.7,
+    priceRange: 3,
     position: [49.19492422556868, 16.607550849916393],
     images: [
       `${bucketBaseUrl}/diandi_5050.jpg`,
@@ -238,6 +264,7 @@ const asian: Restaurant[] = [
     website: "https://www.market-restaurant.at/",
     googleMaps: "https://maps.app.goo.gl/cLUZ4bmqsyMucgY38",
     rating: 4.2,
+    priceRange: 3,
     position: [48.19790050539049, 16.360549252980444],
     images: [
       `${bucketBaseUrl}/marketrestaurant_4908.jpg`,
@@ -255,6 +282,7 @@ const asian: Restaurant[] = [
     website: "https://seoulchicken.eatbu.com/?lang=en",
     googleMaps: "https://maps.app.goo.gl/Kao3UmWf2zszjazY7",
     rating: 4.2,
+    priceRange: 3,
     position: [40.20936666753622, -8.42909226957717],
     images: [
       `${bucketBaseUrl}/seoulchicken_3873.jpg`,
@@ -273,7 +301,8 @@ const asian: Restaurant[] = [
     },
     website: "https://www.instagram.com/ramenbreak",
     googleMaps: "https://maps.app.goo.gl/wYeEzjcDprMcTepEA",
-    rating: 4.4,
+    rating: 4.0,
+    priceRange: 3,
     position: [41.552816077695226, -8.426455275828902],
     images: [
       `${bucketBaseUrl}/ramenbreak_6137.jpg`,
@@ -292,6 +321,7 @@ const asian: Restaurant[] = [
     website: "https://akaistreetfood.wixsite.com/akai",
     googleMaps: "https://maps.app.goo.gl/ifnWrpZGwnXhAxdH6",
     rating: 4.6,
+    priceRange: 4,
     position: [40.87529034876151, -8.665243182836386],
     images: [
       `${bucketBaseUrl}/akai_5567.jpg`,
@@ -317,6 +347,7 @@ const italian: Restaurant[] = [
     website: "https://www.facebook.com/watch/PizzeriaLanticaNapoli/",
     googleMaps: "https://maps.app.goo.gl/pR4tV5FMTyRmHQwm6",
     rating: 4.8,
+    priceRange: 3,
     position: [41.372740121728086, 2.1587960613731183],
     images: [
       `${bucketBaseUrl}/anticanapoli_2277.jpg`,
@@ -335,6 +366,7 @@ const italian: Restaurant[] = [
     website: "https://www.thefork.pt/restaurante/casanostra-r461795?cc=18174-54f",
     googleMaps: "https://maps.app.goo.gl/bQ1XeZUQjewH37cLA",
     rating: 4.0,
+    priceRange: 3,
     position: [38.712538561474126, -9.145145873374128],
     images: [
       `${bucketBaseUrl}/casanostra_0942.jpg`,
@@ -353,6 +385,7 @@ const italian: Restaurant[] = [
     website: "https://saledolce.eatbu.com/",
     googleMaps: "https://maps.app.goo.gl/ybu8kLjAaHrN1dXW7",
     rating: 3.6,
+    priceRange: 3,
     position: [41.54841091259618, -8.427569457958027],
     images: [
       `${bucketBaseUrl}/saledolce_1107.jpg`,
@@ -371,6 +404,7 @@ const italian: Restaurant[] = [
     website: "https://alangolo.be/en",
     googleMaps: "https://maps.app.goo.gl/mRnK1SNHhkQ2eJog8",
     rating: 3.9,
+    priceRange: 3,
     position: [50.849530507500184, 4.349848067031891],
     images: [
       `${bucketBaseUrl}/alangolo_4258.jpg`,
@@ -387,7 +421,8 @@ const italian: Restaurant[] = [
     },
     website: "https://www.gustopizza.pt/",
     googleMaps: "https://maps.app.goo.gl/zH2kMSG9fjmNoxU56",
-    rating: 4.8,
+    rating: 4.6,
+    priceRange: 3,
     position: [40.150982083540306, -8.865948274421342],
     images: [
       `${bucketBaseUrl}/gustopizza_4854.jpg`,
@@ -405,6 +440,7 @@ const italian: Restaurant[] = [
     website: "http://ristorante-mammamia.pt/",
     googleMaps: "https://maps.app.goo.gl/XynhrMusBhXTB6pZ8",
     rating: 3.0,
+    priceRange: 2,
     position: [41.56905030118558, -8.386247825872683],
     images: [
       `${bucketBaseUrl}/mammamia_4883.jpg`,
@@ -425,6 +461,7 @@ const italian: Restaurant[] = [
     website: "https://www.facebook.com/joespizzaCeleiros",
     googleMaps: "https://maps.app.goo.gl/bEDpqbQrdBwmBu8X6",
     rating: 4.1,
+    priceRange: 2,
     position: [41.51360865652946, -8.450963909729941],
     images: [
       `${bucketBaseUrl}/joespizza_4865.jpg`,
@@ -442,6 +479,7 @@ const italian: Restaurant[] = [
     website: "https://www.thefork.pt/restaurante/forneria-da-villa-r733529?cc=18174-54f",
     googleMaps: "https://maps.app.goo.gl/URV31qQ1hatL3HeY6",
     rating: 4.4,
+    priceRange: 4,
     position: [41.47560960439733, -8.332615779214917],
     images: [
       `${bucketBaseUrl}/forneriadavilla_2715.jpg`,
@@ -464,6 +502,7 @@ const italian: Restaurant[] = [
     website: "https://www.omeumenu.pt/menu/0e6a6e99-b6ed-4130-9988-f44fdc9e8025",
     googleMaps: "https://maps.app.goo.gl/L269Sog6b2HQepoeA",
     rating: 4.2,
+    priceRange: 3,
     position: [41.54918720451603, -8.427533516680867],
     images: [
       `${bucketBaseUrl}/lapiola_3617.jpg`,
@@ -482,6 +521,7 @@ const italian: Restaurant[] = [
     website: "https://www.facebook.com/IlFiumeNogueiro/",
     googleMaps: "https://maps.app.goo.gl/PQag7PZnpMLwpaPE8",
     rating: 4.0,
+    priceRange: 3,
     position: [41.55294427444706, -8.401172545768592],
     images: [
       `${bucketBaseUrl}/ilfiumenogueiro_2735.jpg`,
@@ -500,6 +540,7 @@ const italian: Restaurant[] = [
     website: "https://pizzerialapiazza.nl/",
     googleMaps: "https://maps.app.goo.gl/iReE9SoqjagSqwXC8",
     rating: 3.7,
+    priceRange: 3,
     position: [52.37278477631322, 4.891644639834464],
     images: [
       `${bucketBaseUrl}/lapiazzaamsterdam_3466.jpg`,
@@ -519,6 +560,7 @@ const italian: Restaurant[] = [
     website: "https://peppinoamsterdam.nl/",
     googleMaps: "Ristorante Italiano Peppino",
     rating: 3.6,
+    priceRange: 3,
     position: [52.36359981255532, 4.884562666820148],
     images: [
       `${bucketBaseUrl}/ristorantepeppino_3561.jpg`,
@@ -537,6 +579,7 @@ const italian: Restaurant[] = [
     website: "https://www.thefork.pt/restaurante/la-porta-braga-r568401",
     googleMaps: "https://maps.app.goo.gl/tNf34Z9hnDkT9qwC7",
     rating: 3.8,
+    priceRange: 3,
     position: [41.55052635449664, -8.429036289320154],
     images: [
       `${bucketBaseUrl}/laporta_4408.jpg`,
@@ -554,6 +597,7 @@ const italian: Restaurant[] = [
     website: "https://www.thefork.pt/restaurante/caffe-italy-r572183?cc=18174-54f",
     googleMaps: "https://maps.app.goo.gl/PRMU9CDETPnjnHd87",
     rating: 4.0,
+    priceRange: 3,
     position: [41.55171466448018, -8.423731248846567],
     images: [
       `${bucketBaseUrl}/caffeitaly_3716.jpg`,
@@ -576,6 +620,7 @@ const francesinha: Restaurant[] = [
     website: "https://www.tappascaffe.pt/tappas-caffe-candal/",
     googleMaps: "https://maps.app.goo.gl/kXbm943fzafxvRSx7",
     rating: 4.2,
+    priceRange: 3,
     position: [41.13502922129823, -8.624830129133178],
     images: [
       `${bucketBaseUrl}/tappascaffe_0596.jpg`,
@@ -593,6 +638,7 @@ const francesinha: Restaurant[] = [
     website: "https://www.facebook.com/ohlalabraga/",
     googleMaps: "https://maps.app.goo.gl/doLJRPjXSGDTiS717",
     rating: 3.8,
+    priceRange: 3,
     position: [41.55216936352001, -8.395142931647566],
     images: [
       `${bucketBaseUrl}/ohlala_3734.jpg`,
@@ -613,6 +659,7 @@ const others: Restaurant[] = [
     website: "https://www.inatobistro.pt/",
     googleMaps: "https://maps.app.goo.gl/KH2pJdLEBRpsNEw87",
     rating: 4.1,
+    priceRange: 5,
     position: [41.550888078860616, -8.427430900286339],
     images: [
       `${bucketBaseUrl}/inato_4892.jpg`,
@@ -633,6 +680,7 @@ const others: Restaurant[] = [
     website: "https://www.facebook.com/ofilhodamaerestaurante/",
     googleMaps: "https://maps.app.goo.gl/NSNbrfcJET9vvfsm9",
     rating: 4.1,
+    priceRange: 4,
     position: [41.549217492444185, -8.427647002137114],
     images: [
       `${bucketBaseUrl}/filhodamae_4379.jpg`,
@@ -654,6 +702,7 @@ const others: Restaurant[] = [
     website: "https://www.tripadvisor.com/Restaurant_Review-g189171-d25414277-Reviews-El_Guero-Braga_Braga_District_Northern_Portugal.html",
     googleMaps: "https://maps.app.goo.gl/XZCEA4FncBPL7nTB7",
     rating: 3.9,
+    priceRange: 3,
     position: [41.549044623370875, -8.427266159808685],
     images: [
       `${bucketBaseUrl}/elguero_4798.jpg`,
@@ -674,6 +723,7 @@ const others: Restaurant[] = [
     website: "https://uqr.to/1858i",
     googleMaps: "https://maps.app.goo.gl/R8M17CSNMxyK9iu97",
     rating: 4.8,
+    priceRange: 4,
     position: [41.55018688455191, -8.428478746316188],
     images: [
       `${bucketBaseUrl}/partilha_1349.jpg`,
@@ -699,6 +749,7 @@ const others: Restaurant[] = [
     website: "https://www.thefork.pt/restaurante/basilio-r662851?cc=18174-54f",
     googleMaps: "https://maps.app.goo.gl/88e2zJsuKo6KKd7H8",
     rating: 3.4,
+    priceRange: 3,
     position: [38.709232052309794, -9.13399097337424],
     images: [
       `${bucketBaseUrl}/basilio_0838.jpg`,
@@ -717,6 +768,7 @@ const others: Restaurant[] = [
     website: "https://www.thefork.pt/restaurante/restaurante-kianda-r540063?cc=18174-54f",
     googleMaps: "https://maps.app.goo.gl/1aQrp85ybcHMTBsp9",
     rating: 3.7,
+    priceRange: 4,
     position: [41.550201442939915, -8.42863145795796],
     images: [
       `${bucketBaseUrl}/kianda_1458.jpg`,
@@ -737,6 +789,7 @@ const others: Restaurant[] = [
     website: "https://www.instagram.com/cactuscatbar/",
     googleMaps: "https://maps.app.goo.gl/3QPed5YJwVbKTss58",
     rating: 3.8,
+    priceRange: 3,
     position: [41.383296318960525, 2.1646239555301086],
     images: [
       `${bucketBaseUrl}/cactusbar_2255.jpg`,
@@ -755,6 +808,7 @@ const others: Restaurant[] = [
     website: "https://www.facebook.com/pages/Colom-Restaurant/2026230204369890",
     googleMaps: "https://maps.app.goo.gl/28zU6ofUMoK5Rfor6",
     rating: 4.0,
+    priceRange: 3,
     position: [41.38004597852741, 2.1764999978584094],
     images: [
       `${bucketBaseUrl}/colom_2219.jpg`,
@@ -772,6 +826,7 @@ const others: Restaurant[] = [
     website: "https://www.tripadvisor.pt/Restaurant_Review-g189181-d5981294-Reviews-Gelateria_Italiana_Mona_Lisa-Povoa_de_Varzim_Porto_District_Northern_Portugal.html",
     googleMaps: "https://maps.app.goo.gl/1Hwf4LcnJf64hpYPA",
     rating: 4.2,
+    priceRange: 3,
     position: [41.39194490866414, -8.77043341457746],
     images: [
       `${bucketBaseUrl}/gelatariamonalisa_3630.jpg`,
@@ -790,6 +845,7 @@ const others: Restaurant[] = [
     website: "https://www.instagram.com/pracagastropub/",
     googleMaps: "https://maps.app.goo.gl/UZD1u5TJqqgUYu7a7",
     rating: 4.2,
+    priceRange: 3,
     position: [40.05822724206574, -8.626161689770194],
     images: [
       `${bucketBaseUrl}/pracagastropub_4849.jpg`,
@@ -808,6 +864,7 @@ const others: Restaurant[] = [
     website: "https://www.utomana.cz/",
     googleMaps: "https://maps.app.goo.gl/4PwvB23fpjZDFVLfA",
     rating: 4.4,
+    priceRange: 3,
     position: [49.195943525670664, 16.60727230461722],
     images: [
       `${bucketBaseUrl}/utomana_5042.jpg`,
@@ -826,6 +883,7 @@ const others: Restaurant[] = [
     website: "https://mozart-resto.be/",
     googleMaps: "https://maps.app.goo.gl/ZAAcK72N9gLnqpGb7",
     rating: 3.9,
+    priceRange: 3,
     position: [50.84834106180446, 4.353454336616686],
     images: [
       `${bucketBaseUrl}/restaurantmozart_4250.jpg`,
@@ -843,6 +901,7 @@ const others: Restaurant[] = [
     website: "https://www.cosmopolisgrill.cz/",
     googleMaps: "https://maps.app.goo.gl/djAS32RoiheyCgF69",
     rating: 4.0,
+    priceRange: 3,
     position: [49.19671493774963, 16.609638335310628],
     images: [
       `${bucketBaseUrl}/cosmopolis_5063.jpg`,
@@ -862,6 +921,7 @@ const others: Restaurant[] = [
     website: "https://www.wtbakery.cz/",
     googleMaps: "https://maps.app.goo.gl/WbyQkdhYLuEAtpm9A",
     rating: 4.5,
+    priceRange: 4,
     position: [49.193558535262234, 16.611609995364113],
     images: [
       `${bucketBaseUrl}/williamthomas_5145.jpg`,
@@ -878,7 +938,8 @@ const others: Restaurant[] = [
     },
     website: "https://www.mikrofarma.cz/",
     googleMaps: "https://maps.app.goo.gl/gnc3gePFgyMH17cd7",
-    rating: 4.3,
+    rating: 4.5,
+    priceRange: 3,
     position: [49.192238165742125, 16.607719042344687],
     images: [
       `${bucketBaseUrl}/mikrofarma_5035.jpg`,
@@ -896,6 +957,7 @@ const others: Restaurant[] = [
     website: "https://www.cafe-schwarzenberg.at/",
     googleMaps: "https://maps.app.goo.gl/wAjCoYYVAoQhEAbM8",
     rating: 4.3,
+    priceRange: 4,
     position: [48.20222717702701, 16.373665807410518],
     images: [
       `${bucketBaseUrl}/schwarzenberg_4936.jpg`,
@@ -913,6 +975,7 @@ const others: Restaurant[] = [
     website: "https://www.thebreakfastclubcafes.com/locations/london-bridge/",
     googleMaps: "https://maps.app.goo.gl/kcAs3yqqKjUhuJZu5",
     rating: 3.9,
+    priceRange: 3,
     position: [51.50473345709885, -0.09135703148645392],
     images: [
       `${bucketBaseUrl}/thebreakfastclub_4066.jpg`,
@@ -930,6 +993,7 @@ const others: Restaurant[] = [
     website: "https://www.burgerandbeyond.co.uk/",
     googleMaps: "https://maps.app.goo.gl/EzjZjX7sBqkdLMyRA",
     rating: 4.4,
+    priceRange: 3,
     position: [51.50741943154522, -0.09288013656854298],
     images: [
       `${bucketBaseUrl}/burgerbeyond_4085.jpg`,
@@ -947,6 +1011,7 @@ const others: Restaurant[] = [
     website: "https://www.felzl.at/",
     googleMaps: "https://maps.app.goo.gl/rNM3xsfmmBLfyqSh9",
     rating: 4.1,
+    priceRange: 3,
     position: [48.208717897934676, 16.34382029220155],
     images: [
       `${bucketBaseUrl}/felzl_5013.jpg`,
@@ -964,6 +1029,7 @@ const others: Restaurant[] = [
     website: "https://www.instagram.com/benedito_brunch",
     googleMaps: "https://maps.app.goo.gl/TLYBnZTUjL5mxHVB8",
     rating: 4.2,
+    priceRange: 3,
     position: [41.44258152236305, -8.29405530296571],
     images: [
       `${bucketBaseUrl}/beneditobrunch_2726.jpg`,
@@ -982,6 +1048,7 @@ const others: Restaurant[] = [
     website: "https://burgerbistro.nl",
     googleMaps: "https://maps.app.goo.gl/edopGpPDfYCLhaeK9",
     rating: 4.3,
+    priceRange: 3,
     position: [52.37274507816547, 4.891019695656214],
     images: [
       `${bucketBaseUrl}/burgerbistroamsterdam_4536.jpg`,
@@ -999,6 +1066,7 @@ const others: Restaurant[] = [
     website: "https://www.facebook.com/pages/Los-Toros-Restaurant/151491754990324",
     googleMaps: "https://maps.app.goo.gl/YcPi2gahNCHeGvxeA",
     rating: 2.9,
+    priceRange: 4,
     position: [52.3769325165068, 4.897582810999022],
     images: [
       `${bucketBaseUrl}/lostoros_3344.jpg`,
@@ -1017,6 +1085,7 @@ const others: Restaurant[] = [
     website: "https://www.instagram.com/nordico.coffeeshop/",
     googleMaps: "https://maps.app.goo.gl/oumB2C654LqRSd3z7",
     rating: 4.6,
+    priceRange: 3,
     position: [41.548747217701404, -8.425288933646767],
     images: [
       `${bucketBaseUrl}/nordico_2654.jpg`,
@@ -1036,6 +1105,7 @@ const others: Restaurant[] = [
     website: "https://www.rembrandtcorner.nl/",
     googleMaps: "https://maps.app.goo.gl/pkHQFtL5hyw4RU2RA",
     rating: 4.1,
+    priceRange: 3,
     position: [52.3695775936369, 4.901088539834299],
     images: [
       `${bucketBaseUrl}/rembrandtcorner_3020.jpg`,
@@ -1055,6 +1125,7 @@ const others: Restaurant[] = [
     website: "https://www.tripadvisor.pt/Restaurant_Review-g189171-d15696421-Reviews-Semente_Art_Coffee_Plant_Based_Food-Braga_Braga_District_Northern_Portugal.html",
     googleMaps: "https://maps.app.goo.gl/zHpRxoYWgyYjxfHm8",
     rating: 3.9,
+    priceRange: 3,
     position: [41.5496502395634, -8.430567614605124],
     images: [
       `${bucketBaseUrl}/semente_2346.jpg`,
@@ -1072,6 +1143,7 @@ const others: Restaurant[] = [
     website: "https://www.quintadaslagrimas.pt",
     googleMaps: "https://maps.app.goo.gl/pKbEeU4WDFXftfCw5",
     rating: 4.1,
+    priceRange: 5,
     position: [40.198086430499785, -8.433690018207946],
     images: [
       `${bucketBaseUrl}/quintadaslagrimas_3865.jpg`,
@@ -1091,6 +1163,7 @@ const others: Restaurant[] = [
     website: "https://www.facebook.com/pages/Bake-%E9%BA%B5%E5%8C%85%E5%B1%8B/208049219544860",
     googleMaps: "https://maps.app.goo.gl/BV2dNaiSyCXiQ4Z9A",
     rating: 3.6,
+    priceRange: 3,
     position: [51.51101276683126, -0.13185014471207032],
     images: [
       `${bucketBaseUrl}/bakelondon_4022.jpg`,
@@ -1108,6 +1181,7 @@ const others: Restaurant[] = [
     website: "https://www.tripadvisor.pt/Restaurant_Review-g189171-d6850381-Reviews-Tasquinha_Dom_Ferreira-Braga_Braga_District_Northern_Portugal.html?m=19905",
     googleMaps: "https://maps.app.goo.gl/uAT7zbaq4CTZJAgK8",
     rating: 4.3,
+    priceRange: 3,
     position: [41.554715127612276, -8.422914089414277],
     images: [
       `${bucketBaseUrl}/tasquinhadomferreira_5326.jpg`,
@@ -1127,6 +1201,7 @@ const others: Restaurant[] = [
     website: "https://www.instagram.com/granturino.steakhouse",
     googleMaps: "https://maps.app.goo.gl/cXvv4razvXbNU7Qm7",
     rating: 4.6,
+    priceRange: 4,
     position: [40.645027564657404, -8.65666158348872],
     images: [
       `${bucketBaseUrl}/granturino_5539.jpg`,
@@ -1147,6 +1222,7 @@ const others: Restaurant[] = [
     website: "https://www.paulaner-wirtshaus-berlinpotsdamerplatz.de/en",
     googleMaps: "https://maps.app.goo.gl/MwFD2fjkxU6nkdFx5",
     rating: 4.2,
+    priceRange: 3,
     position: [52.50820131476543, 13.374580155334934],
     images: [
       `${bucketBaseUrl}/paulanerwirtshaus_5819.jpg`,
@@ -1164,6 +1240,7 @@ const others: Restaurant[] = [
     website: "https://markthalleneun.de/en/street-food-thursday",
     googleMaps: "https://maps.app.goo.gl/BW6mybGJxRV1YDpt6",
     rating: 4.0,
+    priceRange: 3,
     position: [52.502160522863456, 13.431999570679743],
     images: [
       `${bucketBaseUrl}/markthalleneun_5702.jpg`,
@@ -1183,6 +1260,7 @@ const others: Restaurant[] = [
     website: "https://www.slowtravelberlin.com/boxhagener-platz-food-market/",
     googleMaps: "https://maps.app.goo.gl/AeEqTzFwv7b9EuJu7",
     rating: 3.9,
+    priceRange: 3,
     position: [52.5138853345523, 13.459057696277338],
     images: [
       `${bucketBaseUrl}/boxhagenerplatz_5756.jpg`,
@@ -1201,6 +1279,7 @@ const others: Restaurant[] = [
     website: "https://burger-meister.de/",
     googleMaps: "https://maps.app.goo.gl/x7LDMBCfUZyy92Hc7",
     rating: 4.4,
+    priceRange: 2,
     position: [52.52050629390125, 13.41315282649925],
     images: [
       `${bucketBaseUrl}/burgermeister_5856.jpg`,
@@ -1218,6 +1297,7 @@ const others: Restaurant[] = [
     website: "http://casaguedes.pt/?l=en",
     googleMaps: "https://maps.app.goo.gl/kjXjNmpv5hYKKJcJA",
     rating: 4.3,
+    priceRange: 3,
     position: [41.14622602996456, -8.603400572136742],
     images: [
       `${bucketBaseUrl}/casaguedes_5531.jpg`,
@@ -1235,7 +1315,8 @@ const others: Restaurant[] = [
     },
     website: "https://www.thefork.pt/restaurante/hamburgueria-do-club-r750472?cc=18174-54f",
     googleMaps: "https://maps.app.goo.gl/XWcR4gk7jfTEGap16",
-    rating: 2.9,
+    rating: 3,
+    priceRange: 2,
     position: [41.55445141686233, -8.394769687466098],
     images: [
       `${bucketBaseUrl}/ahamburgueriadoclub_5360.jpg`,
@@ -1254,6 +1335,7 @@ const others: Restaurant[] = [
     website: "https://www.donapipa.pt/",
     googleMaps: "https://maps.app.goo.gl/rZZcLfWRTptuAopi7",
     rating: 4.5,
+    priceRange: 4,
     position: [41.52982006940938, -8.41269781815723],
     images: [
       `${bucketBaseUrl}/donapipa_5332.jpg`,
