@@ -808,7 +808,7 @@ const others: Restaurant[] = [
     website: "https://www.facebook.com/pages/Colom-Restaurant/2026230204369890",
     googleMaps: "https://maps.app.goo.gl/28zU6ofUMoK5Rfor6",
     rating: 4.0,
-    priceRange: 3,
+    priceRange: 4,
     position: [41.38004597852741, 2.1764999978584094],
     images: [
       `${bucketBaseUrl}/colom_2219.jpg`,

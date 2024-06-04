@@ -1,7 +1,7 @@
 import React from "react";
 
 import Link from "next/link";
-import {CheckIcon, EllipsisVerticalIcon, StarHalfIcon, StarIcon} from "lucide-react";
+import {BadgeDollarSign, CheckIcon, EllipsisVerticalIcon, StarHalfIcon, StarIcon} from "lucide-react";
 
 import {Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle,} from "@/components/ui/dialog"
 import {Gallery} from "@/components/gallery";
@@ -89,8 +89,18 @@ export function RestaurantDialog({
             {restaurant.types.join(", ")}
           </DialogDescription>
         </DialogHeader>
-        <span>{stars()}</span>
+
         <span>{restaurant.address.street}, {restaurant.address.city}, {restaurant.address.country}</span>
+
+        <span>{stars()}</span>
+        <span className="flex flex-row">
+          {Array.from({length: restaurant.priceRange}, (_, i) => (
+            <BadgeDollarSign key={i}/>
+          ))}
+          {Array.from({length: 5 - restaurant.priceRange}, (_, i) => (
+            <BadgeDollarSign key={i} className="opacity-30"/>
+          ))}
+        </span>
 
         <div className="mx-auto">
           <Gallery images={restaurant.images}/>
