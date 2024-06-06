@@ -450,24 +450,6 @@ const italian: Restaurant[] = [
     ]
   },
   {
-    key: "JoesPizza",
-    name: "Joe's Pizza",
-    types: ["Italian", "Pizza"],
-    address: {
-      street: "Av. de São Lourenço 86, 4705-444",
-      city: "Braga",
-      country: "Portugal"
-    },
-    website: "https://www.facebook.com/joespizzaCeleiros",
-    googleMaps: "https://maps.app.goo.gl/bEDpqbQrdBwmBu8X6",
-    rating: 4.1,
-    priceRange: 2,
-    position: [41.51360865652946, -8.450963909729941],
-    images: [
-      `${bucketBaseUrl}/joespizza_4865.jpg`,
-    ]
-  },
-  {
     key: "ForneriaDaVilla",
     name: "Forneria da Villa",
     types: ["Italian", "Pizza", "Pasta"],
@@ -642,6 +624,140 @@ const francesinha: Restaurant[] = [
     position: [41.55216936352001, -8.395142931647566],
     images: [
       `${bucketBaseUrl}/ohlala_3734.jpg`,
+    ]
+  }
+]
+
+const pizza: Restaurant[] = [
+  {
+    key: "JoesPizza",
+    name: "Joe's Pizza",
+    types: ["Italian", "Pizza"],
+    address: {
+      street: "Av. de São Lourenço 86, 4705-444",
+      city: "Braga",
+      country: "Portugal"
+    },
+    website: "https://www.facebook.com/joespizzaCeleiros",
+    googleMaps: "https://maps.app.goo.gl/bEDpqbQrdBwmBu8X6",
+    rating: 3.8,
+    priceRange: 2,
+    position: [41.51360865652946, -8.450963909729941],
+    images: [
+      `${bucketBaseUrl}/joespizza_4865.jpg`,
+    ]
+  },
+]
+
+const burgers: Restaurant[] = [
+  {
+    key: "PracaGastroPub",
+    name: "Praça GastroPub",
+    types: ["Burger", "Portuguese"],
+    address: {
+      street: "Praça Miguel Bombarda 5, 3130-257",
+      city: "Soure",
+      country: "Portugal"
+    },
+    website: "https://www.instagram.com/pracagastropub/",
+    googleMaps: "https://maps.app.goo.gl/UZD1u5TJqqgUYu7a7",
+    rating: 4.2,
+    priceRange: 3,
+    position: [40.05822724206574, -8.626161689770194],
+    images: [
+      `${bucketBaseUrl}/pracagastropub_4849.jpg`,
+      `${bucketBaseUrl}/pracagastropub_4850.jpg`,
+    ]
+  },
+  {
+    key: "MikrofarmaMasnyTrh",
+    name: "Mikrofarma Masný trh",
+    types: ["Burger"],
+    address: {
+      street: "Zelný trh 10, 602 00",
+      city: "Brno",
+      country: "Czechia"
+    },
+    website: "https://www.mikrofarma.cz/",
+    googleMaps: "https://maps.app.goo.gl/gnc3gePFgyMH17cd7",
+    rating: 4.5,
+    priceRange: 3,
+    position: [49.192238165742125, 16.607719042344687],
+    images: [
+      `${bucketBaseUrl}/mikrofarma_5035.jpg`,
+    ]
+  },
+  {
+    key: "BurgerandBeyond-BoroughYards",
+    name: "Burger and Beyond Borough Yards",
+    types: ["Burger"],
+    address: {
+      street: "Arch 231, Borough Yards, Bank End, SE1 9FJ",
+      city: "London",
+      country: "United Kingdom"
+    },
+    website: "https://www.burgerandbeyond.co.uk/",
+    googleMaps: "https://maps.app.goo.gl/EzjZjX7sBqkdLMyRA",
+    rating: 4.4,
+    priceRange: 3,
+    position: [51.50741943154522, -0.09288013656854298],
+    images: [
+      `${bucketBaseUrl}/burgerbeyond_4085.jpg`,
+    ]
+  },
+  {
+    key: "BurgerBistro",
+    name: "Burger Bistro",
+    types: ["Burger"],
+    address: {
+      street: "Paleisstraat 21, 1012 RB",
+      city: "Amsterdam",
+      country: "Netherlands"
+    },
+    website: "https://burgerbistro.nl",
+    googleMaps: "https://maps.app.goo.gl/edopGpPDfYCLhaeK9",
+    rating: 4.3,
+    priceRange: 3,
+    position: [52.37274507816547, 4.891019695656214],
+    images: [
+      `${bucketBaseUrl}/burgerbistroamsterdam_4536.jpg`,
+    ]
+  },
+  {
+    key: "Burgermeister",
+    name: "Burgermeister",
+    types: ["Burger"],
+    address: {
+      street: "Dircksenstraße 113, 10178",
+      city: "Berlin",
+      country: "Germany"
+    },
+    website: "https://burger-meister.de/",
+    googleMaps: "https://maps.app.goo.gl/x7LDMBCfUZyy92Hc7",
+    rating: 4.4,
+    priceRange: 2,
+    position: [52.52050629390125, 13.41315282649925],
+    images: [
+      `${bucketBaseUrl}/burgermeister_5856.jpg`,
+    ]
+  },
+  {
+    key: "AHamburgueriaDoClub",
+    name: "A Hamburgueria do Club",
+    types: ["Burger"],
+    address: {
+      street: "Av. Dom João II 23, 4715-303",
+      city: "Braga",
+      country: "Portugal"
+    },
+    website: "https://www.thefork.pt/restaurante/hamburgueria-do-club-r750472?cc=18174-54f",
+    googleMaps: "https://maps.app.goo.gl/XWcR4gk7jfTEGap16",
+    rating: 3,
+    priceRange: 2,
+    position: [41.55445141686233, -8.394769687466098],
+    images: [
+      `${bucketBaseUrl}/ahamburgueriadoclub_5360.jpg`,
+      `${bucketBaseUrl}/ahamburgueriadoclub_5358.jpg`,
     ]
   }
 ]
@@ -834,25 +950,6 @@ const others: Restaurant[] = [
     ]
   },
   {
-    key: "PracaGastroPub",
-    name: "Praça GastroPub",
-    types: ["Burger", "Portuguese"],
-    address: {
-      street: "Praça Miguel Bombarda 5, 3130-257",
-      city: "Soure",
-      country: "Portugal"
-    },
-    website: "https://www.instagram.com/pracagastropub/",
-    googleMaps: "https://maps.app.goo.gl/UZD1u5TJqqgUYu7a7",
-    rating: 4.2,
-    priceRange: 3,
-    position: [40.05822724206574, -8.626161689770194],
-    images: [
-      `${bucketBaseUrl}/pracagastropub_4849.jpg`,
-      `${bucketBaseUrl}/pracagastropub_4850.jpg`,
-    ]
-  },
-  {
     key: "UTomana",
     name: "U Tomana",
     types: ["Czech", "Regional", "Brewery"],
@@ -928,24 +1025,6 @@ const others: Restaurant[] = [
     ]
   },
   {
-    key: "MikrofarmaMasnyTrh",
-    name: "Mikrofarma Masný trh",
-    types: ["Burger"],
-    address: {
-      street: "Zelný trh 10, 602 00",
-      city: "Brno",
-      country: "Czechia"
-    },
-    website: "https://www.mikrofarma.cz/",
-    googleMaps: "https://maps.app.goo.gl/gnc3gePFgyMH17cd7",
-    rating: 4.5,
-    priceRange: 3,
-    position: [49.192238165742125, 16.607719042344687],
-    images: [
-      `${bucketBaseUrl}/mikrofarma_5035.jpg`,
-    ]
-  },
-  {
     key: "CafeSchwarzenberg",
     name: "Café Schwarzenberg",
     types: ["Cafe", "Austrian"],
@@ -979,24 +1058,6 @@ const others: Restaurant[] = [
     position: [51.50473345709885, -0.09135703148645392],
     images: [
       `${bucketBaseUrl}/thebreakfastclub_4066.jpg`,
-    ]
-  },
-  {
-    key: "BurgerandBeyond-BoroughYards",
-    name: "Burger and Beyond Borough Yards",
-    types: ["Burger"],
-    address: {
-      street: "Arch 231, Borough Yards, Bank End, SE1 9FJ",
-      city: "London",
-      country: "United Kingdom"
-    },
-    website: "https://www.burgerandbeyond.co.uk/",
-    googleMaps: "https://maps.app.goo.gl/EzjZjX7sBqkdLMyRA",
-    rating: 4.4,
-    priceRange: 3,
-    position: [51.50741943154522, -0.09288013656854298],
-    images: [
-      `${bucketBaseUrl}/burgerbeyond_4085.jpg`,
     ]
   },
   {
@@ -1034,24 +1095,6 @@ const others: Restaurant[] = [
     images: [
       `${bucketBaseUrl}/beneditobrunch_2726.jpg`,
       `${bucketBaseUrl}/beneditobrunch_2732.jpg`,
-    ]
-  },
-  {
-    key: "BurgerBistro",
-    name: "Burger Bistro",
-    types: ["Burger"],
-    address: {
-      street: "Paleisstraat 21, 1012 RB",
-      city: "Amsterdam",
-      country: "Netherlands"
-    },
-    website: "https://burgerbistro.nl",
-    googleMaps: "https://maps.app.goo.gl/edopGpPDfYCLhaeK9",
-    rating: 4.3,
-    priceRange: 3,
-    position: [52.37274507816547, 4.891019695656214],
-    images: [
-      `${bucketBaseUrl}/burgerbistroamsterdam_4536.jpg`,
     ]
   },
   {
@@ -1268,24 +1311,6 @@ const others: Restaurant[] = [
     ]
   },
   {
-    key: "Burgermeister",
-    name: "Burgermeister",
-    types: ["Burger"],
-    address: {
-      street: "Dircksenstraße 113, 10178",
-      city: "Berlin",
-      country: "Germany"
-    },
-    website: "https://burger-meister.de/",
-    googleMaps: "https://maps.app.goo.gl/x7LDMBCfUZyy92Hc7",
-    rating: 4.4,
-    priceRange: 2,
-    position: [52.52050629390125, 13.41315282649925],
-    images: [
-      `${bucketBaseUrl}/burgermeister_5856.jpg`,
-    ]
-  },
-  {
     key: "CasaGuedes",
     name: "Casa Guedes",
     types: ["Portuguese", "European", "Regional"],
@@ -1302,25 +1327,6 @@ const others: Restaurant[] = [
     images: [
       `${bucketBaseUrl}/casaguedes_5531.jpg`,
       `${bucketBaseUrl}/casaguedes_5532.jpg`,
-    ]
-  },
-  {
-    key: "AHamburgueriaDoClub",
-    name: "A Hamburgueria do Club",
-    types: ["Burger"],
-    address: {
-      street: "Av. Dom João II 23, 4715-303",
-      city: "Braga",
-      country: "Portugal"
-    },
-    website: "https://www.thefork.pt/restaurante/hamburgueria-do-club-r750472?cc=18174-54f",
-    googleMaps: "https://maps.app.goo.gl/XWcR4gk7jfTEGap16",
-    rating: 3,
-    priceRange: 2,
-    position: [41.55445141686233, -8.394769687466098],
-    images: [
-      `${bucketBaseUrl}/ahamburgueriadoclub_5360.jpg`,
-      `${bucketBaseUrl}/ahamburgueriadoclub_5358.jpg`,
     ]
   },
   {
@@ -1348,5 +1354,7 @@ export const restaurantData: Restaurant[] = [
   ...asian,
   ...italian,
   ...francesinha,
+  ...pizza,
+  ...burgers,
   ...others,
 ];
