@@ -114,13 +114,13 @@ const sushis: Restaurant[] = [
   {
     key: "Omakase",
     name: "Omakase Braga",
-    types: ["Japanese", "Sushi"],
+    types: ["Japanese", "Sushi", "Fine Dining"],
     address: {
       street: "R. do Raio 6, 4710-925",
       city: "Braga",
       country: "Portugal"
     },
-    website: "https://omakasebraga.business.site",
+    website: "https://www.omakase.pt/",
     googleMaps: "https://maps.app.goo.gl/h54TzPKPkqxFsMd58",
     rating: 4.9,
     priceRange: 5,
@@ -128,9 +128,92 @@ const sushis: Restaurant[] = [
     images: [
       `${bucketBaseUrl}/omakasebraga_5184.jpg`,
       `${bucketBaseUrl}/omakasebraga_5181.jpg`,
+      `${bucketBaseUrl}/omakasebraga_6690.jpg`,
+      `${bucketBaseUrl}/omakasebraga_6691.jpg`,
+      `${bucketBaseUrl}/omakasebraga_6689.jpg`,
+      `${bucketBaseUrl}/omakasebraga_6688.jpg`,
       `${bucketBaseUrl}/omakasebraga_5186.jpg`,
     ]
-  }
+  },
+  {
+    key: "HOKOSushiBar",
+    name: "HOKO Sushi Bar",
+    types: ["Japanese", "Sushi"],
+    address: {
+      street: "Av. Dom João II 378, 4715-275",
+      city: "Braga",
+      country: "Portugal"
+    },
+    website: "https://hokosushi.pt/",
+    googleMaps: "https://maps.app.goo.gl/9KRedpYz86cs933R7",
+    rating: 4.6,
+    priceRange: 4,
+    position: [41.54429813044529, -8.39984291935205],
+    images: [
+      `${bucketBaseUrl}/hoko_6832.JPEG`,
+      `${bucketBaseUrl}/hoko_6834.JPEG`,
+      `${bucketBaseUrl}/hoko_6829.JPEG`,
+      `${bucketBaseUrl}/hoko_6828.JPEG`,
+      `${bucketBaseUrl}/hoko_6837.JPEG`,
+      `${bucketBaseUrl}/hoko_6836.JPEG`,
+      `${bucketBaseUrl}/hoko_6824.JPEG`,
+      `${bucketBaseUrl}/hoko_6825.JPEG`,
+      `${bucketBaseUrl}/hoko_6826.JPEG`,
+      `${bucketBaseUrl}/hoko_6827.JPEG`,
+    ]
+  },
+  {
+    key: "Lamasan",
+    name: "Lamasan",
+    types: ["Japanese", "Sushi"],
+    address: {
+      street: "R. Nova de Santa Cruz 67, 4710-409",
+      city: "Braga",
+      country: "Portugal"
+    },
+    website: "https://facebook.com/lamasan.braga/",
+    googleMaps: "https://maps.app.goo.gl/ZqNWuwkDV9drqPqCA",
+    rating: 4.1,
+    priceRange: 2,
+    position: [41.55714907979517, -8.399752273325973],
+    images: [
+      `${bucketBaseUrl}/lamasan_7073.JPEG`,
+    ]
+  },
+  {
+    key: "OmakaseSenseiOgawa",
+    name: "Omakase Braga - Special Event by Sensei Hirotoshi Ogawa",
+    types: ["Japanese", "Sushi", "Special Event"],
+    address: {
+      street: "R. do Raio 6, 4710-925",
+      city: "Braga",
+      country: "Portugal"
+    },
+    website: "https://www.omakase.pt/",
+    googleMaps: "https://maps.app.goo.gl/h54TzPKPkqxFsMd58",
+    rating: 4.9,
+    priceRange: 5,
+    position: [41.5511421202459, -8.4181537201536],
+    images: [
+      `${bucketBaseUrl}/omakase_sensei_ogawa_6314.JPEG`,
+      `${bucketBaseUrl}/omakase_sensei_ogawa_6317.JPEG`,
+      `${bucketBaseUrl}/omakase_sensei_ogawa_6318.JPEG`,
+      `${bucketBaseUrl}/omakase_sensei_ogawa_6319.JPEG`,
+      `${bucketBaseUrl}/omakase_sensei_ogawa_6320.JPEG`,
+      `${bucketBaseUrl}/omakase_sensei_ogawa_6323.JPEG`,
+      `${bucketBaseUrl}/omakase_sensei_ogawa_6324.JPEG`,
+      `${bucketBaseUrl}/omakase_sensei_ogawa_6327.JPEG`,
+      `${bucketBaseUrl}/omakase_sensei_ogawa_6328.JPEG`,
+      `${bucketBaseUrl}/omakase_sensei_ogawa_6332.JPEG`,
+      `${bucketBaseUrl}/omakase_sensei_ogawa_6335.JPEG`,
+      `${bucketBaseUrl}/omakase_sensei_ogawa_6336.JPEG`,
+      `${bucketBaseUrl}/omakase_sensei_ogawa_6337.JPEG`,
+      `${bucketBaseUrl}/omakase_sensei_ogawa_6339.JPEG`,
+      `${bucketBaseUrl}/omakase_sensei_ogawa_6340.JPEG`,
+      `${bucketBaseUrl}/omakase_sensei_ogawa_6341.JPEG`,
+      `${bucketBaseUrl}/omakase_sensei_ogawa_6347.JPEG`,
+    ]
+  },
 ]
 
 const asian: Restaurant[] = [
@@ -331,6 +414,167 @@ const asian: Restaurant[] = [
       `${bucketBaseUrl}/akai_5565.jpg`,
       `${bucketBaseUrl}/akai_5573.jpg`,
     ]
+  },
+  {
+    key: "AjitamaRamenBistro",
+    name: "Ajitama Ramen Bistro",
+    types: ["Ramen", "Japanese"],
+    address: {
+      street: "Av. Duque de Loulé 36, 1050-091",
+      city: "Lisboa",
+      country: "Portugal"
+    },
+    website: "https://www.ajitama.pt/",
+    googleMaps: "https://maps.app.goo.gl/ut4kMgApkJtSptPQ9",
+    rating: 4.0,
+    priceRange: 3,
+    position: [38.728442158144254, -9.145206375244598],
+    images: [
+      `${bucketBaseUrl}/ajitama_7039.JPEG`,
+      `${bucketBaseUrl}/ajitama_7037.JPEG`,
+      `${bucketBaseUrl}/ajitama_7040.JPEG`,
+    ]
+  },
+  {
+    key: "BaoBurgerBraga",
+    name: "Bao's Taiwanese Burger Braga",
+    types: ["Taiwanese", "Bao"],
+    address: {
+      street: "R. Dom Diogo de Sousa 23, 4700-424",
+      city: "Braga",
+      country: "Portugal"
+    },
+    website: "https://www.baos.pt/",
+    googleMaps: "https://maps.app.goo.gl/CP7bFvgkFskBnqkB9",
+    rating: 3.9,
+    priceRange: 3,
+    position: [41.55050714206665, -8.42896021750354],
+    images: [
+      `${bucketBaseUrl}/baos_burger_braga_6988.JPEG`,
+      `${bucketBaseUrl}/baos_burger_braga_6990.JPEG`,
+      `${bucketBaseUrl}/baos_burger_braga_6986.JPEG`,
+    ]
+  },
+  {
+    key: "HanTablePorto",
+    name: "Han Table Barbecue Porto",
+    types: ["Korean", "Barbecue"],
+    address: {
+      street: "Rua do Almada 267, 4000-407",
+      city: "Porto",
+      country: "Portugal"
+    },
+    website: "https://www.instagram.com/hantablebarbecue",
+    googleMaps: "https://maps.app.goo.gl/dJKcBUP5HbZPHCLo7",
+    rating: 3.8,
+    priceRange: 4,
+    position: [41.14916002642875, -8.61219473100736],
+    images: [
+      `${bucketBaseUrl}/han_table_9991.JPEG`,
+    ]
+  },
+  {
+    key: "RamenBambu",
+    name: "Ramen Bambu Porto",
+    types: ["Ramen", "Japanese"],
+    address: {
+      street: "Av. de Rodrigues de Freitas 294, 4000-418",
+      city: "Porto",
+      country: "Portugal"
+    },
+    website: "https://www.ramenbambu.com/",
+    googleMaps: "https://maps.app.goo.gl/aGVU8zrJmHgt6kdf8",
+    rating: 4.0,
+    priceRange: 3,
+    position: [41.14570823912437, -8.603892702172011],
+    images: [
+      `${bucketBaseUrl}/ramen_bambu_5588.JPEG`,
+    ]
+  },
+  {
+    key: "RamenBreak",
+    name: "Ramen Break",
+    types: ["Ramen", "Japanese"],
+    address: {
+      street: "Praça Conde de Agrolongo 180, 4700-312",
+      city: "Braga",
+      country: "Portugal"
+    },
+    website: "https://www.instagram.com/ramenbreak",
+    googleMaps: "https://maps.app.goo.gl/P5ByQQRhWTzUYaS36",
+    rating: 3.8,
+    priceRange: 3,
+    position: [41.552848119845926, -8.426056729148689],
+    images: [
+      `${bucketBaseUrl}/ramen_break_6137.JPEG`,
+      `${bucketBaseUrl}/ramen_break_6139.JPEG`,
+    ]
+  },
+  {
+    key: "SweetKorea",
+    name: "Sweet Korea Porto",
+    types: ["Korean", "Barbecue"],
+    address: {
+      street: "R. de Clemente Meneres 51, 4050-381",
+      city: "Porto",
+      country: "Portugal"
+    },
+    website: "https://instagram.com/sweetkorea_porto",
+    googleMaps: "https://maps.app.goo.gl/E5xWUg1z845LbkMt9",
+    rating: 3.7,
+    priceRange: 3,
+    position: [41.149336664320174, -8.61987141602301],
+    images: [
+      `${bucketBaseUrl}/sweet_korea_6851.JPEG`,
+      `${bucketBaseUrl}/sweet_korea_6852.JPEG`,
+      `${bucketBaseUrl}/sweet_korea_6853.JPEG`,
+      `${bucketBaseUrl}/sweet_korea_6854.JPEG`,
+    ]
+  },
+  {
+    key: "XiaoxiongKitchenSaldanha",
+    name: "Xiaoxiong Kitchen (Saldanha)",
+    types: ["Chinese", "Asian"],
+    address: {
+      street: "Av. Elias Garcia 84A, 1050-100",
+      city: "Lisboa",
+      country: "Portugal"
+    },
+    website: "https://xiaoxiongkitchen.pt/",
+    googleMaps: "https://maps.app.goo.gl/2shcUMETW7emBBek7",
+    rating: 4.0,
+    priceRange: 3,
+    position: [38.73936004194839, -9.147711358054043],
+    images: [
+      `${bucketBaseUrl}/xiaoxiong_kitchen_6276.JPEG`,
+      `${bucketBaseUrl}/xiaoxiong_kitchen_6277.JPEG`,
+      `${bucketBaseUrl}/xiaoxiong_kitchen_6278.JPEG`,
+      `${bucketBaseUrl}/xiaoxiong_kitchen_6280.JPEG`,
+      `${bucketBaseUrl}/xiaoxiong_kitchen_6281.JPEG`,
+      `${bucketBaseUrl}/xiaoxiong_kitchen_6282.JPEG`,
+      `${bucketBaseUrl}/xiaoxiong_kitchen_6307.JPEG`,
+    ]
+  },
+  {
+    key: "YOAMPorto",
+    name: "YOAM - Vietnamese Bread & Boba",
+    types: ["Chinese", "Asian"],
+    address: {
+      street: "Rua do Almada 348, 4050-033",
+      city: "Porto",
+      country: "Portugal"
+    },
+    website: "https://www.yoam.pt/",
+    googleMaps: "https://maps.app.goo.gl/PrfBKyhfNjJP4i3Z8",
+    rating: 3.5,
+    priceRange: 3,
+    position: [41.1497827885786, -8.611888444500897],
+    images: [
+      `${bucketBaseUrl}/yoam_porto_6216.JPEG`,
+      `${bucketBaseUrl}/yoam_porto_6217.JPEG`,
+      `${bucketBaseUrl}/yoam_porto_6219.JPEG`,
+      `${bucketBaseUrl}/yoam_porto_6221.JPEG`,
+    ]
   }
 ]
 
@@ -425,6 +669,8 @@ const italian: Restaurant[] = [
     priceRange: 3,
     position: [40.150982083540306, -8.865948274421342],
     images: [
+      `${bucketBaseUrl}/gustopizza_7018.JPEG`,
+      `${bucketBaseUrl}/gustopizza_7017.JPEG`,
       `${bucketBaseUrl}/gustopizza_4854.jpg`,
     ]
   },
@@ -464,6 +710,10 @@ const italian: Restaurant[] = [
     priceRange: 4,
     position: [41.47560960439733, -8.332615779214917],
     images: [
+      `${bucketBaseUrl}/forneriadavilla_6349.jpg`,
+      `${bucketBaseUrl}/forneriadavilla_6420.jpg`,
+      `${bucketBaseUrl}/forneriadavilla_6348.jpg`,
+      `${bucketBaseUrl}/forneriadavilla_7013.jpg`,
       `${bucketBaseUrl}/forneriadavilla_2715.jpg`,
       `${bucketBaseUrl}/forneriadavilla_2717.jpg`,
       `${bucketBaseUrl}/forneriadavilla_2718.jpg`,
@@ -586,6 +836,228 @@ const italian: Restaurant[] = [
       `${bucketBaseUrl}/caffeitaly_3718.jpg`,
       `${bucketBaseUrl}/caffeitaly_3721.jpg`,
     ]
+  },
+  {
+    key: "LibertaPastaBar",
+    name: "Libertà Pasta Bar - Time Out Market",
+    types: ["Italian", "Pizza", "Pasta"],
+    address: {
+      street: "Av. 24 de Julho 49, 1200-479",
+      city: "Lisboa",
+      country: "Portugal"
+    },
+    website: "https://www.timeoutmarket.com/lisboa/comer-e-beber/liberta-pasta-bar/",
+    googleMaps: "https://maps.app.goo.gl/G1ntQEikSFp3jhFg6",
+    rating: 4.1,
+    priceRange: 3,
+    position: [38.7076815007865, -9.146497723708537],
+    images: [
+      `${bucketBaseUrl}/liberta_timeout_6288.JPEG`,
+      `${bucketBaseUrl}/liberta_timeout_6287.JPEG`,
+      `${bucketBaseUrl}/liberta_timeout_6289.JPEG`,
+    ]
+  },
+  {
+    key: "MarysSfogliatella",
+    name: "Mary's Sfogliatella",
+    types: ["Italian", "Dessert", "Sfogliatella"],
+    address: {
+      street: "Galleria Umberto I, 66, 80132",
+      city: "Napoli",
+      country: "Italy"
+    },
+    website: "https://www.facebook.com/lasfogliatellamaryofficial/",
+    googleMaps: "https://maps.app.goo.gl/pmoTzvL6k4VSjG5s9",
+    rating: 3.5,
+    priceRange: 2,
+    position: [40.8392501220132, 14.249003228657308],
+    images: [
+      `${bucketBaseUrl}/marys_sfogliatella_6482.JPEG`,
+    ]
+  },
+  {
+    key: "Paravisello",
+    name: "Paravisello",
+    types: ["Italian", "Pasta"],
+    address: {
+      street: "Vico Figurella a Montecalvario, 6, 80134",
+      city: "Napoli",
+      country: "Italy"
+    },
+    website: "https://www.villagardenhotel.com/paravisiello/menubar.html",
+    googleMaps: "https://maps.app.goo.gl/nv5uK6zspFsW6mZC8",
+    rating: 3.9,
+    priceRange: 3,
+    position: [40.842090168962386, 14.247810838393834],
+    images: [
+      `${bucketBaseUrl}/paravisello_6518.JPEG`,
+      `${bucketBaseUrl}/paravisello_6519.JPEG`,
+      `${bucketBaseUrl}/paravisello_6516.JPEG`,
+      `${bucketBaseUrl}/paravisello_6521.JPEG`,
+      `${bucketBaseUrl}/paravisello_6522.JPEG`,
+    ]
+  },
+  {
+    key: "PizzaFrittadaGennaro",
+    name: "La Vera Pizza Fritta da Gennaro",
+    types: ["Italian", "Pizza"],
+    address: {
+      street: "Via del Formale, 56, 80134",
+      city: "Napoli",
+      country: "Italy"
+    },
+    website: "https://www.tripadvisor.com/Restaurant_Review-g187785-d8589723-Reviews-Pizze_Fritte_da_Gennaro-Naples_Province_of_Naples_Campania.html?m=19905",
+    googleMaps: "https://maps.app.goo.gl/UyZJjitq2Fi3NARN7",
+    rating: 3.8,
+    priceRange: 2,
+    position: [40.84424889675964, 14.248172468984846],
+    images: [
+      `${bucketBaseUrl}/pizza_fritta_da_gennaro_6514.JPEG`,
+    ]
+  },
+  {
+    key: "PizzeriaDaAttilio",
+    name: "Pizzeria Da Attilio",
+    types: ["Italian", "Pizza"],
+    address: {
+      street: "Via Pignasecca, 17, 80134",
+      city: "Napoli",
+      country: "Italy"
+    },
+    website: "https://www.pizzeriadaattilio.com/",
+    googleMaps: "https://maps.app.goo.gl/a56iHJuTCqnjgMqo8",
+    rating: 4.3,
+    priceRange: 2,
+    position: [40.84532254569159, 14.248216968984817],
+    images: [
+      `${bucketBaseUrl}/pizzeria_da_attilio_6462.JPEG`,
+      `${bucketBaseUrl}/pizzeria_da_attilio_6463.JPEG`,
+    ]
+  },
+  {
+    key: "PizzeriadaMichele",
+    name: "L'Antica Pizzeria da Michele",
+    types: ["Italian", "Pizza"],
+    address: {
+      street: "Via Cesare Sersale, 1, 80139",
+      city: "Napoli",
+      country: "Italy"
+    },
+    website: "https://www.damichele.net/le-nostre-pizze",
+    googleMaps: "https://maps.app.goo.gl/krnp6NEfeckhhuUB9",
+    rating: 4.1,
+    priceRange: 1,
+    position: [40.85031725416416, 14.26343617199684],
+    images: [
+      `${bucketBaseUrl}/pizzeria_da_michele_6508.JPEG`,
+      `${bucketBaseUrl}/pizzeria_da_michele_6509.JPEG`,
+    ]
+  },
+  {
+    key: "Scaturchio",
+    name: "Scaturchio",
+    types: ["Italian", "Dessert", "Pastries"],
+    address: {
+      street: "P.za S. Domenico Maggiore, 19, 80134",
+      city: "Napoli",
+      country: "Italy"
+    },
+    website: "https://www.damichele.net/le-nostre-pizze",
+    googleMaps: "https://maps.app.goo.gl/krnp6NEfeckhhuUB9",
+    rating: 3.9,
+    priceRange: 3,
+    position: [40.84849316539146, 14.254902626364267],
+    images: [
+      `${bucketBaseUrl}/scaturchio_6471.JPEG`,
+    ]
+  },
+  {
+    key: "Trattoria179",
+    name: "Trattoria 179",
+    types: ["Italian", "Pizza", "Pasta", "Risotto"],
+    address: {
+      street: "R. de Rodrigues Sampaio 179, 4000-425 Porto",
+      city: "Porto",
+      country: "Portugal"
+    },
+    website: "https://trattoria179.pt/",
+    googleMaps: "https://maps.app.goo.gl/4qJSUcanKdA3hsD3A",
+    rating: 4.2,
+    priceRange: 4,
+    position: [41.14896570578065, -8.610069288678345],
+    images: [
+      `${bucketBaseUrl}/trattoria179_6224.JPEG`,
+      `${bucketBaseUrl}/trattoria179_6225.JPEG`,
+      `${bucketBaseUrl}/trattoria179_6223.JPEG`,
+      `${bucketBaseUrl}/trattoria179_6227.JPEG`,
+    ]
+  },
+  {
+    key: "VillaggioColdirettiNapoli",
+    name: "Villaggio Coldiretti - Napoli 2023",
+    types: ["Italian", "Market", "Local"],
+    address: {
+      street: "Piazza Municipio, 80133",
+      city: "Napoli",
+      country: "Italy"
+    },
+    website: "https://villaggio.coldiretti.it/",
+    googleMaps: "https://maps.app.goo.gl/oizGsYKB57AumhKJ8",
+    rating: 4.4,
+    priceRange: 2,
+    position: [40.83927392252491, 14.25464741721415],
+    images: [
+      `${bucketBaseUrl}/villaggio_coldiretti_6450.JPEG`,
+      `${bucketBaseUrl}/villaggio_coldiretti_6451.JPEG`,
+      `${bucketBaseUrl}/villaggio_coldiretti_6454.JPEG`,
+      `${bucketBaseUrl}/villaggio_coldiretti_6455.JPEG`,
+      `${bucketBaseUrl}/villaggio_coldiretti_6458.JPEG`,
+      `${bucketBaseUrl}/villaggio_coldiretti_6459.JPEG`,
+      `${bucketBaseUrl}/villaggio_coldiretti_6461.JPEG`,
+      `${bucketBaseUrl}/villaggio_coldiretti_6484.JPEG`,
+      `${bucketBaseUrl}/villaggio_coldiretti_6485.JPEG`,
+    ]
+  },
+  {
+    key: "TrattoriaSanGennaro",
+    name: "Trattoria San Gennaro",
+    types: ["Italian", "Pasta"],
+    address: {
+      street: "Via Gennaro Capriglione, 75, 84010",
+      city: "Praiano",
+      country: "Italy"
+    },
+    website: "https://www.instagram.com/trattoriasangennaro_s",
+    googleMaps: "https://maps.app.goo.gl/K63ztQYDAw7tt5PA6",
+    rating: 4.1,
+    priceRange: 3,
+    position: [40.614705847947704, 14.522091675055668],
+    images: [
+      `${bucketBaseUrl}/trattoriasangennaro_6565.jpg`,
+      `${bucketBaseUrl}/trattoriasangennaro_6566.jpg`,
+      `${bucketBaseUrl}/trattoriasangennaro_6568.jpg`,
+      `${bucketBaseUrl}/trattoriasangennaro_6567.jpg`,
+    ]
+  },
+  {
+    key: "StrittStritt",
+    name: "Stritt Stritt",
+    types: ["Italian", "Pasta"],
+    address: {
+      street: "Calata S. Marco, 44/45, 80133",
+      city: "Napoli",
+      country: "Italy"
+    },
+    website: "https://www.instagram.com/strittstritt/",
+    googleMaps: "https://maps.app.goo.gl/AHJAtpUb81BUFHp77",
+    rating: 4.1,
+    priceRange: 3,
+    position: [40.84033013673468, 14.252676505966933],
+    images: [
+      `${bucketBaseUrl}/strittstritt_6641.jpg`,
+      `${bucketBaseUrl}/strittstritt_6642.jpg`,
+      `${bucketBaseUrl}/strittstritt_6643.jpg`,
+    ]
   }
 ]
 
@@ -625,6 +1097,24 @@ const francesinha: Restaurant[] = [
     images: [
       `${bucketBaseUrl}/ohlala_3734.jpg`,
     ]
+  },
+  {
+    key: "LondrinaGuimaraes",
+    name: "Taberna Londrina - Guimarães",
+    types: ["Francesinha", "Portuguese"],
+    address: {
+      street: "Praça londrina nº2/3, 4835-067",
+      city: "Guimarães",
+      country: "Portugal"
+    },
+    website: "https://www.tabernalondrina.com/locais/guimaraes",
+    googleMaps: "https://maps.app.goo.gl/gBzjTwM6uvGyzKaU7",
+    rating: 4.0,
+    priceRange: 3,
+    position: [41.44360836281433, -8.303054253899809],
+    images: [
+      `${bucketBaseUrl}/londrina_guimaraes_7141.jpg`,
+    ]
   }
 ]
 
@@ -632,7 +1122,7 @@ const pizza: Restaurant[] = [
   {
     key: "JoesPizza",
     name: "Joe's Pizza",
-    types: ["Italian", "Pizza"],
+    types: ["Pizza"],
     address: {
       street: "Av. de São Lourenço 86, 4705-444",
       city: "Braga",
@@ -647,6 +1137,43 @@ const pizza: Restaurant[] = [
       `${bucketBaseUrl}/joespizza_4865.jpg`,
     ]
   },
+  {
+    key: "Padeirinhos",
+    name: "Padeirinhos",
+    types: ["Pizza"],
+    address: {
+      street: "R. Combatentes do Ultramar N5, 4705-794",
+      city: "Braga",
+      country: "Portugal"
+    },
+    website: "https://www.facebook.com/trespadeirinhoslomar",
+    googleMaps: "https://maps.app.goo.gl/4t4WzWF8Qmocwh5F8",
+    rating: 4.1,
+    priceRange: 2,
+    position: [41.51451821213243, -8.434762617504493],
+    images: [
+      `${bucketBaseUrl}/padeirinhos_7109.JPEG`,
+    ]
+  },
+  {
+    key: "MrPizzaBraga",
+    name: "Mr. Pizza Braga",
+    types: ["Pizza"],
+    address: {
+      street: "R. de São Marcos N.122, 4700-328",
+      city: "Braga",
+      country: "Portugal"
+    },
+    website: "https://www.mrpizza.pt/",
+    googleMaps: "https://maps.app.goo.gl/zLpx32kWvZ6J8h7D8",
+    rating: 3.8,
+    priceRange: 2,
+    position: [41.54995656819125, -8.4240194867216],
+    images: [
+      `${bucketBaseUrl}/mrpizza_braga_6875.JPEG`,
+      `${bucketBaseUrl}/mrpizza_braga_6874.JPEG`,
+    ]
+  }
 ]
 
 const burgers: Restaurant[] = [
@@ -758,6 +1285,111 @@ const burgers: Restaurant[] = [
     images: [
       `${bucketBaseUrl}/ahamburgueriadoclub_5360.jpg`,
       `${bucketBaseUrl}/ahamburgueriadoclub_5358.jpg`,
+    ]
+  },
+  {
+    key: "HamburgueriaPracaLousada",
+    name: "Hambúrgueria da Praça Lousada",
+    types: ["Burger"],
+    address: {
+      street: "Praça Republica 159, 4620-653",
+      city: "Lousada",
+      country: "Portugal"
+    },
+    website: "https://www.hamburgueriadapraca.pt/",
+    googleMaps: "https://maps.app.goo.gl/gYUfeXoHGrikz1s56",
+    rating: 3.9,
+    priceRange: 2,
+    position: [41.27768817123363, -8.284434146345976],
+    images: [
+      `${bucketBaseUrl}/hamburgueria_da_praca_lousada_7121.jpg`,
+      `${bucketBaseUrl}/hamburgueria_da_praca_lousada_7122.jpg`,
+    ]
+  },
+  {
+    key: "MimosSmokeHouseBraga",
+    name: "Mimo's Smoke House - Braga",
+    types: ["Burger", "Smokehouse", "Meat"],
+    address: {
+      street: "Largo Sra. A. Branca 47, 4710-443",
+      city: "Braga",
+      country: "Portugal"
+    },
+    website: "https://www.mimossmokehouse.pt/menu",
+    googleMaps: "https://maps.app.goo.gl/1QS7VC1VXAkdEgh77",
+    rating: 3.9,
+    priceRange: 3,
+    position: [41.552236789663226, -8.417095817503464],
+    images: [
+      `${bucketBaseUrl}/mimos_some_house_braga_6408.JPEG`,
+      `${bucketBaseUrl}/mimos_some_house_braga_6405.JPEG`,
+      `${bucketBaseUrl}/mimos_some_house_braga_6402.JPEG`,
+      `${bucketBaseUrl}/mimos_some_house_braga_6406.JPEG`,
+      `${bucketBaseUrl}/mimos_some_house_braga_6409.JPEG`,
+      `${bucketBaseUrl}/mimos_some_house_braga_6411.JPEG`,
+    ]
+  },
+  {
+    key: "SoulStreetBurger",
+    name: "Soul Street Burger",
+    types: ["Burger"],
+    address: {
+      street: "Alameda de São Dâmaso, 4810-431",
+      city: "Guimarães",
+      country: "Portugal"
+    },
+    website: "https://oddmenu.com/pt/p/soul-street-burguer",
+    googleMaps: "https://maps.app.goo.gl/JPyQRuieVbKcxdAk9",
+    rating: 4.4,
+    priceRange: 3,
+    position: [41.44204605158258, -8.292658675177323],
+    images: [
+      `${bucketBaseUrl}/soul_burger_6868.JPEG`,
+      `${bucketBaseUrl}/soul_burger_6869.JPEG`,
+      `${bucketBaseUrl}/soul_burger_6870.JPEG`,
+      `${bucketBaseUrl}/soul_burger_6863.JPEG`,
+    ]
+  }
+]
+
+const brunch: Restaurant[] = [
+  {
+    key: "DoBeco",
+    name: "Do Beco - Padaria Artesanal & Brunch",
+    types: ["Brunch", "Bakery"],
+    address: {
+      street: "R. Passos Manuel 106A, 1150-053",
+      city: "Lisboa",
+      country: "Portugal"
+    },
+    website: "https://www.paodobeco.com/",
+    googleMaps: "https://maps.app.goo.gl/tjeb7xLirtxJwx6W6",
+    rating: 4.2,
+    priceRange: 3,
+    position: [38.73024100665, -9.136761602231667],
+    images: [
+      `${bucketBaseUrl}/dobeco_lisboa_7035.JPEG`,
+      `${bucketBaseUrl}/dobeco_lisboa_7036.JPEG`,
+    ]
+  },
+  {
+    key: "GardenBragaCafe",
+    name: "Garden Braga Café",
+    types: ["Brunch", "Coffee"],
+    address: {
+      street: "Praça Conde de Agrolongo 182, 4704-524",
+      city: "Braga",
+      country: "Portugal"
+    },
+    website: "https://www.gardencafe.pt/garden-braga-cafe-brunch-restaurant",
+    googleMaps: "https://maps.app.goo.gl/44dapyeSKeqh5V1G8",
+    rating: 43.8,
+    priceRange: 3,
+    position: [41.55289726198165, -8.425999888667992],
+    images: [
+      `${bucketBaseUrl}/garden_braga_cafe_6758.JPEG`,
+      `${bucketBaseUrl}/garden_braga_cafe_6760.JPEG`,
+      `${bucketBaseUrl}/garden_braga_cafe_6757.JPEG`,
     ]
   }
 ]
@@ -1131,6 +1763,9 @@ const others: Restaurant[] = [
     priceRange: 3,
     position: [41.548747217701404, -8.425288933646767],
     images: [
+      `${bucketBaseUrl}/nordico_9990.JPEG`,
+      `${bucketBaseUrl}/nordico_6426.JPEG`,
+      `${bucketBaseUrl}/nordico_6427.JPEG`,
       `${bucketBaseUrl}/nordico_2654.jpg`,
       `${bucketBaseUrl}/nordico_4596.jpg`,
       `${bucketBaseUrl}/nordico_2656.jpg`,
@@ -1346,6 +1981,304 @@ const others: Restaurant[] = [
     images: [
       `${bucketBaseUrl}/donapipa_5332.jpg`,
     ]
+  },
+  {
+    key: "Alameda",
+    name: "Alameda",
+    types: ["Portuguese", "Traditional"],
+    address: {
+      street: "Largo de São João 44, 4990-083",
+      city: "Ponte de Lima",
+      country: "Portugal"
+    },
+    website: "https://www.facebook.com/p/Restaurante-Alameda-100054906543999/",
+    googleMaps: "https://maps.app.goo.gl/mtmvQQVWFcMseG1D6",
+    rating: 4.3,
+    priceRange: 3,
+    position: [41.769470403682675, -8.584355044485012],
+    images: [
+      `${bucketBaseUrl}/alameda_6772.JPEG`,
+    ]
+  },
+  {
+    key: "CasaSalgado",
+    name: "Casa Salgado - Pizzaria e Snack-Bar",
+    types: ["Coffee", "Pizza", "Snacks"],
+    address: {
+      street: "R. das Granjas 20 4705, 4705-475",
+      city: "Braga",
+      country: "Portugal"
+    },
+    website: "http://www.casasalgado.pt/",
+    googleMaps: "https://maps.app.goo.gl/kYyvpC46zCvpW4v17",
+    rating: 4.1,
+    priceRange: 2,
+    position: [41.51179955260278, -8.420726173327147],
+    images: [
+      `${bucketBaseUrl}/casa_salgado_5526.JPEG`,
+    ]
+  },
+  {
+    key: "Conga",
+    name: "Conga",
+    types: ["Portuguese", "Traditional", "Bifanas"],
+    address: {
+      street: "R. do Bonjardim 318, 4000-115",
+      city: "Porto",
+      country: "Portugal"
+    },
+    website: "https://www.facebook.com/CONGACASADASBIFANAS",
+    googleMaps: "https://maps.app.goo.gl/rxrBNhXnfM3RWHYE7",
+    rating: 4.3,
+    priceRange: 2,
+    position: [41.14943507096307, -8.609491123970741],
+    images: [
+      `${bucketBaseUrl}/conga_6850.JPEG`,
+      `${bucketBaseUrl}/conga_6849.JPEG`,
+    ]
+  },
+  {
+    key: "FlowerEat",
+    name: "Flower Eat",
+    types: ["Portuguese"],
+    address: {
+      street: "EM583 2192, 4800-611",
+      city: "Prazins",
+      country: "Portugal"
+    },
+    website: "https://flowereatrestaurante.com",
+    googleMaps: "https://maps.app.goo.gl/QUX5jGvB97ZAExWG7",
+    rating: 3.5,
+    priceRange: 4,
+    position: [41.48805488344042, -8.316377961682546],
+    images: [
+      `${bucketBaseUrl}/flower_eat_5458.JPEG`,
+      `${bucketBaseUrl}/flower_eat_5457.JPEG`,
+      `${bucketBaseUrl}/flower_eat_5454.JPEG`,
+      `${bucketBaseUrl}/flower_eat_5459.JPEG`,
+      `${bucketBaseUrl}/flower_eat_5461.JPEG`,
+      `${bucketBaseUrl}/flower_eat_5463.JPEG`,
+    ]
+  },
+  {
+    key: "LEclair",
+    name: "L'Éclair - Time Out Market",
+    types: ["French", "Dessert"],
+    address: {
+      street: "R. Ribeira Nova 50, 1200-425",
+      city: "Lisboa",
+      country: "Portugal"
+    },
+    website: "https://www.l-eclair.pt",
+    googleMaps: "https://maps.app.goo.gl/AsE8uN6U5KirS3j46",
+    rating: 4.5,
+    priceRange: 3,
+    position: [38.70721416183686, -9.14591934271287],
+    images: [
+      `${bucketBaseUrl}/leclair_timeout_6292.JPEG`,
+      `${bucketBaseUrl}/leclair_timeout_7025.JPEG`,
+      `${bucketBaseUrl}/leclair_timeout_6290.JPEG`,
+    ]
+  },
+  {
+    key: "Marlene",
+    name: "Marlene,",
+    types: ["Portuguese", "European", "Fine Dining"],
+    address: {
+      street: "R. Ribeira Nova 50, 1200-425",
+      city: "Lisboa",
+      country: "Portugal"
+    },
+    website: "https://marlene.pt/",
+    googleMaps: "https://maps.app.goo.gl/s65njtGBENDUvtA9A",
+    rating: 4.7,
+    priceRange: 5,
+    position: [38.71174552191858, -9.124089058054698],
+    images: [
+      `${bucketBaseUrl}/marlene,_6250.JPEG`,
+      `${bucketBaseUrl}/marlene,_6251.JPEG`,
+      `${bucketBaseUrl}/marlene,_6253.JPEG`,
+      `${bucketBaseUrl}/marlene,_6254.JPEG`,
+      `${bucketBaseUrl}/marlene,_6255.JPEG`,
+      `${bucketBaseUrl}/marlene,_6256.JPEG`,
+      `${bucketBaseUrl}/marlene,_6257.JPEG`,
+      `${bucketBaseUrl}/marlene,_6258.JPEG`,
+      `${bucketBaseUrl}/marlene,_6259.JPEG`,
+      `${bucketBaseUrl}/marlene,_6260.JPEG`,
+      `${bucketBaseUrl}/marlene,_6261.JPEG`,
+      `${bucketBaseUrl}/marlene,_6263.JPEG`,
+    ]
+  },
+  {
+    key: "Mercado2deMaioViseu",
+    name: "Mercado 2 de Maio",
+    types: ["Portuguese", "Traditional", "Market"],
+    address: {
+      street: "R. Formosa, 3500-153",
+      city: "Viseu",
+      country: "Portugal"
+    },
+    website: "https://maps.app.goo.gl/iYjkefrRdjfh6MGv5",
+    googleMaps: "https://maps.app.goo.gl/iYjkefrRdjfh6MGv5",
+    rating: 3.7,
+    priceRange: 2,
+    position: [40.65778062616963, -7.91287640403267],
+    images: [
+      `${bucketBaseUrl}/mercado_2_de_maio_6956.JPEG`,
+      `${bucketBaseUrl}/mercado_2_de_maio_6957.JPEG`,
+      `${bucketBaseUrl}/mercado_2_de_maio_6958.JPEG`,
+      `${bucketBaseUrl}/mercado_2_de_maio_6955.JPEG`,
+    ]
+  },
+  {
+    key: "Nosemaisbolos",
+    name: "Nós é mais bolos - Time Out Market",
+    types: ["Dessert", "Bakery"],
+    address: {
+      street: "Av. 24 de Julho 50, 1200-109",
+      city: "Lisboa",
+      country: "Portugal"
+    },
+    website: "https://www.nosemaisbolos.pt/",
+    googleMaps: "https://maps.app.goo.gl/otbYw5QTb713ab5C7",
+    rating: 4.1,
+    priceRange: 3,
+    position: [38.70698820704707, -9.145580615628065],
+    images: [
+      `${bucketBaseUrl}/nosemaisbolos_timeout_7023.JPEG`,
+    ]
+  },
+  {
+    key: "OstrasSobreRodas",
+    name: "Restaurante Ostras Sobre Rodas (Belém)",
+    types: ["Seafood", "Portuguese"],
+    address: {
+      street: "Av. Brasília, 1400-038",
+      city: "Lisboa",
+      country: "Portugal"
+    },
+    website: "https://www.ostrassobrerodas.pt/",
+    googleMaps: "https://maps.app.goo.gl/AdV17MrRgF6teGTg9",
+    rating: 4.5,
+    priceRange: 3,
+    position: [38.69381887019828, -9.206284144464227],
+    images: [
+      `${bucketBaseUrl}/ostras_sobre_rodas_6294.JPEG`,
+    ]
+  },
+  {
+    key: "PanteraCorDeRosa",
+    name: "Pantera Cor de Rosa",
+    types: ["Desert", "Bakery"],
+    address: {
+      street: "R. Dr. Gonçalo Sampaio 25 Loja 19, 4700-321",
+      city: "Braga",
+      country: "Portugal"
+    },
+    website: "https://www.facebook.com/croissanteriapanteracorderosa",
+    googleMaps: "https://maps.app.goo.gl/vF5XmVCrWMC5UWM56",
+    rating: 4.1,
+    priceRange: 3,
+    position: [41.54935636945846, -8.422775644393306],
+    images: [
+      `${bucketBaseUrl}/pantera_corderosa_7080.JPEG`,
+    ]
+  },
+  {
+    key: "Pastanaga",
+    name: "Restaurante Pastanaga",
+    types: ["Portuguese", "Traditional"],
+    address: {
+      street: "Tv. dos Pescadores 27, 1200-328",
+      city: "Lisboa",
+      country: "Portugal"
+    },
+    website: "https://www.facebook.com/pastanagalisboa",
+    googleMaps: "https://maps.app.goo.gl/DW7Xo1zPavcAJQPQ9",
+    rating: 4.2,
+    priceRange: 4,
+    position: [39.12782651881385, -9.108770549311108],
+    images: [
+      `${bucketBaseUrl}/pastanaga_7031.JPEG`,
+      `${bucketBaseUrl}/pastanaga_7032.JPEG`,
+    ]
+  },
+  {
+    key: "PedroDosLeitoes",
+    name: "Pedro dos Leitões",
+    types: ["Portuguese", "Traditional", "Leitão"],
+    address: {
+      street: "R. Álvaro Pedro 1, 3050-382",
+      city: "Mealhada",
+      country: "Portugal"
+    },
+    website: "https://www.pedrodosleitoes.com/",
+    googleMaps: "https://maps.app.goo.gl/FNknbok2go5C11qw9",
+    rating: 4.4,
+    priceRange: 3,
+    position: [40.393920122952316, -8.450309555536382],
+    images: [
+      `${bucketBaseUrl}/pedro_dos_leitoes_6161.JPEG`,
+    ]
+  },
+  {
+    key: "Santobychef",
+    name: "Restaurante Santobychef",
+    types: ["Portuguese", "Fusion"],
+    address: {
+      street: "R. Dom Afonso Henriques 95, 4700-030",
+      city: "Braga",
+      country: "Portugal"
+    },
+    website: "https://www.santobychef.pt/",
+    googleMaps: "https://maps.app.goo.gl/i4JeZ9WHNKp7GYm98",
+    rating: 4.2,
+    priceRange: 4,
+    position: [41.54963354456222, -8.426029002161606],
+    images: [
+      `${bucketBaseUrl}/santobychef_6816.JPEG`,
+      `${bucketBaseUrl}/santobychef_6814.JPEG`,
+      `${bucketBaseUrl}/santobychef_6815.JPEG`,
+      `${bucketBaseUrl}/santobychef_6813.JPEG`,
+    ]
+  },
+  {
+    key: "TabernaDMaria",
+    name: "Taberna D. Maria",
+    types: ["Portuguese", "Traditional"],
+    address: {
+      street: "Av. Alberto Sampaio 28, 3510-024",
+      city: "Viseu",
+      country: "Portugal"
+    },
+    website: "https://www.facebook.com/TabernaDMaria",
+    googleMaps: "https://maps.app.goo.gl/RZgC2cCrWeiddWu86",
+    rating: 4.1,
+    priceRange: 3,
+    position: [40.65752151417196, -7.915358258006946],
+    images: [
+      `${bucketBaseUrl}/taberna_dm_6952.JPEG`,
+      `${bucketBaseUrl}/taberna_dm_6949.JPEG`,
+    ]
+  },
+  {
+    key: "ZedaMouraria2",
+    name: "Zé da Mouraria 2",
+    types: ["Portuguese", "Traditional"],
+    address: {
+      street: "R. Gomes Freire 60, 1150-175",
+      city: "Lisboa",
+      country: "Portugal"
+    },
+    website: "https://www.facebook.com/pages/Ze-Da-Mouraria-2/857092067663087",
+    googleMaps: "https://maps.app.goo.gl/8DJbk1Dhdnx67G7v6",
+    rating: 3.7,
+    priceRange: 3,
+    position: [38.7244751337441, -9.139895515725353],
+    images: [
+      `${bucketBaseUrl}/zedamouraria_7022.JPEG`,
+      `${bucketBaseUrl}/zedamouraria_7021.JPEG`,
+    ]
   }
 ]
 
@@ -1356,5 +2289,6 @@ export const restaurantData: Restaurant[] = [
   ...francesinha,
   ...pizza,
   ...burgers,
+  ...brunch,
   ...others,
 ];
