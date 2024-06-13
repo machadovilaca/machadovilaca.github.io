@@ -1302,8 +1302,8 @@ const burgers: Restaurant[] = [
     priceRange: 2,
     position: [41.27768817123363, -8.284434146345976],
     images: [
-      `${bucketBaseUrl}/hamburgueria_da_praca_lousada_7121.jpg`,
-      `${bucketBaseUrl}/hamburgueria_da_praca_lousada_7122.jpg`,
+      `${bucketBaseUrl}/hamburgueria_da_praca_lousada_7121.JPEG`,
+      `${bucketBaseUrl}/hamburgueria_da_praca_lousada_7122.JPEG`,
     ]
   },
   {
@@ -2257,8 +2257,8 @@ const others: Restaurant[] = [
     priceRange: 3,
     position: [40.65752151417196, -7.915358258006946],
     images: [
-      `${bucketBaseUrl}/taberna_dm_6952.JPEG`,
-      `${bucketBaseUrl}/taberna_dm_6949.JPEG`,
+      `${bucketBaseUrl}/taberna_dmaria_6952.JPEG`,
+      `${bucketBaseUrl}/taberna_dmaria_6949.JPEG`,
     ]
   },
   {
