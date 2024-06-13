@@ -79,7 +79,7 @@ const sushis: Restaurant[] = [
     },
     website: "https://www.tripadvisor.pt/Restaurant_Review-g189174-d20944018-Reviews-Kanji_Restaurant_Garden_Bar-Guimaraes_Braga_District_Northern_Portugal.html",
     googleMaps: "https://maps.app.goo.gl/c9SQtyq1cxqJfBbBA",
-    rating: 4.1,
+    rating: 3.8,
     priceRange: 3,
     position: [41.44431046042532, -8.293703813781669],
     images: [
@@ -122,7 +122,7 @@ const sushis: Restaurant[] = [
     },
     website: "https://www.omakase.pt/",
     googleMaps: "https://maps.app.goo.gl/h54TzPKPkqxFsMd58",
-    rating: 4.9,
+    rating: 4.8,
     priceRange: 5,
     position: [41.5511421202459, -8.4181537201536],
     images: [
@@ -249,7 +249,7 @@ const asian: Restaurant[] = [
     },
     website: "https://chinatown.co.uk/en/restaurant/leongs-legend/",
     googleMaps: "https://maps.app.goo.gl/RhiUc2s4CocAxNQMA",
-    rating: 4.6,
+    rating: 4.4,
     priceRange: 3,
     position: [51.51219837825268, -0.13075197516503045],
     images: [
@@ -307,7 +307,7 @@ const asian: Restaurant[] = [
     },
     website: "https://www.arslanbuuz.cz/",
     googleMaps: "https://maps.app.goo.gl/WRKdqRHt7PB8rQSM6",
-    rating: 4.7,
+    rating: 4.5,
     priceRange: 2,
     position: [49.20045764794219, 16.60233092420062],
     images: [
@@ -325,7 +325,7 @@ const asian: Restaurant[] = [
     },
     website: "https://diandi.cz/",
     googleMaps: "https://maps.app.goo.gl/MmEnvipYx3JPDip26",
-    rating: 3.7,
+    rating: 3.4,
     priceRange: 3,
     position: [49.19492422556868, 16.607550849916393],
     images: [
@@ -685,7 +685,7 @@ const italian: Restaurant[] = [
     },
     website: "http://ristorante-mammamia.pt/",
     googleMaps: "https://maps.app.goo.gl/XynhrMusBhXTB6pZ8",
-    rating: 3.0,
+    rating: 2.8,
     priceRange: 2,
     position: [41.56905030118558, -8.386247825872683],
     images: [
@@ -771,7 +771,7 @@ const italian: Restaurant[] = [
     },
     website: "https://pizzerialapiazza.nl/",
     googleMaps: "https://maps.app.goo.gl/iReE9SoqjagSqwXC8",
-    rating: 3.7,
+    rating: 3.3,
     priceRange: 3,
     position: [52.37278477631322, 4.891644639834464],
     images: [
@@ -791,7 +791,7 @@ const italian: Restaurant[] = [
     },
     website: "https://peppinoamsterdam.nl/",
     googleMaps: "Ristorante Italiano Peppino",
-    rating: 3.6,
+    rating: 3.3,
     priceRange: 3,
     position: [52.36359981255532, 4.884562666820148],
     images: [
@@ -1130,7 +1130,7 @@ const pizza: Restaurant[] = [
     },
     website: "https://www.facebook.com/joespizzaCeleiros",
     googleMaps: "https://maps.app.goo.gl/bEDpqbQrdBwmBu8X6",
-    rating: 3.8,
+    rating: 3.5,
     priceRange: 2,
     position: [41.51360865652946, -8.450963909729941],
     images: [
@@ -1536,7 +1536,7 @@ const others: Restaurant[] = [
     },
     website: "https://www.instagram.com/cactuscatbar/",
     googleMaps: "https://maps.app.goo.gl/3QPed5YJwVbKTss58",
-    rating: 3.8,
+    rating: 2.9,
     priceRange: 3,
     position: [41.383296318960525, 2.1646239555301086],
     images: [

@@ -21,15 +21,20 @@ import {
 import "leaflet/dist/leaflet.css"
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css"
 import "./map.css"
+import {Slider} from "@/components/ui/slider";
+import {StarIcon} from "lucide-react";
 
 const baseUrl = "/food-map"
 const marker = icon({iconUrl: "/marker-icon.svg"});
+const defaultRatingValue = [0, 5]
 
 export default function FoodMap({restaurants}: Readonly<{ restaurants: Restaurant[] }>) {
   const searchParams = useSearchParams()
   const router = useRouter()
 
-  const [value, setValue] = React.useState<string[]>([])
+  const [searchValue, setSearchValue] = React.useState<string[]>([])
+  const [ratingValue, setRatingValue] = React.useState<[number, number]>(defaultRatingValue)
+
   const [showingRestaurants, setShowingRestaurants] = React.useState<Restaurant[]>(restaurants)
   const [selectedRestaurant, setSelectedRestaurant] = React.useState<Restaurant | null>(null);
 
@@ -79,11 +84,39 @@ export default function FoodMap({restaurants}: Readonly<{ restaurants: Restauran
     })
 
     setShowingRestaurants(toShow)
-    setValue(value)
+    setSearchValue(value)
   }
 
+  const onRatingChange = (value: number[number]) => {
+    const toShow = restaurants.filter(restaurant => {
+      return restaurant.rating >= value[0] && restaurant.rating <= value[1]
+    })
+
+    setShowingRestaurants(toShow)
+    setRatingValue(value)
+  }
+
+  const tagSelector = () =>
+    <div className="w-full flex flex-row gap-3 items-center">
+      <span className="flex-none w-40">Filter type, city, etc...</span>
+      <MultiSelector values={searchValue} onValuesChange={onSearchChange} loop>
+        <MultiSelectorTrigger>
+          <MultiSelectorInput placeholder="Search by..."/>
+        </MultiSelectorTrigger>
+        <MultiSelectorContent>
+          <MultiSelectorList>
+            {
+              searches().map((tag, index) => (
+                <MultiSelectorItem key={index} value={tag}>{tag}</MultiSelectorItem>
+              ))
+            }
+          </MultiSelectorList>
+        </MultiSelectorContent>
+      </MultiSelector>
+    </div>
+
   return (
-    <>
+    <div className="flex flex-col gap-5">
       {
         selectedRestaurant !== null &&
           <RestaurantDialog
@@ -93,21 +126,26 @@ export default function FoodMap({restaurants}: Readonly<{ restaurants: Restauran
           />
       }
 
-      <div className="h-20 w-full">
-        <MultiSelector values={value} onValuesChange={onSearchChange} loop>
-          <MultiSelectorTrigger>
-            <MultiSelectorInput placeholder="Search by type, city, etc..."/>
-          </MultiSelectorTrigger>
-          <MultiSelectorContent>
-            <MultiSelectorList>
-              {
-                searches().map((tag, index) => (
-                  <MultiSelectorItem key={index} value={tag}>{tag}</MultiSelectorItem>
-                ))
-              }
-            </MultiSelectorList>
-          </MultiSelectorContent>
-        </MultiSelector>
+      {tagSelector()}
+
+      <div className="mb-5 flex flex-row gap-3 items-center">
+        <span className="flex-none w-40">Filter by Rating:</span>
+        <div className="flex flex-row gap-2 items-center">
+          <span className="flex flex-row">
+            {ratingValue[0]}
+            <StarIcon fill="#f0ab00" strokeWidth={0.2} />
+          </span>
+          <Slider
+            className="w-40"
+            defaultValue={defaultRatingValue}
+            max={5}
+            step={0.5}
+            onValueChange={onRatingChange}
+          />
+          <span className="flex flex-row">
+            {ratingValue[1]}
+            <StarIcon fill="#f0ab00" strokeWidth={0.2}/>
+          </span></div>
       </div>
 
       <MapContainer
@@ -129,6 +167,6 @@ export default function FoodMap({restaurants}: Readonly<{ restaurants: Restauran
           <RestaurantsMarkers restaurants={showingRestaurants}/>
         </MarkerClusterGroup>
       </MapContainer>
-    </>
+    </div>
   )
 }
