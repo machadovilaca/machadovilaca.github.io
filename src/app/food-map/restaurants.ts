@@ -128,10 +128,10 @@ const sushis: Restaurant[] = [
     images: [
       `${bucketBaseUrl}/omakasebraga_5184.jpg`,
       `${bucketBaseUrl}/omakasebraga_5181.jpg`,
-      `${bucketBaseUrl}/omakasebraga_6690.jpg`,
-      `${bucketBaseUrl}/omakasebraga_6691.jpg`,
-      `${bucketBaseUrl}/omakasebraga_6689.jpg`,
-      `${bucketBaseUrl}/omakasebraga_6688.jpg`,
+      `${bucketBaseUrl}/omakasebraga_6690.JPEG`,
+      `${bucketBaseUrl}/omakasebraga_6691.JPEG`,
+      `${bucketBaseUrl}/omakasebraga_6689.JPEG`,
+      `${bucketBaseUrl}/omakasebraga_6688.JPEG`,
       `${bucketBaseUrl}/omakasebraga_5186.jpg`,
     ]
   },
@@ -1317,16 +1317,16 @@ const burgers: Restaurant[] = [
     },
     website: "https://www.mimossmokehouse.pt/menu",
     googleMaps: "https://maps.app.goo.gl/1QS7VC1VXAkdEgh77",
-    rating: 3.9,
+    rating: 4.1,
     priceRange: 3,
     position: [41.552236789663226, -8.417095817503464],
     images: [
-      `${bucketBaseUrl}/mimos_some_house_braga_6408.JPEG`,
-      `${bucketBaseUrl}/mimos_some_house_braga_6405.JPEG`,
-      `${bucketBaseUrl}/mimos_some_house_braga_6402.JPEG`,
-      `${bucketBaseUrl}/mimos_some_house_braga_6406.JPEG`,
-      `${bucketBaseUrl}/mimos_some_house_braga_6409.JPEG`,
-      `${bucketBaseUrl}/mimos_some_house_braga_6411.JPEG`,
+      `${bucketBaseUrl}/mimos_smoke_house_braga_6408.JPEG`,
+      `${bucketBaseUrl}/mimos_smoke_house_braga_6405.JPEG`,
+      `${bucketBaseUrl}/mimos_smoke_house_braga_6402.JPEG`,
+      `${bucketBaseUrl}/mimos_smoke_house_braga_6406.JPEG`,
+      `${bucketBaseUrl}/mimos_smoke_house_braga_6409.JPEG`,
+      `${bucketBaseUrl}/mimos_smoke_house_braga_6411.JPEG`,
     ]
   },
   {
