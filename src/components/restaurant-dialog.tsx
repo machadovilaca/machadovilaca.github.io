@@ -79,14 +79,14 @@ export function RestaurantDialog({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-3xl">
+      <DialogContent className="max-w-80 max-h-full sm:max-w-3xl overflow-auto">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-1">
             {restaurant.name}
             {dropdownMenu}
           </DialogTitle>
           <DialogDescription>
-            {restaurant.types.join(", ")}
+            <p className="max-w-80">{restaurant.types.join(", ")}</p>
           </DialogDescription>
         </DialogHeader>
 

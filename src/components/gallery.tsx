@@ -90,11 +90,11 @@ export function Gallery({images}: Readonly<{ images: string[] }>) {
   };
 
   return (
-    <div className="min-w-96">
+    <div className="min-w-64 sm:min-w-96">
       <Carousel setApi={setMainApi}>
         <CarouselContent className="m-1">{mainImage}</CarouselContent>
-        <CarouselPrevious/>
-        <CarouselNext/>
+        <CarouselPrevious className="hidden sm:flex"/>
+        <CarouselNext className="hidden sm:flex"/>
       </Carousel>
       <Carousel setApi={setThumbnailApi}>
         <CarouselContent className="m-1">{thumbnailImages}</CarouselContent>
