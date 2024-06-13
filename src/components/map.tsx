@@ -22,18 +22,20 @@ import "leaflet/dist/leaflet.css"
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css"
 import "./map.css"
 import {Slider} from "@/components/ui/slider";
-import {StarIcon} from "lucide-react";
+import {BadgeDollarSign, DollarSignIcon, StarIcon} from "lucide-react";
 
 const baseUrl = "/food-map"
 const marker = icon({iconUrl: "/marker-icon.svg"});
 const defaultRatingValue = [0, 5]
+const defaultPriceValue = [1, 5]
 
 export default function FoodMap({restaurants}: Readonly<{ restaurants: Restaurant[] }>) {
   const searchParams = useSearchParams()
   const router = useRouter()
 
   const [searchValue, setSearchValue] = React.useState<string[]>([])
-  const [ratingValue, setRatingValue] = React.useState<[number, number]>(defaultRatingValue)
+  const [ratingValue, setRatingValue] = React.useState<number[]>(defaultRatingValue)
+  const [priceValue, setPriceValue] = React.useState<number[]>(defaultPriceValue)
 
   const [showingRestaurants, setShowingRestaurants] = React.useState<Restaurant[]>(restaurants)
   const [selectedRestaurant, setSelectedRestaurant] = React.useState<Restaurant | null>(null);
@@ -44,6 +46,19 @@ export default function FoodMap({restaurants}: Readonly<{ restaurants: Restauran
 
     setSelectedRestaurant(initialRestaurant || null)
   }, [restaurants, searchParams])
+
+  React.useEffect(() => {
+    const toShow =
+      restaurants
+        .filter(restaurant => {
+          const restaurantTags = [...restaurant.types, restaurant.address.city, restaurant.address.country, restaurant.name]
+          return searchValue.every(tag => restaurantTags.includes(tag))
+        })
+        .filter(restaurant => restaurant.rating >= ratingValue[0] && restaurant.rating <= ratingValue[1])
+        .filter(restaurant => restaurant.priceRange >= priceValue[0] && restaurant.priceRange <= priceValue[1])
+
+    setShowingRestaurants(toShow)
+  }, [restaurants, searchValue, ratingValue, priceValue])
 
   const RestaurantsMarkers = ({restaurants}: Readonly<{ restaurants: Restaurant[] }>) => {
     return <>
@@ -77,29 +92,10 @@ export default function FoodMap({restaurants}: Readonly<{ restaurants: Restauran
     return Array.from(tags)
   }
 
-  const onSearchChange = (value: string[]) => {
-    const toShow = restaurants.filter(restaurant => {
-      const tags = [...restaurant.types, restaurant.address.city, restaurant.address.country, restaurant.name]
-      return value.every(tag => tags.includes(tag))
-    })
-
-    setShowingRestaurants(toShow)
-    setSearchValue(value)
-  }
-
-  const onRatingChange = (value: number[number]) => {
-    const toShow = restaurants.filter(restaurant => {
-      return restaurant.rating >= value[0] && restaurant.rating <= value[1]
-    })
-
-    setShowingRestaurants(toShow)
-    setRatingValue(value)
-  }
-
   const tagSelector = () =>
     <div className="w-full flex flex-row gap-3 items-center">
-      <span className="flex-none w-40">Filter type, city, etc...</span>
-      <MultiSelector values={searchValue} onValuesChange={onSearchChange} loop>
+      <span className="min-w-44">Type, location, name:</span>
+      <MultiSelector values={searchValue} onValuesChange={setSearchValue} loop>
         <MultiSelectorTrigger>
           <MultiSelectorInput placeholder="Search by..."/>
         </MultiSelectorTrigger>
@@ -115,6 +111,69 @@ export default function FoodMap({restaurants}: Readonly<{ restaurants: Restauran
       </MultiSelector>
     </div>
 
+  const ratingSelector = () =>
+    <div className="mb-5 flex flex-row gap-3 items-center">
+      <span>Rating:</span>
+      <div className="flex flex-row gap-2 items-center">
+        <span className="flex flex-row">
+          {Array.from({length: ratingValue[0]}, (_, i) => (
+            <StarIcon key={i} fill="#f0ab00" strokeWidth={0.2} />
+          ))}
+          {Array.from({length: 5 - ratingValue[0]}, (_, i) => (
+            <StarIcon key={i} fill="#f0ab00" strokeWidth={0.2} className="opacity-30" />
+          ))}
+        </span>
+        <Slider
+          className="w-40"
+          defaultValue={defaultRatingValue}
+          max={5}
+          step={1}
+          onValueChange={setRatingValue}
+        />
+        <span className="flex flex-row">
+          {Array.from({length: ratingValue[1]}, (_, i) => (
+            <StarIcon key={i} fill="#f0ab00" strokeWidth={0.2}/>
+          ))}
+          {Array.from({length: 5 - ratingValue[1]}, (_, i) => (
+            <StarIcon key={i} fill="#f0ab00" strokeWidth={0.2} className="opacity-30"/>
+          ))}
+        </span>
+      </div>
+    </div>
+
+  const priceSelector = () =>
+    <div className="mb-5 flex flex-row gap-3 items-center">
+      <span>Price:</span>
+      <div className="flex flex-row gap-2 items-center">
+        <span className="flex flex-row">
+            {Array.from({length: priceValue[0]}, (_, i) => (
+              <BadgeDollarSign key={i}/>
+            ))}
+          {Array.from({length: 5 - priceValue[0]}, (_, i) => (
+            <BadgeDollarSign key={i} className="opacity-30"/>
+          ))}
+        </span>
+        <Slider
+          className="w-40"
+          defaultValue={defaultPriceValue}
+          min={1}
+          max={5}
+          step={1}
+          onValueChange={setPriceValue}
+        />
+        <span className="flex flex-row">
+          <span className="flex flex-row">
+            {Array.from({length: priceValue[1]}, (_, i) => (
+              <BadgeDollarSign key={i}/>
+            ))}
+              {Array.from({length: 5 - priceValue[1]}, (_, i) => (
+                <BadgeDollarSign key={i} className="opacity-30"/>
+              ))}
+          </span>
+        </span>
+      </div>
+    </div>
+
   return (
     <div className="flex flex-col gap-5">
       {
@@ -127,26 +186,8 @@ export default function FoodMap({restaurants}: Readonly<{ restaurants: Restauran
       }
 
       {tagSelector()}
-
-      <div className="mb-5 flex flex-row gap-3 items-center">
-        <span className="flex-none w-40">Filter by Rating:</span>
-        <div className="flex flex-row gap-2 items-center">
-          <span className="flex flex-row">
-            {ratingValue[0]}
-            <StarIcon fill="#f0ab00" strokeWidth={0.2} />
-          </span>
-          <Slider
-            className="w-40"
-            defaultValue={defaultRatingValue}
-            max={5}
-            step={0.5}
-            onValueChange={onRatingChange}
-          />
-          <span className="flex flex-row">
-            {ratingValue[1]}
-            <StarIcon fill="#f0ab00" strokeWidth={0.2}/>
-          </span></div>
-      </div>
+      {ratingSelector()}
+      {priceSelector()}
 
       <MapContainer
         center={[44, -7]}
