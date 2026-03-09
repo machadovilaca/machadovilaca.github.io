@@ -1,9 +1,10 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import dynamic from "next/dynamic";
 import { restaurantData } from "@/data/restaurants";
+import { flightData, flightCount } from "@/data/flights";
 import RestaurantFilter from "@/components/RestaurantFilter";
 
 const WorldMap = dynamic(() => import("@/components/WorldMap"), {
@@ -16,21 +17,33 @@ const WorldMap = dynamic(() => import("@/components/WorldMap"), {
 });
 
 const layers = [
-  { id: "restaurants", label: "Restaurants", enabled: true },
-  { id: "flights", label: "Flights", enabled: false },
+  { id: "restaurants", label: "Restaurants", count: () => restaurantData.length, enabled: true },
+  { id: "flights", label: "Flights", count: () => flightCount, enabled: true },
   { id: "stadiums", label: "Stadiums", enabled: false },
 ];
 
 export default function MapPage() {
   const searchParams = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname();
   const focusKey = searchParams.get("restaurant") || null;
-  const [activeLayers, setActiveLayers] = useState(["restaurants"]);
+  const initialLayer = searchParams.get("layer");
+  const validLayerIds = layers.filter((l) => l.enabled).map((l) => l.id);
+  const [activeLayers, setActiveLayers] = useState(
+    initialLayer && validLayerIds.includes(initialLayer) ? [initialLayer] : ["restaurants"]
+  );
   const [filteredRestaurants, setFilteredRestaurants] = useState(restaurantData);
 
   const toggleLayer = (id) => {
-    setActiveLayers((prev) =>
-      prev.includes(id) ? prev.filter((l) => l !== id) : [...prev, id]
-    );
+    const next = activeLayers.includes(id) ? [] : [id];
+    setActiveLayers(next);
+    const params = new URLSearchParams(searchParams.toString());
+    if (next.length > 0) {
+      params.set("layer", next[0]);
+    } else {
+      params.delete("layer");
+    }
+    router.replace(`${pathname}?${params.toString()}`, { scroll: false });
   };
 
   const handleFilterChange = useCallback((filtered) => {
@@ -38,7 +51,9 @@ export default function MapPage() {
   }, []);
 
   const showRestaurants = activeLayers.includes("restaurants");
+  const showFlights = activeLayers.includes("flights");
   const restaurants = showRestaurants ? filteredRestaurants : [];
+  const flights = showFlights ? flightData : [];
 
   return (
     <div className="flex h-[calc(100vh-3.5rem)] flex-col p-6">
@@ -65,6 +80,11 @@ export default function MapPage() {
                 }`}
               >
                 {layer.label}
+                {layer.count && (
+                  <span className="ml-1.5 rounded-full bg-white/20 px-1.5 py-0.5 text-[10px] tabular-nums">
+                    {layer.count()}
+                  </span>
+                )}
               </button>
             );
           })}
@@ -82,7 +102,7 @@ export default function MapPage() {
 
       <div className="relative flex-1 rounded-lg border border-zinc-200" style={{ isolation: "isolate" }}>
         <div className="absolute inset-0 overflow-hidden rounded-lg">
-          <WorldMap restaurants={restaurants} focusKey={focusKey} />
+          <WorldMap restaurants={restaurants} focusKey={focusKey} flights={flights} />
         </div>
       </div>
     </div>

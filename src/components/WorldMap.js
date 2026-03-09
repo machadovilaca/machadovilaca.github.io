@@ -7,6 +7,7 @@ import "leaflet/dist/leaflet.css";
 import "leaflet.markercluster/dist/MarkerCluster.css";
 import "leaflet.markercluster/dist/MarkerCluster.Default.css";
 import RestaurantLayer from "./RestaurantLayer";
+import FlightLayer from "./FlightLayer";
 
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
@@ -21,7 +22,7 @@ L.Icon.Default.mergeOptions({
 const MAP_CENTER = [30, 0];
 const MAP_ZOOM = 3;
 
-export default function WorldMap({ restaurants = [], focusKey = null }) {
+export default function WorldMap({ restaurants = [], focusKey = null, flights = [] }) {
   useEffect(() => {
     window.dispatchEvent(new Event("resize"));
   }, []);
@@ -41,6 +42,7 @@ export default function WorldMap({ restaurants = [], focusKey = null }) {
       />
 
       <RestaurantLayer restaurants={restaurants} focusKey={focusKey} />
+      <FlightLayer flights={flights} />
     </MapContainer>
   );
 }
