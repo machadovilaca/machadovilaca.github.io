@@ -8,6 +8,7 @@ import { profile } from "@/data/content";
 const navLinks = [
   { label: "About", href: "/" },
   { label: "Speaking", href: "/speaking" },
+  { label: "Map", href: "/map" },
 ];
 
 export default function Navbar() {
