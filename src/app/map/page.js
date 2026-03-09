@@ -5,6 +5,7 @@ import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import dynamic from "next/dynamic";
 import { restaurantData } from "@/data/restaurants";
 import { flightData, flightCount } from "@/data/flights";
+import { stadiumData } from "@/data/stadiums";
 import RestaurantFilter from "@/components/RestaurantFilter";
 
 const WorldMap = dynamic(() => import("@/components/WorldMap"), {
@@ -19,7 +20,7 @@ const WorldMap = dynamic(() => import("@/components/WorldMap"), {
 const layers = [
   { id: "restaurants", label: "Restaurants", count: () => restaurantData.length, enabled: true },
   { id: "flights", label: "Flights", count: () => flightCount, enabled: true },
-  { id: "stadiums", label: "Stadiums", enabled: false },
+  { id: "stadiums", label: "Stadiums", count: () => stadiumData.length, enabled: true },
 ];
 
 export default function MapPage() {
@@ -52,8 +53,10 @@ export default function MapPage() {
 
   const showRestaurants = activeLayers.includes("restaurants");
   const showFlights = activeLayers.includes("flights");
+  const showStadiums = activeLayers.includes("stadiums");
   const restaurants = showRestaurants ? filteredRestaurants : [];
   const flights = showFlights ? flightData : [];
+  const stadiums = showStadiums ? stadiumData : [];
 
   return (
     <div className="flex h-[calc(100vh-3.5rem)] flex-col p-6">
@@ -102,7 +105,7 @@ export default function MapPage() {
 
       <div className="relative flex-1 rounded-lg border border-zinc-200" style={{ isolation: "isolate" }}>
         <div className="absolute inset-0 overflow-hidden rounded-lg">
-          <WorldMap restaurants={restaurants} focusKey={focusKey} flights={flights} />
+          <WorldMap restaurants={restaurants} focusKey={focusKey} flights={flights} stadiums={stadiums} />
         </div>
       </div>
     </div>
