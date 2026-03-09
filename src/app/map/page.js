@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { Suspense, useState, useCallback } from "react";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import dynamic from "next/dynamic";
 import { restaurantData } from "@/data/restaurants";
@@ -24,6 +24,18 @@ const layers = [
 ];
 
 export default function MapPage() {
+  return (
+    <Suspense fallback={
+      <div className="flex h-[calc(100vh-3.5rem)] items-center justify-center">
+        <div className="text-sm text-zinc-400">Loading…</div>
+      </div>
+    }>
+      <MapPageContent />
+    </Suspense>
+  );
+}
+
+function MapPageContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
