@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { Marker, Popup, Tooltip, useMap } from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-cluster";
+import { usePopupSize } from "./usePopupSize";
 
 function PriceRange({ level }) {
   return (
@@ -34,13 +35,13 @@ function RestaurantPopup({ restaurant }) {
   const hasMultiple = images.length > 1;
 
   return (
-    <div className="w-64">
+    <div className="w-64 sm:w-80 md:w-96">
       {images.length > 0 && (
         <div className="relative mb-2">
           <img
             src={images[imgIdx]}
             alt={restaurant.name}
-            className="max-h-48 w-full rounded-md object-contain"
+            className="max-h-48 sm:max-h-56 md:max-h-64 w-full rounded-md object-contain"
           />
           {hasMultiple && (
             <>
@@ -70,7 +71,7 @@ function RestaurantPopup({ restaurant }) {
         </div>
       )}
 
-      <h3 className="text-sm font-semibold text-zinc-900">{restaurant.name}</h3>
+      <h3 className="text-sm md:text-base font-semibold text-zinc-900">{restaurant.name}</h3>
 
       <div className="mt-1 flex flex-wrap gap-1">
         {restaurant.types.map((type) => (
@@ -148,6 +149,7 @@ function FocusHandler({ focusKey, markerRefs }) {
 
 function RestaurantMarkers({ restaurants, markerRefs, setMarkerRef }) {
   const map = useMap();
+  const { maxWidth, minWidth } = usePopupSize();
 
   return restaurants.map((r) => (
     <Marker
@@ -175,7 +177,7 @@ function RestaurantMarkers({ restaurants, markerRefs, setMarkerRef }) {
       <Tooltip direction="top" offset={[0, -10]}>
         {r.name} ({r.rating})
       </Tooltip>
-      <Popup maxWidth={300} minWidth={260}>
+      <Popup maxWidth={maxWidth} minWidth={minWidth}>
         <RestaurantPopup restaurant={r} />
       </Popup>
     </Marker>

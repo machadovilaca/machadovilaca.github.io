@@ -2,6 +2,7 @@
 
 import { Marker, Popup, Tooltip, useMap } from "react-leaflet";
 import L from "leaflet";
+import { usePopupSize } from "./usePopupSize";
 
 const shadowUrl = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png";
 
@@ -28,13 +29,13 @@ const goldenIcon = new L.Icon({
 
 function StadiumPopup({ stadium }) {
   return (
-    <div className="w-64">
+    <div className="w-64 sm:w-80 md:w-96">
       {stadium.image && (
         <div className="mb-2">
           <img
             src={stadium.image}
             alt={stadium.match || stadium.stadium}
-            className="max-h-48 w-full rounded-md object-contain"
+            className="max-h-48 sm:max-h-56 md:max-h-64 w-full rounded-md object-contain"
           />
         </div>
       )}
@@ -52,7 +53,7 @@ function StadiumPopup({ stadium }) {
       )}
 
       {stadium.match && (
-        <h3 className="text-sm font-semibold text-zinc-900">{stadium.match}</h3>
+        <h3 className="text-sm md:text-base font-semibold text-zinc-900">{stadium.match}</h3>
       )}
 
       {stadium.date && (
@@ -75,6 +76,7 @@ function StadiumPopup({ stadium }) {
 
 function StadiumMarkers({ stadiums }) {
   const map = useMap();
+  const { maxWidth, minWidth } = usePopupSize();
 
   return stadiums.map((s) => (
     <Marker
@@ -95,7 +97,7 @@ function StadiumMarkers({ stadiums }) {
       <Tooltip direction="top" offset={[0, -10]}>
         {s.match || s.stadium}{s.date ? ` (${s.date})` : ""}
       </Tooltip>
-      <Popup maxWidth={300} minWidth={260}>
+      <Popup maxWidth={maxWidth} minWidth={minWidth}>
         <StadiumPopup stadium={s} />
       </Popup>
     </Marker>
